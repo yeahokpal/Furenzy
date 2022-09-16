@@ -16,7 +16,7 @@ public class PlayerMovementTemp : MonoBehaviour
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
 
-    void Move(InputAction.CallbackContext context)
+    void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
     }
