@@ -1,24 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovementTemp : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 5f;
 
     public Rigidbody2D rb;
 
-    Vector2 movement;
-
-    // Update is called once per frame
-    void Update()
-    {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-    }
-
+    Vector2 moveInput;
+    
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    void Move(InputAction.CallbackContext context)
+    {
+        moveInput = value.Get<Vector2>();
     }
 }
