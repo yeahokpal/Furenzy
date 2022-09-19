@@ -8,6 +8,7 @@ public class PlayerMovementTemp : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
 
     public Rigidbody2D rb;
+    public Animator animator;
 
     Vector2 moveInput;
     
