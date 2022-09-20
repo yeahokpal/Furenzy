@@ -15,6 +15,11 @@ public class PlayerMovementTemp : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+
+        // Animation Stuff
+        animator.SetFloat("Speed", moveInput.magnitude);
+        animator.SetFloat("Horizontal", moveInput.x);
+        animator.SetFloat("Vertical", moveInput.y);
     }
 
     void OnMove(InputValue value)
