@@ -228,6 +228,36 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!1 &1862144552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1460901717897544858, guid: 39529f13222727f46935fce0d9e05faa, type: 3}
+  m_PrefabInstance: {fileID: 1460901717310150559}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1862144553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862144552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e7eace68d1a0f045b8c0c6ca9730ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rb: {fileID: 1862144556}
+  animator: {fileID: 1862144554}
+--- !u!95 &1862144554 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1460901717897544852, guid: 39529f13222727f46935fce0d9e05faa, type: 3}
+  m_PrefabInstance: {fileID: 1460901717310150559}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1862144556 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 1460901717897544850, guid: 39529f13222727f46935fce0d9e05faa, type: 3}
+  m_PrefabInstance: {fileID: 1460901717310150559}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1460901717310150559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -279,11 +309,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1460901717897544848, guid: 39529f13222727f46935fce0d9e05faa, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1688147516}
     - target: {fileID: 1460901717897544858, guid: 39529f13222727f46935fce0d9e05faa, type: 3}
       propertyPath: m_Name
       value: Fox
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1460901717897544849, guid: 39529f13222727f46935fce0d9e05faa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 39529f13222727f46935fce0d9e05faa, type: 3}
 --- !u!1001 &4410633836267510109
 PrefabInstance:
@@ -340,5 +375,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bunny
       objectReference: {fileID: 0}
+    - target: {fileID: 4410633837779907549, guid: 7a1ef9befec95694db9fb9852d3bfad7, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1688147516}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a1ef9befec95694db9fb9852d3bfad7, type: 3}
