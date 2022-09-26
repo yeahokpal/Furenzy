@@ -27,8 +27,6 @@ public class PlayerMovement : MonoBehaviour
         else if (moveInput.x < .0001 && moveInput.y < -.0001)
             moveDir = 3;
 
-        Debug.Log(moveDir);
-
             rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
 
         // Animation Stuff

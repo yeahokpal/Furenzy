@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
@@ -256,8 +256,8 @@ TextureImporter:
       FoxRunEast_0: -1858589526
       FoxRunEast_1: 1281805088
       FoxRunEast_4: -74844542
-      FoxRunEast_3: 963201237
       FoxRunEast_2: 1395758945
+      FoxRunEast_3: 963201237
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
