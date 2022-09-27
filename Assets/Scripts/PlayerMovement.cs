@@ -6,10 +6,10 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
+    private InputActionMap playerInput;
 
     public Rigidbody2D rb;
     public Animator animator;
-    private InputActionMap playerInput;
     public int moveDir;
 
     Vector2 moveInput;
@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
             rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
 
-        // Animation Stuff
+        // Defining variables used by Animator
         animator.SetInteger("MoveDir", moveDir);
         animator.SetFloat("Speed", moveInput.magnitude);
         animator.SetFloat("Horizontal", moveInput.x);
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void OnMove(InputValue value)
+    public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
     }
