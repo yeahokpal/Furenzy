@@ -20,6 +20,11 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 moveInput;
 
+    private void Awake()
+    {
+        currentHealthSprite = health1;
+    }
+
     void FixedUpdate()
     {
         // Finding the current facing direction
