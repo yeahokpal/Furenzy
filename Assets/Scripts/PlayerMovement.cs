@@ -22,6 +22,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        health1 = GameObject.Find("FoxHealth1");
+        health2 = GameObject.Find("FoxHealth2");
+        health3 = GameObject.Find("FoxHealth3");
+        health4 = GameObject.Find("FoxHealth4");
+
         currentHealthSprite = health1;
     }
 
