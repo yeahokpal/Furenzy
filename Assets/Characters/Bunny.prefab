@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4410633837779907362}
   - component: {fileID: 4410633837779907363}
+  - component: {fileID: 197664950683565021}
   - component: {fileID: 4410633837779907360}
-  - component: {fileID: 4410633837779907361}
   - component: {fileID: 4410633837779907366}
   - component: {fileID: 4410633837779907549}
   m_Layer: 0
@@ -88,6 +88,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &197664950683565021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4410633837779907367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e77e9811c285447862efb670c7d7ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rb: {fileID: 4410633837779907360}
+  animator: {fileID: 4410633837779907366}
+  moveDir: 0
+  Health: 3
+  currentHealthSprite: {fileID: 0}
+  health1: {fileID: 0}
+  health2: {fileID: 0}
+  health3: {fileID: 0}
+  health4: {fileID: 0}
 --- !u!50 &4410633837779907360
 Rigidbody2D:
   serializedVersion: 4
@@ -109,28 +131,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4410633837779907361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4410633837779907367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e7eace68d1a0f045b8c0c6ca9730ef8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rb: {fileID: 4410633837779907360}
-  animator: {fileID: 4410633837779907366}
-  moveDir: 0
-  Health: 3
-  currentHealthSprite: {fileID: 0}
-  health1: {fileID: 0}
-  health2: {fileID: 0}
-  health3: {fileID: 0}
-  health4: {fileID: 0}
 --- !u!95 &4410633837779907366
 Animator:
   serializedVersion: 4

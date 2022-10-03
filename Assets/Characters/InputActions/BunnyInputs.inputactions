@@ -1,5 +1,5 @@
 {
-    "name": "BPA2022",
+    "name": "BunnyInputs",
     "maps": [
         {
             "name": "Player",
@@ -162,6 +162,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a365988c-08fd-4e9b-bb2d-4bc19b7b5ed1",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false

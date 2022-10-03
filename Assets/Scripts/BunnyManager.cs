@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class BunnyManager : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     private InputActionMap playerInput;
@@ -22,10 +22,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        health1 = GameObject.Find("FoxHealth1");
-        health2 = GameObject.Find("FoxHealth2");
-        health3 = GameObject.Find("FoxHealth3");
-        health4 = GameObject.Find("FoxHealth4");
+        health1 = GameObject.Find("BunnyHealth1");
+        health2 = GameObject.Find("BunnyHealth2");
+        health3 = GameObject.Find("BunnyHealth3");
+        health4 = GameObject.Find("BunnyHealth4");
 
         currentHealthSprite = health1;
     }
@@ -34,16 +34,16 @@ public class PlayerMovement : MonoBehaviour
     {
         // Finding the current facing direction
         // North = 1, East = 2, South = 3, West = 4
-        if (moveInput.x > .0001 && moveInput.y < .0001)
+        if (moveInput.x > .25 && moveInput.y < .25)
             moveDir = 2;
-        else if (moveInput.x < -.0001 && moveInput.y < .0001)
+        else if (moveInput.x < -.25 && moveInput.y < .25)
             moveDir = 4;
-        else if (moveInput.x < .0001 && moveInput.y > .0001)
+        else if (moveInput.x < .25 && moveInput.y > .25)
             moveDir = 1;
-        else if (moveInput.x < .0001 && moveInput.y < -.0001)
+        else if (moveInput.x < .25 && moveInput.y < -.25)
             moveDir = 3;
 
-            rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
 
         // Defining variables used by Animator
         animator.SetInteger("MoveDir", moveDir);
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
             health1.SetActive(false);
             health3.SetActive(false);
             health4.SetActive(false);
-        }  
+        }
         else if (Health == 1)
         {
             currentHealthSprite = health3;
