@@ -1,5 +1,5 @@
 {
-    "name": "BPA2022",
+    "name": "FoxInputs",
     "maps": [
         {
             "name": "Player",
@@ -162,6 +162,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "415ff1c7-5368-42ab-8b07-74a7f1507b6b",
+                    "path": "<Gamepad>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
