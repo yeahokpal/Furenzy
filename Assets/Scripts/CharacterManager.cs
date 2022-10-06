@@ -7,30 +7,31 @@ public class CharacterManager : MonoBehaviour
 {
     GameObject playerInput;
 
-    public GameObject Fox;
-    public GameObject Bunny;
-    public GameObject Bird;
-
+    public GameObject PlaceholderCharacter;
+    public GameObject Player1;
+    public GameObject Player2;
+    public GameObject Player3;
+    //public GameObject Player4;
     private void Start()
     {
-        playerInput = Fox;
+        playerInput = PlaceholderCharacter;
     }
 
     private void Update()
     {
         if (gameObject.GetComponent<PlayerInputManager>().playerCount == 0)
         {
-            playerInput = Fox;
+            playerInput = Player1;
             gameObject.GetComponent<PlayerInputManager>().playerPrefab = playerInput;
         }
         else if (gameObject.GetComponent<PlayerInputManager>().playerCount == 1)
         {
-            playerInput = Bunny;
+            playerInput = Player2;
             gameObject.GetComponent<PlayerInputManager>().playerPrefab = playerInput;
         }
         else if (gameObject.GetComponent<PlayerInputManager>().playerCount == 2)
         {
-            playerInput = Bird;
+            playerInput = Player3;
             gameObject.GetComponent<PlayerInputManager>().playerPrefab = playerInput;
         }
         /*else if (gameObject.GetComponent<PlayerInputManager>().playerCount == 3)
