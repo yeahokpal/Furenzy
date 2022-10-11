@@ -11,7 +11,7 @@ public class BirdManager : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public int moveDir;
-    public float Health = 3;
+    public int Health = 3;
     public GameObject currentHealthSprite;
     public GameObject health1;
     public GameObject health2;
@@ -91,9 +91,9 @@ public class BirdManager : MonoBehaviour
         moveInput = value.Get<Vector2>();
     }
 
-    void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        Health -= 1;
+        Health = Health - damage; ;
     }
     void Dead()
     {

@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  FireBall: {fileID: 432442249930084551, guid: 95af1012853bd974d807e4b556db0ec0, type: 3}
   rb: {fileID: 1460901717897544850}
   animator: {fileID: 1460901717897544852}
   moveDir: 0
