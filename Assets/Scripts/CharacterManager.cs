@@ -11,7 +11,7 @@ public class CharacterManager : MonoBehaviour
     public GameObject Player1;
     public GameObject Player2;
     public GameObject Player3;
-    //public GameObject Player4;
+    public GameObject Player4;
     private void Start()
     {
         playerInput = PlaceholderCharacter;
@@ -34,12 +34,12 @@ public class CharacterManager : MonoBehaviour
             playerInput = Player3;
             gameObject.GetComponent<PlayerInputManager>().playerPrefab = playerInput;
         }
-        /*else if (gameObject.GetComponent<PlayerInputManager>().playerCount == 3)
+        else if (gameObject.GetComponent<PlayerInputManager>().playerCount == 3)
         {
-            playerInput = player4
+            playerInput = Player4;
             gameObject.GetComponent<PlayerInputManager>().playerPrefab = playerInput;
         }
-        else
+        /*else
         {
             some sort of error message
         }*/
