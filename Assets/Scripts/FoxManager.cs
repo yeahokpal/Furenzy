@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class FoxManager : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private GameObject FireBall;
     private InputActionMap playerInput;
 
     public Rigidbody2D rb;
     public Animator animator;
     public int moveDir;
-    public float Health = 3;
+    public int Health = 3;
     public GameObject currentHealthSprite;
     public GameObject health1;
     public GameObject health2;
     public GameObject health3;
     public GameObject health4;
+    public GameObject foxFill;
 
     Vector2 moveInput;
 
@@ -26,6 +29,7 @@ public class FoxManager : MonoBehaviour
         health2 = GameObject.Find("FoxHealth2");
         health3 = GameObject.Find("FoxHealth3");
         health4 = GameObject.Find("FoxHealth4");
+        foxFill = GameObject.Find("FoxFill");
 
         currentHealthSprite = health1;
     }
@@ -91,9 +95,27 @@ public class FoxManager : MonoBehaviour
         moveInput = value.Get<Vector2>();
     }
 
-    void TakeDamage()
+    public void OnFireBall()
     {
-        Health -= 1;
+        if (foxFill.GetComponent<Image>().fillAmount >= .5)
+        {
+            animator.SetTrigger("FireBall");
+            if (moveDir == 1)
+                Instantiate(FireBall, transform.position, Quaternion.Euler(0f, 0f, 180f));
+            else if (moveDir == 2)
+                Instantiate(FireBall, transform.position, Quaternion.Euler(0f, 0f, 90f));
+            else if (moveDir == 3)
+                Instantiate(FireBall, transform.position, Quaternion.Euler(0f, 0f, 0f));
+            else if (moveDir == 4)
+                Instantiate(FireBall, transform.position, Quaternion.Euler(0f, 0f, -90f));
+
+            foxFill.GetComponent<Image>().fillAmount -= .5f;
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        Health = Health - damage;;
     }
     void Dead()
     {
