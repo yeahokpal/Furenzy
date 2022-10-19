@@ -1303,6 +1303,7 @@ MonoBehaviour:
   Bunny: {fileID: 0}
   Bird: {fileID: 0}
   Ferret: {fileID: 0}
+  Camera: {fileID: 1469272683}
 --- !u!4 &777769789
 Transform:
   m_ObjectHideFlags: 0
@@ -1513,7 +1514,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -2404,8 +2405,8 @@ MonoBehaviour:
     GateFit: 2
     m_SensorSize: {x: 1, y: 1}
   m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
+    m_BlendHint: 1
+    m_InheritPosition: 1
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
