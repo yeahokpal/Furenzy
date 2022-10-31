@@ -113,6 +113,11 @@ public class FoxManager : MonoBehaviour
         }
     }
 
+    public void OnLightning()
+    {
+
+    }
+
     public void TakeDamage(int damage)
     {
         Health = Health - damage;
