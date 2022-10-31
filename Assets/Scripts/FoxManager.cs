@@ -8,6 +8,7 @@ public class FoxManager : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private GameObject FireBall;
+    [SerializeField] private GameObject Lightning;
     private InputActionMap playerInput;
 
     public Rigidbody2D rb;
@@ -115,7 +116,15 @@ public class FoxManager : MonoBehaviour
 
     public void OnLightning()
     {
-
+        animator.SetTrigger("FireBall");
+        if (moveDir == 1)
+            Instantiate(Lightning, transform.position, Quaternion.Euler(0f, 0f, 180f));
+        else if (moveDir == 2)
+            Instantiate(Lightning, transform.position, Quaternion.Euler(0f, 0f, 90f));
+        else if (moveDir == 3)
+            Instantiate(Lightning, transform.position, Quaternion.Euler(0f, 0f, 0f));
+        else if (moveDir == 4)
+            Instantiate(Lightning, transform.position, Quaternion.Euler(0f, 0f, -90f));
     }
 
     public void TakeDamage(int damage)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Lightning : MonoBehaviour
 {
     public int damage = 1;
-    public int speed = 5;
+    public int speed = 20;
 
     private void Awake() // Setting Force Direction When it enters the scene
     {
@@ -22,6 +22,7 @@ public class Lightning : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision) // If it hits an enemy, deal damage
     {
+        transform.GetChild(0).gameObject.SetActive(true);
         if (collision.transform.tag == "Enemy")
         {
             // Have damageing reference later
