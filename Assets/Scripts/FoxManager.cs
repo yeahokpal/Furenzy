@@ -115,7 +115,7 @@ public class FoxManager : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Health = Health - damage;;
+        Health = Health - damage;
     }
     void Dead()
     {

@@ -91,9 +91,9 @@ public class FerretManager : MonoBehaviour
         moveInput = value.Get<Vector2>();
     }
 
-    void TakeDamage()
+    public void TakeDamage(int damage)
     {
-        Health -= 1;
+        Health = Health - damage; ;
     }
     void Dead()
     {
