@@ -4009,11 +4009,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!4 &535434613 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6387965122076298286, guid: e2e032ee4a48a214c8b19a898fa44ce3, type: 3}
-  m_PrefabInstance: {fileID: 1804834419}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &570861170
 GameObject:
   m_ObjectHideFlags: 0
@@ -4132,7 +4127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597033753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 11.95, y: -4.79, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4700,6 +4695,8 @@ GameObject:
   - component: {fileID: 886297882}
   - component: {fileID: 886297885}
   - component: {fileID: 886297886}
+  - component: {fileID: 886297887}
+  - component: {fileID: 886297888}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -4785,7 +4782,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886297881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 0.06, z: 0}
+  m_LocalPosition: {x: 11.92, y: -4.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4806,7 +4803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 535434613}
+  target: {fileID: 0}
 --- !u!61 &886297886
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4833,6 +4830,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!58 &886297887
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886297881}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 4
+--- !u!114 &886297888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886297881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f77b04e1dce6047a3272030f740a93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &889963044
 GameObject:
   m_ObjectHideFlags: 3
@@ -13241,7 +13266,7 @@ MonoBehaviour:
         m_Flags: 0
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 1460901717897544858, guid: 39529f13222727f46935fce0d9e05faa, type: 3}
+  m_PlayerPrefab: {fileID: 4422845648860592782, guid: e2e032ee4a48a214c8b19a898fa44ce3, type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
@@ -13259,7 +13284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870109133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 996.61334, y: 375.65897, z: -6.509482}
+  m_LocalPosition: {x: -10.01, y: -1.01, z: -6.509482}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
