@@ -6,9 +6,11 @@ public class Lightning : MonoBehaviour
 {
     public int damage = 1;
     public int speed = 20;
+    bool canCollide = false;
 
     private void Awake() // Setting Force Direction When it enters the scene
     {
+        StartCoroutine(WaitToCollide());
         if (gameObject.transform.rotation == Quaternion.Euler(0, 0, 180))
             gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * speed, ForceMode2D.Impulse);
         else if (gameObject.transform.rotation == Quaternion.Euler(0, 0, 90))
@@ -22,15 +24,26 @@ public class Lightning : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision) // If it hits an enemy, deal damage
     {
-        transform.GetChild(0).gameObject.SetActive(true);
-        if (collision.transform.tag == "Enemy")
+        if (canCollide)
         {
-            // Have damageing reference later
+            transform.GetChild(0).gameObject.SetActive(true);
+            if (collision.transform.tag == "Enemy")
+            {
+                // Have damageing reference later
+                Debug.Log("Hit With Circle");
+            }
+            Destroy(gameObject);
         }
     }
     IEnumerator WaitToDestroy() // Destroy itself after 2 seconds
     {
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
+    }
+
+    IEnumerator WaitToCollide()
+    {
+        yield return new WaitForSeconds(.05f);
+        canCollide = !canCollide;
     }
 }

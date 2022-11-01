@@ -23,6 +23,8 @@ public class FoxManager : MonoBehaviour
     public GameObject health4;
     public GameObject foxFill;
 
+    public UnityEvent OnHit;
+
     Vector2 moveInput;
 
     private void Awake()
