@@ -132,10 +132,14 @@ public class FoxManager : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        gameObject.GetComponent<ParticleSystem>().Play();
         Health = Health - damage;
+        if (Health == 0)
+            StartCoroutine(Dead());
     }
-    void Dead()
+    IEnumerator Dead()
     {
-
+        yield return new WaitForSeconds(.2f);
+        gameObject.SetActive(false);
     }
 }

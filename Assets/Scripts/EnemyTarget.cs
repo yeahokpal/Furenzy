@@ -7,11 +7,7 @@ public class EnemyTarget : MonoBehaviour
 {
     bool i = false;
     GameObject tracking;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int health;
 
     // Update is called once per frame
     void Update()
@@ -42,5 +38,20 @@ public class EnemyTarget : MonoBehaviour
             if (collision.gameObject.name == "Ferret(Clone)")
                 collision.gameObject.GetComponent<FerretManager>().TakeDamage(1);
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        gameObject.GetComponent<ParticleSystem>().Play();
+        health = health - damage;
+        if (health == 0)
+        {
+            StartCoroutine(WaitToDestroy());
+        }
+    }
+    IEnumerator WaitToDestroy()
+    {
+        yield return new WaitForSeconds(.2f);
+        Destroy(gameObject);
     }
 }

@@ -29,8 +29,7 @@ public class Lightning : MonoBehaviour
             transform.GetChild(0).gameObject.SetActive(true);
             if (collision.transform.tag == "Enemy")
             {
-                // Have damageing reference later
-                Debug.Log("Hit With Circle");
+                collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
             }
             Destroy(gameObject);
         }

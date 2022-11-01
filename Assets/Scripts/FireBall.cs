@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class FireBall : MonoBehaviour
 {
-    public int damage = 1;
+    public int damage = 3;
     public int speed = 5;
+    bool canCollide = false;
 
     private void Awake() // Setting Force Direction When it enters the scene
     {
@@ -22,14 +23,23 @@ public class FireBall : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision) // If it hits an enemy, deal damage
     {
-        if (collision.transform.tag == "Enemy")
+        if (canCollide)
         {
-            // Have damageing reference later
+            if (collision.transform.tag == "Enemy")
+            {
+                // Have damageing reference later
+            }
+            Destroy(gameObject);
         }
     }
     IEnumerator WaitToDestroy() // Destroy itself after 2 seconds
     {
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
+    }
+    IEnumerator WaitToCollide()
+    {
+        yield return new WaitForSeconds(.05f);
+        canCollide = !canCollide;
     }
 }
