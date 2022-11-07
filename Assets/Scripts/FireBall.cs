@@ -18,8 +18,9 @@ public class FireBall : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.down * speed, ForceMode2D.Impulse);
         else if (gameObject.transform.rotation == Quaternion.Euler(0, 0, -90))
             gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.left * speed, ForceMode2D.Impulse); 
-        // Starts coroutine to k*ll itself
+        // Starts coroutine to kill itself
         StartCoroutine(WaitToDestroy());
+        StartCoroutine(WaitToCollide());
     }
     private void OnCollisionEnter2D(Collision2D collision) // If it hits an enemy, deal damage
     {
@@ -27,7 +28,7 @@ public class FireBall : MonoBehaviour
         {
             if (collision.transform.tag == "Enemy")
             {
-                // Have damageing reference later
+                collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
             }
             Destroy(gameObject);
         }
@@ -40,6 +41,6 @@ public class FireBall : MonoBehaviour
     IEnumerator WaitToCollide()
     {
         yield return new WaitForSeconds(.05f);
-        canCollide = !canCollide;
+        canCollide = true;
     }
 }

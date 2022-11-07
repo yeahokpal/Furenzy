@@ -634,6 +634,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227515292}
   m_CullTransparentMesh: 1
+--- !u!1001 &233425149
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Name
+      value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331834, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281275730268993408, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281275730268993413, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281275730268993413, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281275730268993413, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281275730268993413, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281275730268993413, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281275730268993413, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281275730268993413, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281275730268993413, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281275730268993413, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281275730268993413, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281275730268993413, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
 --- !u!1 &255987569
 GameObject:
   m_ObjectHideFlags: 0
@@ -13332,6 +13409,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331834, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: health
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7281275730268993408, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
