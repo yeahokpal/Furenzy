@@ -8,7 +8,7 @@ public class EnemyTarget : MonoBehaviour
     bool i = false;
     GameObject tracking;
     public int health;
-
+    public GameObject attacker;
     // Update is called once per frame
     void Update()
     {
@@ -30,7 +30,10 @@ public class EnemyTarget : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             if (collision.gameObject.name == "Fox(Clone)")
+            {
                 collision.gameObject.GetComponent<FoxManager>().TakeDamage(1);
+                attacker = collision.gameObject;
+            }     
             if (collision.gameObject.name == "Bunny(Clone)")
                 collision.gameObject.GetComponent<BunnyManager>().TakeDamage(1);
             if (collision.gameObject.name == "Bird(Clone)")
