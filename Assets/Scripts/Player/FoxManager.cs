@@ -161,4 +161,9 @@ public class FoxManager : MonoBehaviour
         gameObject.SetActive(false);
         OnDeath.Invoke();
     }
+
+    private void OnPause()
+    {
+        GameObject.Find("UI Elements").GetComponent<CanvasManager>().isPaused = !GameObject.Find("UI Elements").GetComponent<CanvasManager>().isPaused;
+    }
 }
