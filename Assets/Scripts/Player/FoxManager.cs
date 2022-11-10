@@ -25,7 +25,7 @@ public class FoxManager : MonoBehaviour
     public GameObject health4;
     public GameObject foxFill;
 
-    public UnityEvent OnHit;
+    public UnityEvent OnDeath;
 
     Vector2 moveInput;
 
@@ -159,5 +159,6 @@ public class FoxManager : MonoBehaviour
     {
         yield return new WaitForSeconds(.2f);
         gameObject.SetActive(false);
+        OnDeath.Invoke();
     }
 }
