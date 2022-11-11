@@ -105,7 +105,7 @@ public class FoxManager : MonoBehaviour
 
     public void OnFireBall()
     {
-        if (foxFill.GetComponent<Image>().fillAmount >= .5)
+        if (foxFill.GetComponent<Image>().fillAmount >= .5 && Time.timeScale == 1f)
         {
             animator.SetTrigger("FireBall");
             if (moveDir == 1)
@@ -123,15 +123,18 @@ public class FoxManager : MonoBehaviour
 
     public void OnLightning()
     {
-        animator.SetTrigger("FireBall");
-        if (moveDir == 1)
-            Instantiate(Lightning, transform.position, Quaternion.Euler(0f, 0f, 180f));
-        else if (moveDir == 2)
-            Instantiate(Lightning, transform.position, Quaternion.Euler(0f, 0f, 90f));
-        else if (moveDir == 3)
-            Instantiate(Lightning, transform.position, Quaternion.Euler(0f, 0f, 0f));
-        else if (moveDir == 4)
-            Instantiate(Lightning, transform.position, Quaternion.Euler(0f, 0f, -90f));
+        if (Time.timeScale == 1f)
+        {
+            animator.SetTrigger("FireBall");
+            if (moveDir == 1)
+                Instantiate(Lightning, transform.position, Quaternion.Euler(0f, 0f, 180f));
+            else if (moveDir == 2)
+                Instantiate(Lightning, transform.position, Quaternion.Euler(0f, 0f, 90f));
+            else if (moveDir == 3)
+                Instantiate(Lightning, transform.position, Quaternion.Euler(0f, 0f, 0f));
+            else if (moveDir == 4)
+                Instantiate(Lightning, transform.position, Quaternion.Euler(0f, 0f, -90f));
+        }
     }
 
     public void TakeDamage(int damage)
@@ -164,6 +167,11 @@ public class FoxManager : MonoBehaviour
 
     private void OnPause()
     {
-        GameObject.Find("UI Elements").GetComponent<CanvasManager>().isPaused = !GameObject.Find("UI Elements").GetComponent<CanvasManager>().isPaused;
+        var CanvasManager = GameObject.Find("UI Elements").GetComponent<CanvasManager>();
+        bool isPaused = GameObject.Find("UI Elements").GetComponent<CanvasManager>().isPaused;
+        if (isPaused)
+            CanvasManager.Resume();
+        else
+            CanvasManager.Pause();
     }
 }

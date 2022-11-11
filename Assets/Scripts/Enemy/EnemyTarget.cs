@@ -51,7 +51,7 @@ public class EnemyTarget : MonoBehaviour
     {
         gameObject.GetComponent<ParticleSystem>().Play();
         health = health - damage;
-        if (health == 0)
+        if (health <= 0)
         {
             StartCoroutine(WaitToDestroy());
         }

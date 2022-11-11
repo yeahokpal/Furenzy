@@ -24,24 +24,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Fire",
+                    "name": "Pause",
                     "type": "Button",
-                    "id": "7c6ad38f-2c74-481c-a729-406d522c423d",
+                    "id": "32ec1221-9a91-450b-b7d3-cf61047d06b9",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-<<<<<<< HEAD
                     "name": "Knife",
                     "type": "Button",
-                    "id": "c2257c6c-1e8b-4859-a69a-0c342cfd56f1",
-=======
-                    "name": "Pause",
-                    "type": "Button",
-                    "id": "0beeac87-f3fd-4ea3-8466-8750f6023fe7",
->>>>>>> 2e2331a6d82b85e5d0481ce2a99c9f32a5a8f908
+                    "id": "f562538c-28d6-461a-adf7-f6823e9b3445",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -183,7 +177,7 @@
                 },
                 {
                     "name": "",
-                    "id": "a365988c-08fd-4e9b-bb2d-4bc19b7b5ed1",
+                    "id": "415ff1c7-5368-42ab-8b07-74a7f1507b6b",
                     "path": "<Gamepad>/dpad",
                     "interactions": "",
                     "processors": "",
@@ -191,61 +185,6 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "Arrow Keys",
-                    "id": "861e1f3c-b841-423f-9031-4300930200ff",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "590d2ff6-fcd1-4a7c-ab8c-e33942e2c799",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "11fc963a-f1cf-4272-b091-3a2290a2ca7d",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "89600f71-d398-4a79-9a3d-21a61ad15078",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "7737f11b-4619-42d5-8c31-c3b901369fcc",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -281,42 +220,101 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-<<<<<<< HEAD
-                    "id": "d7a7ebda-e87e-4aa8-b336-b3d0dc5f68f6",
-                    "path": "<Mouse>/rightButton",
+                    "name": "Arrow Keys",
+                    "id": "61d7142f-f8a7-4d08-a076-4ae6caab68ae",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Knife",
-=======
-                    "id": "c6cc8a81-d473-4601-a44f-e8dad91c091e",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "b7c98aff-3a8c-4418-9d9e-6d75356e7a98",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "3f3cd3b2-9cf5-4a6d-ae00-9761a9ee7f97",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "3b36be6f-bb8f-42a6-a473-de9aea8862ff",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "71daef42-15c5-4d9f-82ae-5b9860a87a9f",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "b806ef09-f7fd-4b51-99b7-f1992156f8ba",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
->>>>>>> 2e2331a6d82b85e5d0481ce2a99c9f32a5a8f908
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-<<<<<<< HEAD
-                    "id": "9b762e20-56eb-4cb4-833b-3f9c63fba53c",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Knife",
-=======
-                    "id": "ac7bba6d-d4a2-4c7e-b981-a879af87184d",
+                    "id": "7623793e-0b76-4ddb-be90-6f18df447657",
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
->>>>>>> 2e2331a6d82b85e5d0481ce2a99c9f32a5a8f908
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "109c304a-c52e-42bd-9f48-3cbddc939144",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Knife",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e47fa707-3781-418c-ba16-c5f53ee712a1",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Knife",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

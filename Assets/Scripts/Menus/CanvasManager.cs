@@ -1,37 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CanvasManager : MonoBehaviour
 {
     public bool isPaused = false;
+    public GameObject pauseMenu;
 
     private void Start()
     {
         Resume();
     }
 
-    private void Update()
-    {
-        if (isPaused)
-        {
-            Pause();
-        }
-        else
-        {
-            Resume();
-        }
-    }
-
     public void Pause()
     {
-        GameObject.Find("PauseMenu").SetActive(true);
+        pauseMenu.SetActive(true);
         Time.timeScale = 0f;
     }
 
     public void Resume()
     {
-        GameObject.Find("PauseMenu").SetActive(false);
+        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
 

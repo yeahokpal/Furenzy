@@ -93,16 +93,19 @@ public class BunnyManager : MonoBehaviour
     }
     public void OnKnife()
     {
-        Debug.Log("working");
-        //animator.SetTrigger("Knife");
-        if (moveDir == 1)
-            Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, 180f));
-        else if (moveDir == 2)
-            Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, 90f));
-        else if (moveDir == 3)
-            Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, 0f));
-        else if (moveDir == 4)
-            Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, -90f));
+        if (Time.timeScale == 1f)
+        {
+            Debug.Log("working");
+            //animator.SetTrigger("Knife");
+            if (moveDir == 1)
+                Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, 180f));
+            else if (moveDir == 2)
+                Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, 90f));
+            else if (moveDir == 3)
+                Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, 0f));
+            else if (moveDir == 4)
+                Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, -90f));
+        }
     }
     public void TakeDamage(int damage)
     {
