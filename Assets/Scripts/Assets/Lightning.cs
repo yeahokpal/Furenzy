@@ -30,12 +30,11 @@ public class Lightning : MonoBehaviour
         {
             if (collision.transform.tag == "Enemy")
             {
-                Debug.Log("Direct");
                 collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
                 canCollide = false;
                 StartCoroutine(WaitToDestroy(0.2f));
             }
-            else
+            else if (collision.transform.tag == "Wall")
             {
                 StartCoroutine(WaitToDestroy(0f));
             }

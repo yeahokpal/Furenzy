@@ -7,6 +7,8 @@ using UnityEngine.Events;
 
 public class FoxManager : MonoBehaviour
 {
+    public static FoxManager instance;
+
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private GameObject FireBall;
     [SerializeField] private GameObject Lightning;
@@ -23,12 +25,14 @@ public class FoxManager : MonoBehaviour
     public GameObject health4;
     public GameObject foxFill;
 
-    public UnityEvent OnHit;
+    public UnityEvent OnDeath;
 
     Vector2 moveInput;
 
     private void Awake()
     {
+        instance = this;
+
         health1 = GameObject.Find("FoxHealth1");
         health2 = GameObject.Find("FoxHealth2");
         health3 = GameObject.Find("FoxHealth3");
@@ -137,9 +141,29 @@ public class FoxManager : MonoBehaviour
         if (Health == 0)
             StartCoroutine(Dead());
     }
+
+    public IEnumerator Knockback(float KnockbackDuration, float KnockbackPower, Transform obj)
+    {
+        float timer = 0;
+
+        while (KnockbackDuration > timer)
+        {
+            timer += Time.deltaTime;
+            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
+            rb.AddForce(-direction * KnockbackPower);
+        }
+
+        yield return 0;
+    }
     IEnumerator Dead()
     {
         yield return new WaitForSeconds(.2f);
         gameObject.SetActive(false);
+        OnDeath.Invoke();
+    }
+
+    private void OnPause()
+    {
+        GameObject.Find("UI Elements").GetComponent<CanvasManager>().isPaused = !GameObject.Find("UI Elements").GetComponent<CanvasManager>().isPaused;
     }
 }

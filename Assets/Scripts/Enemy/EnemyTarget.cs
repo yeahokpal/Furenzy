@@ -9,6 +9,9 @@ public class EnemyTarget : MonoBehaviour
     GameObject tracking;
     public int health;
     public GameObject attacker;
+    public float KnockbackPower = 100;
+
+    public float KnockbackDuration = 1;
     // Update is called once per frame
     void Update()
     {
@@ -40,6 +43,7 @@ public class EnemyTarget : MonoBehaviour
                 collision.gameObject.GetComponent<BirdManager>().TakeDamage(1);
             if (collision.gameObject.name == "Ferret(Clone)")
                 collision.gameObject.GetComponent<FerretManager>().TakeDamage(1);
+            StartCoroutine(FoxManager.instance.Knockback(KnockbackDuration, KnockbackPower, this.transform));
         }
     }
 

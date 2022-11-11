@@ -33,9 +33,15 @@
                     "initialStateCheck": false
                 },
                 {
+<<<<<<< HEAD
                     "name": "Knife",
                     "type": "Button",
                     "id": "c2257c6c-1e8b-4859-a69a-0c342cfd56f1",
+=======
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "0beeac87-f3fd-4ea3-8466-8750f6023fe7",
+>>>>>>> 2e2331a6d82b85e5d0481ce2a99c9f32a5a8f908
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -276,23 +282,41 @@
                 },
                 {
                     "name": "",
+<<<<<<< HEAD
                     "id": "d7a7ebda-e87e-4aa8-b336-b3d0dc5f68f6",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Knife",
+=======
+                    "id": "c6cc8a81-d473-4601-a44f-e8dad91c091e",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+>>>>>>> 2e2331a6d82b85e5d0481ce2a99c9f32a5a8f908
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
+<<<<<<< HEAD
                     "id": "9b762e20-56eb-4cb4-833b-3f9c63fba53c",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Knife",
+=======
+                    "id": "ac7bba6d-d4a2-4c7e-b981-a879af87184d",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+>>>>>>> 2e2331a6d82b85e5d0481ce2a99c9f32a5a8f908
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
