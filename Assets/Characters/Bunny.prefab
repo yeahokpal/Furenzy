@@ -111,6 +111,7 @@ MonoBehaviour:
   health2: {fileID: 0}
   health3: {fileID: 0}
   health4: {fileID: 0}
+  Knife: {fileID: 2670072933658668320, guid: 4b12e831d66f1ae479210372bfff2076, type: 3}
 --- !u!50 &4410633837779907360
 Rigidbody2D:
   serializedVersion: 4

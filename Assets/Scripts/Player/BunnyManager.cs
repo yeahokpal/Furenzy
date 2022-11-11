@@ -17,6 +17,7 @@ public class BunnyManager : MonoBehaviour
     public GameObject health2;
     public GameObject health3;
     public GameObject health4;
+    public GameObject Knife;
 
     Vector2 moveInput;
 
@@ -89,6 +90,19 @@ public class BunnyManager : MonoBehaviour
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+    }
+    public void OnKnife()
+    {
+        Debug.Log("working");
+        //animator.SetTrigger("Knife");
+        if (moveDir == 1)
+            Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, 180f));
+        else if (moveDir == 2)
+            Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, 90f));
+        else if (moveDir == 3)
+            Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, 0f));
+        else if (moveDir == 4)
+            Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, -90f));
     }
     public void TakeDamage(int damage)
     {

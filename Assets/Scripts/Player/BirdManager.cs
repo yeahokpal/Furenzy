@@ -17,6 +17,7 @@ public class BirdManager : MonoBehaviour
     public GameObject health2;
     public GameObject health3;
     public GameObject health4;
+    public GameObject Arrow;
 
     Vector2 moveInput;
 
@@ -89,6 +90,19 @@ public class BirdManager : MonoBehaviour
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+    }
+
+    private void OnShootOne()
+    {
+        animator.SetTrigger("FireBall");
+        if (moveDir == 1)
+            Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, 180f));
+        else if (moveDir == 2)
+            Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, 90f));
+        else if (moveDir == 3)
+            Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, 0f));
+        else if (moveDir == 4)
+            Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, -90f));
     }
 
     public void TakeDamage(int damage)
