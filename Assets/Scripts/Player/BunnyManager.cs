@@ -117,6 +117,11 @@ public class BunnyManager : MonoBehaviour
     }
     private void OnPause()
     {
-        GameObject.Find("PauseMenu").GetComponent<CanvasManager>().isPaused = !GameObject.Find("PauseMenu").GetComponent<CanvasManager>().isPaused;
+        var CanvasManager = GameObject.Find("UI Elements").GetComponent<CanvasManager>();
+        bool isPaused = GameObject.Find("UI Elements").GetComponent<CanvasManager>().isPaused;
+        if (isPaused)
+            CanvasManager.Resume();
+        else
+            CanvasManager.Pause();
     }
 }
