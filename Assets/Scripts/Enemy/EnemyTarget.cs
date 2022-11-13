@@ -43,6 +43,7 @@ public class EnemyTarget : MonoBehaviour
                 collision.gameObject.GetComponent<BirdManager>().TakeDamage(1);
             if (collision.gameObject.name == "Ferret(Clone)")
                 collision.gameObject.GetComponent<FerretManager>().TakeDamage(1);
+            attacker = collision.gameObject;
             StartCoroutine(FoxManager.instance.Knockback(KnockbackDuration, KnockbackPower, this.transform));
         }
     }

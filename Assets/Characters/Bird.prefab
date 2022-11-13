@@ -111,6 +111,7 @@ MonoBehaviour:
   health2: {fileID: 0}
   health3: {fileID: 0}
   health4: {fileID: 0}
+  Arrow: {fileID: 905513310717300629, guid: e6a01ca7f666af341a3ca838b9da3670, type: 3}
 --- !u!50 &3151010248019297983
 Rigidbody2D:
   serializedVersion: 4
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Move
+  m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!70 &8770117189072466304
