@@ -7,7 +7,6 @@ public class BunnyManager : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     private InputActionMap playerInput;
-
     public Rigidbody2D rb;
     public Animator animator;
     public int moveDir;
@@ -138,15 +137,6 @@ public class BunnyManager : MonoBehaviour
     void Dead()
     {
 
-    }
-    private void OnPause()
-    {
-        var CanvasManager = GameObject.Find("UI Elements").GetComponent<CanvasManager>();
-        bool isPaused = GameObject.Find("UI Elements").GetComponent<CanvasManager>().isPaused;
-        if (isPaused)
-            CanvasManager.Resume();
-        else
-            CanvasManager.Pause();
     }
     private void OnPause()
     {
