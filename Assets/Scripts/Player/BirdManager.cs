@@ -12,6 +12,7 @@ public class BirdManager : MonoBehaviour
     public Animator animator;
     public int moveDir;
     public int Health = 3;
+    bool canAttack = true;
     public GameObject currentHealthSprite;
     public GameObject health1;
     public GameObject health2;
@@ -94,14 +95,18 @@ public class BirdManager : MonoBehaviour
 
     public void OnShootOne()
     {
-        if (moveDir == 1)
-            Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, 180f));
-        else if (moveDir == 2)
-            Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, 90f));
-        else if (moveDir == 3)
-            Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, 0f));
-        else if (moveDir == 4)
-            Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, -90f));
+        if (canAttack)
+        {
+            if (moveDir == 1)
+                Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, 180f));
+            else if (moveDir == 2)
+                Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, 90f));
+            else if (moveDir == 3)
+                Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, 0f));
+            else if (moveDir == 4)
+                Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, -90f));
+            StartCoroutine(Cooldown());
+        }
     }
 
     public void TakeDamage(int damage)
@@ -120,5 +125,10 @@ public class BirdManager : MonoBehaviour
             CanvasManager.Resume();
         else
             CanvasManager.Pause();
+    }
+    IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(.33f);
+        canAttack = true;
     }
 }

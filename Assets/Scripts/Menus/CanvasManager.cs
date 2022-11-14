@@ -25,7 +25,7 @@ public class CanvasManager : MonoBehaviour
     {
         if (enemyCount == 0 && canCheckForEnemies)
         {
-
+            GameObject.Find("YouWin").SetActive(true);
         }
     }
 

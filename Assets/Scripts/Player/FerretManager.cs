@@ -12,6 +12,7 @@ public class FerretManager : MonoBehaviour
     public Animator animator;
     public int moveDir;
     public float Health = 3;
+    bool canAttack = true;
     public GameObject currentHealthSprite;
     public GameObject health1;
     public GameObject health2;
@@ -107,5 +108,10 @@ public class FerretManager : MonoBehaviour
             CanvasManager.Resume();
         else
             CanvasManager.Pause();
+    }
+    IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(.33f);
+        canAttack = true;
     }
 }

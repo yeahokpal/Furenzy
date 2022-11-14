@@ -18,6 +18,7 @@ public class FoxManager : MonoBehaviour
     public Animator animator;
     public int moveDir;
     public int Health = 3;
+    bool canAttack = true;
     public GameObject currentHealthSprite;
     public GameObject health1;
     public GameObject health2;
@@ -105,7 +106,7 @@ public class FoxManager : MonoBehaviour
 
     public void OnFireBall()
     {
-        if (foxFill.GetComponent<Image>().fillAmount >= .5 && Time.timeScale == 1f)
+        if (foxFill.GetComponent<Image>().fillAmount >= .5 && Time.timeScale == 1f && canAttack)
         {
             animator.SetTrigger("FireBall");
             if (moveDir == 1)
@@ -118,12 +119,14 @@ public class FoxManager : MonoBehaviour
                 Instantiate(FireBall, transform.position, Quaternion.Euler(0f, 0f, -90f));
 
             foxFill.GetComponent<Image>().fillAmount -= .5f;
+            canAttack = false;
+            StartCoroutine(Cooldown());
         }
     }
 
     public void OnLightning()
     {
-        if (Time.timeScale == 1f)
+        if (Time.timeScale == 1f && canAttack)
         {
             animator.SetTrigger("FireBall");
             if (moveDir == 1)
@@ -134,6 +137,8 @@ public class FoxManager : MonoBehaviour
                 Instantiate(Lightning, transform.position, Quaternion.Euler(0f, 0f, 0f));
             else if (moveDir == 4)
                 Instantiate(Lightning, transform.position, Quaternion.Euler(0f, 0f, -90f));
+            canAttack = false;
+            StartCoroutine(Cooldown());
         }
     }
 
@@ -173,5 +178,10 @@ public class FoxManager : MonoBehaviour
             CanvasManager.Resume();
         else
             CanvasManager.Pause();
+    }
+    IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(.33f);
+        canAttack = true;
     }
 }
