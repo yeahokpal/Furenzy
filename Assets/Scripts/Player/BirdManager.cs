@@ -94,7 +94,6 @@ public class BirdManager : MonoBehaviour
 
     public void OnShootOne()
     {
-        Debug.Log("Input");
         if (moveDir == 1)
             Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, 180f));
         else if (moveDir == 2)

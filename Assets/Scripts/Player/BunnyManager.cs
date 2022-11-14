@@ -103,14 +103,12 @@ public class BunnyManager : MonoBehaviour
             animator.SetTrigger("AttackSouth");
         else if (moveDir == 4)
             animator.SetTrigger("AttackWest");
-        Debug.Log("Stab");
     }
 
     public void OnKnife()
     {
         if (Time.timeScale == 1f)
         {
-            Debug.Log("working");
             //animator.SetTrigger("Knife");
             if (moveDir == 1)
                 Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, 180f));
