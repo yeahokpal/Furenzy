@@ -121,7 +121,6 @@ public class FoxManager : MonoBehaviour
                 Instantiate(FireBall, transform.position, Quaternion.Euler(0f, 0f, 0f));
             else if (moveDir == 4)
                 Instantiate(FireBall, transform.position, Quaternion.Euler(0f, 0f, -90f));
-
             mana -= .5f;
             canAttack = false;
             StartCoroutine(Cooldown());
@@ -192,6 +191,7 @@ public class FoxManager : MonoBehaviour
 
     public void MP_Up()
     {
+        Debug.Log("MP UP");
         mana += .1f;
     }
 }

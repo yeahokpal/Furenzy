@@ -32,28 +32,30 @@ public class EnemyTarget : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            if (collision.gameObject.name == "Lightning(Clone)")
+            {
+                Debug.Log("working");
+                GameObject.Find("Fox(Clone)").GetComponent<FoxManager>().MP_Up(); 
+            }
+
             if (collision.gameObject.name == "Fox(Clone)")
             {
                 collision.gameObject.GetComponent<FoxManager>().TakeDamage(1);
-                collision.gameObject.GetComponent<FoxManager>().MP_Up(); 
                 attacker = collision.gameObject;
             }     
             if (collision.gameObject.name == "Bunny(Clone)")
             {
                 collision.gameObject.GetComponent<BunnyManager>().TakeDamage(1);
-                collision.gameObject.GetComponent<BunnyManager>().MP_Up();
             }
                 
             if (collision.gameObject.name == "Bird(Clone)")
             {
                 collision.gameObject.GetComponent<BirdManager>().TakeDamage(1);
-                collision.gameObject.GetComponent<BirdManager>().MP_Up();
             }
                 
             if (collision.gameObject.name == "Ferret(Clone)")
             {
                 collision.gameObject.GetComponent<FerretManager>().TakeDamage(1);
-                collision.gameObject.GetComponent<FerretManager>().MP_Up();
             }
                 
             attacker = collision.gameObject;
