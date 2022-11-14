@@ -7,10 +7,26 @@ public class CanvasManager : MonoBehaviour
 {
     public bool isPaused = false;
     public GameObject pauseMenu;
+    public int enemyCount = 0;
+    bool canCheckForEnemies = false;
 
     private void Start()
     {
         Resume();
+
+        foreach (GameObject temp in GameObject.FindGameObjectsWithTag("Enemy"))
+        {
+            ++enemyCount;
+            canCheckForEnemies = true;
+        }
+    }
+
+    private void Update()
+    {
+        if (enemyCount == 0 && canCheckForEnemies)
+        {
+
+        }
     }
 
     public void Pause()
