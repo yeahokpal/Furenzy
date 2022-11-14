@@ -91,6 +91,21 @@ public class BunnyManager : MonoBehaviour
     {
         moveInput = value.Get<Vector2>();
     }
+
+    public void OnStab()
+    {
+        //Play Attack Animation
+        if (moveDir == 1)
+            animator.SetTrigger("AttackNorth");
+        else if (moveDir == 2)
+            animator.SetTrigger("AttackEast");
+        else if (moveDir == 3)
+            animator.SetTrigger("AttackSouth");
+        else if (moveDir == 4)
+            animator.SetTrigger("AttackWest");
+        Debug.Log("Stab");
+    }
+
     public void OnKnife()
     {
         if (Time.timeScale == 1f)
