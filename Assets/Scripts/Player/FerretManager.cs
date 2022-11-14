@@ -34,9 +34,6 @@ public class FerretManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Filling the mana bar appropriately
-        foxFill.GetComponent<Image>().fillAmount = mana;
-        
         // Finding the current facing direction
         // North = 1, East = 2, South = 3, West = 4
         if (moveInput.x > .25 && moveInput.y < .25)
@@ -122,6 +119,6 @@ public class FerretManager : MonoBehaviour
 
     public void MP_Up()
     {
-        mana += .1;
+        mana += .1f;
     }
 }

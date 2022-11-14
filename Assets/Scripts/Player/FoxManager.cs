@@ -192,6 +192,6 @@ public class FoxManager : MonoBehaviour
 
     public void MP_Up()
     {
-        mana += .1;
+        mana += .1f;
     }
 }
