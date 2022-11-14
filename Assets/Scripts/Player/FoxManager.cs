@@ -18,6 +18,7 @@ public class FoxManager : MonoBehaviour
     public Animator animator;
     public int moveDir;
     public int Health = 3;
+    public float mana = 1f;
     bool canAttack = true;
     public GameObject currentHealthSprite;
     public GameObject health1;
@@ -45,6 +46,9 @@ public class FoxManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Filling the mana bar appropriately
+        foxFill.GetComponent<Image>().fillAmount = mana;
+
         // Finding the current facing direction
         // North = 1, East = 2, South = 3, West = 4
         if (moveInput.x > .25 && moveInput.y < .25)
@@ -118,7 +122,7 @@ public class FoxManager : MonoBehaviour
             else if (moveDir == 4)
                 Instantiate(FireBall, transform.position, Quaternion.Euler(0f, 0f, -90f));
 
-            foxFill.GetComponent<Image>().fillAmount -= .5f;
+            mana -= .5f;
             canAttack = false;
             StartCoroutine(Cooldown());
         }
@@ -181,7 +185,13 @@ public class FoxManager : MonoBehaviour
     }
     IEnumerator Cooldown()
     {
+        canAttack = false;
         yield return new WaitForSeconds(.33f);
         canAttack = true;
+    }
+
+    public void MP_Up()
+    {
+        mana += .1;
     }
 }

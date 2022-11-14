@@ -12,6 +12,7 @@ public class BirdManager : MonoBehaviour
     public Animator animator;
     public int moveDir;
     public int Health = 3;
+    public float mana = 1f;
     bool canAttack = true;
     public GameObject currentHealthSprite;
     public GameObject health1;
@@ -34,6 +35,9 @@ public class BirdManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Filling the mana bar appropriately
+        foxFill.GetComponent<Image>().fillAmount = mana;
+        
         // Finding the current facing direction
         // North = 1, East = 2, South = 3, West = 4
         if (moveInput.x > .25 && moveInput.y < .25)
@@ -128,7 +132,13 @@ public class BirdManager : MonoBehaviour
     }
     IEnumerator Cooldown()
     {
+        canAttack = false;
         yield return new WaitForSeconds(.33f);
         canAttack = true;
+    }
+
+    public void MP_Up()
+    {
+        mana += .1;
     }
 }

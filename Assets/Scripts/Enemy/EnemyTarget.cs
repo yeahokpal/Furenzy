@@ -51,6 +51,14 @@ public class EnemyTarget : MonoBehaviour
     public void TakeDamage(int damage)
     {
         gameObject.GetComponent<ParticleSystem>().Play();
+        if (collision.gameObject.name == "Fox(Clone)")
+            collision.gameObject.GetComponent<FoxManager>().MP_Up(); 
+        if (collision.gameObject.name == "Bunny(Clone)")
+            collision.gameObject.GetComponent<BunnyManager>().MP_Up();
+        if (collision.gameObject.name == "Bird(Clone)")
+            collision.gameObject.GetComponent<BirdManager>().MP_Up();
+        if (collision.gameObject.name == "Ferret(Clone)")
+            collision.gameObject.GetComponent<FerretManager>().MP_Up();
         health = health - damage;
         if (health <= 0)
         {

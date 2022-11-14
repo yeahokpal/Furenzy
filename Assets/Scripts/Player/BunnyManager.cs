@@ -12,6 +12,7 @@ public class BunnyManager : MonoBehaviour
     public Animator animator;
     public int moveDir;
     public int Health = 3;
+    public float mana = 1f;
     bool canAttack = true;
     public GameObject currentHealthSprite;
     public GameObject health1;
@@ -34,6 +35,9 @@ public class BunnyManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Filling the mana bar appropriately
+        foxFill.GetComponent<Image>().fillAmount = mana;
+        
         // Finding the current facing direction
         // North = 1, East = 2, South = 3, West = 4
         if (moveInput.x > .25 && moveInput.y < .25)
@@ -95,20 +99,25 @@ public class BunnyManager : MonoBehaviour
 
     public void OnStab()
     {
-        //Play Attack Animation
-        if (moveDir == 1)
-            animator.SetTrigger("AttackNorth");
-        else if (moveDir == 2)
-            animator.SetTrigger("AttackEast");
-        else if (moveDir == 3)
-            animator.SetTrigger("AttackSouth");
-        else if (moveDir == 4)
-            animator.SetTrigger("AttackWest");
+        if (canAttack)
+        {
+            //Play Attack Animation
+            if (moveDir == 1)
+                animator.SetTrigger("AttackNorth");
+            else if (moveDir == 2)
+                animator.SetTrigger("AttackEast");
+            else if (moveDir == 3)
+                animator.SetTrigger("AttackSouth");
+            else if (moveDir == 4)
+                animator.SetTrigger("AttackWest");
+                StartCoroutine(Cooldown());
+        }
+        
     }
 
     public void OnKnife()
     {
-        if (Time.timeScale == 1f)
+        if (Time.timeScale == 1f && canAttack)
         {
             //animator.SetTrigger("Knife");
             if (moveDir == 1)
@@ -119,6 +128,7 @@ public class BunnyManager : MonoBehaviour
                 Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, 0f));
             else if (moveDir == 4)
                 Instantiate(Knife, transform.position, Quaternion.Euler(0f, 0f, -90f));
+            StartCoroutine(Cooldown());
         }
     }
     public void TakeDamage(int damage)
@@ -138,9 +148,24 @@ public class BunnyManager : MonoBehaviour
         else
             CanvasManager.Pause();
     }
+    private void OnPause()
+    {
+        var CanvasManager = GameObject.Find("UI Elements").GetComponent<CanvasManager>();
+        bool isPaused = GameObject.Find("UI Elements").GetComponent<CanvasManager>().isPaused;
+        if (isPaused)
+            CanvasManager.Resume();
+        else
+            CanvasManager.Pause();
+    }
     IEnumerator Cooldown()
     {
+        canAttack = false;
         yield return new WaitForSeconds(.33f);
         canAttack = true;
+    }
+
+    public void MP_Up()
+    {
+        mana += .1;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    public int damage = 1;
+    public int damage = 2;
     public int speed = 8;
     bool canCollide = false;
 
