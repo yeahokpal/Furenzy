@@ -7,25 +7,23 @@ public class CanvasManager : MonoBehaviour
 {
     public bool isPaused = false;
     public GameObject pauseMenu;
-    public int enemyCount = 0;
-    bool canCheckForEnemies = false;
+    public GameObject win;
 
     private void Start()
     {
         Resume();
-
-        foreach (GameObject temp in GameObject.FindGameObjectsWithTag("Enemy"))
-        {
-            ++enemyCount;
-            canCheckForEnemies = true;
-        }
     }
 
     private void Update()
     {
-        if (enemyCount == 0 && canCheckForEnemies)
+        int enemyCount = 0;
+        foreach (GameObject temp in GameObject.FindGameObjectsWithTag("Enemy"))
         {
-            GameObject.Find("YouWin").SetActive(true);
+            ++enemyCount;
+        }
+        if (enemyCount == 0)
+        {
+            win.SetActive(true);
         }
     }
 
