@@ -285,7 +285,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 5
 --- !u!114 &8407160628758159255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +300,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   attacker: {fileID: 0}
+  KnockbackPower: 100
+  KnockbackDuration: 1
 --- !u!198 &3316113007192396120
 ParticleSystem:
   m_ObjectHideFlags: 0

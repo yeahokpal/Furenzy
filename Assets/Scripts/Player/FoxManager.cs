@@ -26,8 +26,8 @@ public class FoxManager : MonoBehaviour
     public GameObject health3;
     public GameObject health4;
     public GameObject foxFill;
-
     public UnityEvent OnDeath;
+
 
     Vector2 moveInput;
 
@@ -169,8 +169,9 @@ public class FoxManager : MonoBehaviour
     IEnumerator Dead()
     {
         yield return new WaitForSeconds(.2f);
-        gameObject.SetActive(false);
+        GameObject.Find("PlayerInputManager").GetComponent<CharacterManager>().Player1 = null;
         OnDeath.Invoke();
+        gameObject.SetActive(false);
     }
 
     private void OnPause()

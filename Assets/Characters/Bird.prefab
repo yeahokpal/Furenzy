@@ -106,6 +106,7 @@ MonoBehaviour:
   animator: {fileID: 3151010248019297980}
   moveDir: 0
   Health: 3
+  mana: 1
   currentHealthSprite: {fileID: 0}
   health1: {fileID: 0}
   health2: {fileID: 0}
@@ -131,7 +132,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &3151010248019297980
 Animator:

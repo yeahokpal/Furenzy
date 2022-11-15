@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FireBall : MonoBehaviour
 {
     public int damage = 3;
-    public int speed = 5;
+    public int speed = 15;
     bool canCollide = false;
 
     private void Awake() // Setting Force Direction When it enters the scene
@@ -22,17 +23,17 @@ public class FireBall : MonoBehaviour
         StartCoroutine(WaitToDestroy());
         StartCoroutine(WaitToCollide());
     }
-    private void OnCollisionEnter2D(Collision2D collision) // If it hits an enemy, deal damage
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (canCollide)
         {
-            if (collision.transform.tag == "Enemy")
+            if (collision.transform.tag == "Enemy" && collision is BoxCollider2D)
             {
                 collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
             }
-            Destroy(gameObject);
         }
     }
+
     IEnumerator WaitToDestroy() // Destroy itself after 2 seconds
     {
         yield return new WaitForSeconds(2f);

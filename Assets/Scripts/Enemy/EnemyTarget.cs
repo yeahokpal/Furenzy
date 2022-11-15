@@ -32,12 +32,6 @@ public class EnemyTarget : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (collision.gameObject.name == "Lightning(Clone)")
-            {
-                Debug.Log("working");
-                GameObject.Find("Fox(Clone)").GetComponent<FoxManager>().MP_Up(); 
-            }
-
             if (collision.gameObject.name == "Fox(Clone)")
             {
                 collision.gameObject.GetComponent<FoxManager>().TakeDamage(1);
@@ -61,12 +55,18 @@ public class EnemyTarget : MonoBehaviour
             attacker = collision.gameObject;
             StartCoroutine(FoxManager.instance.Knockback(KnockbackDuration, KnockbackPower, this.transform));
         }
+
+        if (collision.gameObject.name == "Lightning(Clone)")
+        {
+            GameObject.Find("Fox(Clone)").GetComponent<FoxManager>().MP_Up();
+        }
     }
 
 
     public void TakeDamage(int damage)
     {    
         health = health - damage;
+        gameObject.GetComponent<ParticleSystem>().Play();
         if (health <= 0)
         {
             StartCoroutine(WaitToDestroy());
