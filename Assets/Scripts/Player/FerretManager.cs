@@ -121,7 +121,7 @@ public class FerretManager : MonoBehaviour
 
     void Dead()
     {
-        GameObject.Find("PlayerInputManager").GetComponent<CharacterManager>().Player1 = null;
+        GameObject.Find("PlayerInputManager").GetComponent<CharacterManager>().Player4 = null;
         gameObject.SetActive(false);
     }
     private void OnPause()

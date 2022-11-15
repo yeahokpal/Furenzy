@@ -25,6 +25,10 @@ public class EnemyTarget : MonoBehaviour
     {
         if (tracking != null)
             gameObject.GetComponent<AIDestinationSetter>().target = tracking.transform;
+        if (gameObject.GetComponent<AIDestinationSetter>().target == null)
+        {
+            i = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

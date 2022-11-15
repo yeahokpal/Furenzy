@@ -201,7 +201,7 @@ public class BunnyManager : MonoBehaviour
 
     void Dead()
     {
-        GameObject.Find("PlayerInputManager").GetComponent<CharacterManager>().Player1 = null;
+        GameObject.Find("PlayerInputManager").GetComponent<CharacterManager>().Player2 = null;
         gameObject.SetActive(false);
     }
     private void OnPause()

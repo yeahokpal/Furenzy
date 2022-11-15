@@ -35,7 +35,14 @@ public class CameraManager : MonoBehaviour
             foxX = Fox.GetComponent<Transform>().position.x;
             foxY = Fox.GetComponent<Transform>().position.y;
         }
-            
+        else
+        {
+            Fox = null;
+            foxDist = 0.01f;
+            foxX = 0;
+            foxY = 0;
+        }
+
         if (GameObject.Find("Bunny(Clone)"))
         {
             Bunny = GameObject.Find("Bunny(Clone)");
@@ -43,7 +50,14 @@ public class CameraManager : MonoBehaviour
             bunnyX = Bunny.GetComponent<Transform>().position.x;
             bunnyY = Bunny.GetComponent<Transform>().position.y;
         }
-            
+        else
+        {
+            Bunny = null;
+            bunnyDist = 0.01f;
+            bunnyX = 0;
+            bunnyY = 0;
+        }
+
         if (GameObject.Find("Bird(Clone)"))
         {
             Bird = GameObject.Find("Bird(Clone)");
@@ -51,13 +65,28 @@ public class CameraManager : MonoBehaviour
             birdX = Bird.GetComponent<Transform>().position.x;
             birdY = Bird.GetComponent<Transform>().position.y;
         }
+        else
+        {
+            Bird = null;
+            birdDist = 0.01f;
+            birdX = 0;
+            birdY = 0;
+        }
             
+
         if (GameObject.Find("Ferret(Clone)"))
         {
             Ferret = GameObject.Find("Ferret(Clone)");
             ferretDist = Vector2.Distance(Ferret.transform.position, transform.position);
             ferretX = Ferret.GetComponent<Transform>().position.x;
             ferretY = Ferret.GetComponent<Transform>().position.y;
+        }
+        else
+        {
+            Ferret = null;
+            ferretDist = 0.01f;
+            ferretX = 0;
+            ferretY = 0;
         }
 
         if (GameObject.Find("Fox(Clone)") || GameObject.Find("Bunny(Clone)") || GameObject.Find("Bird(Clone)") || GameObject.Find("Ferret(Clone)"))

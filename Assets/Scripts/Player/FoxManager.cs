@@ -50,6 +50,7 @@ public class FoxManager : MonoBehaviour
     void FixedUpdate()
     {
         // Filling the mana bar appropriately
+        if (mana > 1f) mana = 1f;
         foxFill.GetComponent<Image>().fillAmount = mana;
 
         // Finding the current facing direction
@@ -195,7 +196,6 @@ public class FoxManager : MonoBehaviour
 
     public void MP_Up()
     {
-        Debug.Log("MP UP");
         mana += .1f;
     }
 }
