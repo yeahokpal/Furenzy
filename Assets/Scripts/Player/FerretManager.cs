@@ -13,7 +13,7 @@ public class FerretManager : MonoBehaviour
     public int moveDir;
     public float Health = 3;
     public float mana = 1f;
-    bool canAttack = true;
+    //bool canAttack = true;
     public GameObject currentHealthSprite;
     public GameObject health1;
     public GameObject health2;
@@ -135,9 +135,9 @@ public class FerretManager : MonoBehaviour
     }
     IEnumerator Cooldown()
     {
-        canAttack = false;
+        //canAttack = false;
         yield return new WaitForSeconds(.33f);
-        canAttack = true;
+        //canAttack = true;
     }
 
     public void MP_Up()

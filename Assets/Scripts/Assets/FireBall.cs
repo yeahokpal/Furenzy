@@ -30,6 +30,7 @@ public class FireBall : MonoBehaviour
             if (collision.transform.tag == "Enemy" && collision is BoxCollider2D)
             {
                 collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
+                StartCoroutine(collision.gameObject.GetComponent<EnemyTarget>().OnHit());
             }
         }
     }

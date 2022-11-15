@@ -251,6 +251,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -299,6 +303,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -317,6 +325,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -368,6 +380,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -518,6 +534,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -570,6 +590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &76875482 stripped
@@ -587,6 +611,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
@@ -636,6 +664,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -657,6 +689,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
@@ -706,6 +742,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -724,6 +764,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -775,6 +819,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -1208,6 +1256,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -1292,6 +1344,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -1308,6 +1364,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
@@ -1357,6 +1417,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -1380,6 +1444,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -1431,6 +1499,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -1767,6 +1839,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -1814,6 +1890,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
@@ -1913,6 +1993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -1961,6 +2045,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -1979,6 +2067,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -2030,6 +2122,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -6567,7 +6663,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -6672,6 +6768,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -6723,6 +6823,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -6835,6 +6939,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -6886,6 +6994,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -7078,6 +7190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -7125,6 +7241,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
@@ -7408,6 +7528,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -7456,6 +7580,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -7479,6 +7607,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -7531,6 +7663,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &849108299 stripped
@@ -7569,6 +7705,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
@@ -7617,6 +7757,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
@@ -7949,6 +8093,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -7997,6 +8145,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -8015,6 +8167,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -8067,6 +8223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &934609443 stripped
@@ -8081,6 +8241,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -8132,6 +8296,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -8388,6 +8556,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -8435,6 +8607,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
@@ -8530,6 +8706,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -8582,6 +8762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &1065231858 stripped
@@ -8633,6 +8817,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -8676,6 +8864,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -8961,6 +9153,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -9008,6 +9204,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
@@ -9129,6 +9329,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -9181,6 +9385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &1193159706 stripped
@@ -9203,6 +9411,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
@@ -9252,6 +9464,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -9299,6 +9515,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
@@ -9348,6 +9568,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -9366,6 +9590,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -9417,6 +9645,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -46727,6 +46959,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -46774,6 +47010,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
@@ -46947,6 +47187,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -46998,6 +47242,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -47134,6 +47382,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6647284845694830732, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -47209,6 +47461,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -47424,6 +47680,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -47476,6 +47736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &1528895617 stripped
@@ -47493,6 +47757,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
@@ -47541,6 +47809,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
@@ -47784,6 +48056,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -47835,6 +48111,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -48118,6 +48398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -48165,6 +48449,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
@@ -48298,6 +48586,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -48345,6 +48637,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
@@ -48440,6 +48736,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159272, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -48492,6 +48792,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &1892813250 stripped
@@ -48529,7 +48833,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1893346909}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48605,6 +48909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -48653,6 +48961,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -48674,6 +48986,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
@@ -48722,6 +49038,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
@@ -49034,6 +49354,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -49081,6 +49405,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
@@ -49151,6 +49479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -49199,6 +49531,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -49217,6 +49553,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 5
@@ -49304,6 +49644,10 @@ PrefabInstance:
     - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}

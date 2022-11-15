@@ -146,8 +146,12 @@ public class BunnyManager : MonoBehaviour
             //Deal Damage
             foreach (Collider2D enemy in hitEnemies)
             {
-                enemy.GetComponent<EnemyTarget>().TakeDamage(1);
-                StartCoroutine(EnemyTarget.instance.Knockback(KnockbackDuration, KnockbackPower, this.transform));
+                if (enemy is not CircleCollider2D)
+                {
+                    enemy.GetComponent<EnemyTarget>().TakeDamage(1);
+                    StartCoroutine(enemy.GetComponent<EnemyTarget>().OnHit());
+                    //StartCoroutine(EnemyTarget.instance.Knockback(KnockbackDuration, KnockbackPower, this.transform));
+                }
             }
         }        
     }

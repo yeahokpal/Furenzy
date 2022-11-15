@@ -11,7 +11,15 @@ public class EnemyTarget : MonoBehaviour
     public GameObject attacker;
     public float KnockbackPower = 100;
 
+    public static EnemyTarget instance;
+    public Rigidbody2D rb;
+
     public float KnockbackDuration = 1;
+
+    private void Awake()
+    {
+        instance = this;   
+    }
     // Update is called once per frame
     void Update()
     {
@@ -36,24 +44,28 @@ public class EnemyTarget : MonoBehaviour
             {
                 collision.gameObject.GetComponent<FoxManager>().TakeDamage(1);
                 attacker = collision.gameObject;
+                StartCoroutine(FoxManager.instance.Knockback(KnockbackDuration, KnockbackPower, this.transform));
             }     
             if (collision.gameObject.name == "Bunny(Clone)")
             {
                 collision.gameObject.GetComponent<BunnyManager>().TakeDamage(1);
+                attacker = collision.gameObject;
+                StartCoroutine(BunnyManager.instance.Knockback(KnockbackDuration, KnockbackPower, this.transform));
             }
                 
             if (collision.gameObject.name == "Bird(Clone)")
             {
                 collision.gameObject.GetComponent<BirdManager>().TakeDamage(1);
+                attacker = collision.gameObject;
+                StartCoroutine(BirdManager.instance.Knockback(KnockbackDuration, KnockbackPower, this.transform));
             }
                 
             if (collision.gameObject.name == "Ferret(Clone)")
             {
                 collision.gameObject.GetComponent<FerretManager>().TakeDamage(1);
+                attacker = collision.gameObject;
+                StartCoroutine(FerretManager.instance.Knockback(KnockbackDuration, KnockbackPower, this.transform));
             }
-                
-            attacker = collision.gameObject;
-            StartCoroutine(FoxManager.instance.Knockback(KnockbackDuration, KnockbackPower, this.transform));
         }
 
         if (collision.gameObject.name == "Lightning(Clone)")
@@ -71,6 +83,27 @@ public class EnemyTarget : MonoBehaviour
         {
             StartCoroutine(WaitToDestroy());
         }
+    }
+
+    public IEnumerator OnHit()
+    {
+        GetComponent<AIPath>().isStopped = true;
+        yield return new WaitForSeconds(0.3f);
+        GetComponent<AIPath>().isStopped = false;
+    }
+
+    public IEnumerator Knockback(float KnockbackDuration, float KnockbackPower, Transform obj)
+    {
+        float timer = 0;
+
+        while (KnockbackDuration > timer)
+        {
+            timer += Time.deltaTime;
+            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
+            rb.AddForce(-direction * KnockbackPower);
+        }
+
+        yield return 0;
     }
     IEnumerator WaitToDestroy()
     {

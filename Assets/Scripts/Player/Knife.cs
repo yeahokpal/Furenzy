@@ -29,6 +29,7 @@ public class Knife : MonoBehaviour
             if (collision.transform.tag == "Enemy")
             {
                 collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
+                StartCoroutine(collision.gameObject.GetComponent<EnemyTarget>().OnHit());
             }
             Destroy(gameObject);
         }
