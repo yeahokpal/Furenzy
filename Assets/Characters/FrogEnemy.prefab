@@ -183,6 +183,22 @@ MonoBehaviour:
   attacker: {fileID: 0}
   KnockbackPower: 100
   KnockbackDuration: 1
+  rb: {fileID: 7584505528846437624}
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4935595870939331783}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &7584505528846437624
 Rigidbody2D:
   serializedVersion: 4
@@ -202,8 +218,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!198 &2222470834537099829
 ParticleSystem:
   m_ObjectHideFlags: 0

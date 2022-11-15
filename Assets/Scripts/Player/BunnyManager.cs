@@ -5,25 +5,41 @@ using UnityEngine.InputSystem;
 
 public class BunnyManager : MonoBehaviour
 {
+    //player stats
     [SerializeField] private float moveSpeed = 5f;
-    private InputActionMap playerInput;
-    public Rigidbody2D rb;
-    public Animator animator;
-    public int moveDir;
     public int Health = 3;
     public float mana = 1f;
+
+    //movement and animations
+    public int moveDir;
+    public Rigidbody2D rb;
+    private InputActionMap playerInput;
+    public Animator animator;
     bool canAttack = true;
+    public static BunnyManager instance;
+    Vector2 moveInput;
+
+    //UI
     public GameObject currentHealthSprite;
     public GameObject health1;
     public GameObject health2;
     public GameObject health3;
     public GameObject health4;
-    public GameObject Knife;
 
-    Vector2 moveInput;
+    //attacks
+    public GameObject Knife;
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
+
+    public float KnockbackPower = 100;
+    public float KnockbackDuration = 1;
+
 
     private void Awake()
     {
+        instance = this;
+
         health1 = GameObject.Find("BunnyHealth1");
         health2 = GameObject.Find("BunnyHealth2");
         health3 = GameObject.Find("BunnyHealth3");
@@ -99,16 +115,49 @@ public class BunnyManager : MonoBehaviour
         {
             //Play Attack Animation
             if (moveDir == 1)
+            {
                 animator.SetTrigger("AttackNorth");
+                attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0f, 0.5f, 0f);
+            }
+                
             else if (moveDir == 2)
+            {
                 animator.SetTrigger("AttackEast");
+                attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0.5f, 0.0f, 0f);
+            }
+                
             else if (moveDir == 3)
+            {
                 animator.SetTrigger("AttackSouth");
+                attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0f, -0.5f, 0f);
+            }
+                
             else if (moveDir == 4)
+            {
                 animator.SetTrigger("AttackWest");
-                StartCoroutine(Cooldown());
-        }
-        
+                attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(-0.5f, 0.0f, 0f);
+            }
+                
+            StartCoroutine(Cooldown());
+
+            //Hit Detection
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+            //Deal Damage
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponent<EnemyTarget>().TakeDamage(1);
+                StartCoroutine(EnemyTarget.instance.Knockback(KnockbackDuration, KnockbackPower, this.transform));
+            }
+        }        
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
     public void OnKnife()
@@ -131,6 +180,21 @@ public class BunnyManager : MonoBehaviour
     {
         Health = Health - damage;
     }
+
+    public IEnumerator Knockback(float KnockbackDuration, float KnockbackPower, Transform obj)
+    {
+        float timer = 0;
+
+        while (KnockbackDuration > timer)
+        {
+            timer += Time.deltaTime;
+            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
+            rb.AddForce(-direction * KnockbackPower);
+        }
+
+        yield return 0;
+    }
+
     void Dead()
     {
 

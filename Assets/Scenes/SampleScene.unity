@@ -251,6 +251,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -295,9 +299,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -313,6 +325,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -360,6 +376,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -510,6 +530,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -558,6 +582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &76875482 stripped
@@ -575,6 +603,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
@@ -620,9 +652,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -641,6 +681,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
@@ -686,9 +730,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -704,6 +756,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -751,6 +807,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -1184,6 +1244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1264,9 +1328,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -1280,6 +1352,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
@@ -1325,9 +1401,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -1348,6 +1432,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -1395,6 +1483,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -1731,6 +1823,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -1775,9 +1871,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -1873,6 +1977,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -1917,9 +2025,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -1935,6 +2051,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -1983,6 +2103,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &449562689 stripped
@@ -2005,11 +2129,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &480104149
 GameObject:
@@ -6519,11 +6643,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!4 &583696877 stripped
 Transform:
@@ -6624,6 +6748,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -6672,6 +6800,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &600828316 stripped
@@ -6694,11 +6826,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &605178367
 GameObject:
@@ -6783,6 +6915,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -6831,6 +6967,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &610202138 stripped
@@ -6853,11 +6993,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &632245298
 GameObject:
@@ -7022,6 +7162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -7066,9 +7210,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -7348,6 +7500,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -7392,9 +7548,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -7410,6 +7574,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -7458,6 +7626,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &849108299 stripped
@@ -7480,11 +7652,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1001 &849689282
 PrefabInstance:
@@ -7496,6 +7668,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
@@ -7541,9 +7717,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -7855,11 +8039,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1001 &921202104
 PrefabInstance:
@@ -7871,6 +8055,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
@@ -7916,9 +8104,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -7934,6 +8130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -7982,6 +8182,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &934609443 stripped
@@ -7996,6 +8200,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -8044,6 +8252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &952588940 stripped
@@ -8066,11 +8278,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &957012377
 GameObject:
@@ -8299,6 +8511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8343,9 +8559,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -8437,6 +8661,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -8485,6 +8713,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &1065231858 stripped
@@ -8507,11 +8739,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &1079430968
 GameObject:
@@ -8790,6 +9022,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 37
@@ -8834,9 +9070,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -8865,11 +9109,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &1188244899
 GameObject:
@@ -8954,6 +9198,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -9002,6 +9250,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &1193159706 stripped
@@ -9024,6 +9276,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
@@ -9069,9 +9325,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -9100,11 +9364,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1001 &1340824882
 PrefabInstance:
@@ -9116,6 +9380,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
@@ -9161,9 +9429,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -9179,6 +9455,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -9227,6 +9507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &1355567452 stripped
@@ -9249,11 +9533,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &1366912638
 GameObject:
@@ -46536,6 +46820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -46580,9 +46868,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -46752,6 +47048,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -46799,6 +47099,10 @@ PrefabInstance:
     - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Name
       value: SnakeEnemy (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
@@ -47136,6 +47440,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -47184,6 +47492,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &1528895617 stripped
@@ -47201,6 +47513,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
@@ -47246,9 +47562,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -47475,11 +47799,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1001 &1713389109
 PrefabInstance:
@@ -47488,6 +47812,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -47536,6 +47864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &1713389110 stripped
@@ -47558,11 +47890,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &1732359752 stripped
 GameObject:
@@ -47584,11 +47916,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &1745512260 stripped
 GameObject:
@@ -47610,11 +47942,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &1776379134
 GameObject:
@@ -47775,11 +48107,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &1845742144 stripped
 GameObject:
@@ -47801,11 +48133,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1001 &1850351329
 PrefabInstance:
@@ -47817,6 +48149,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
@@ -47862,9 +48198,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -47905,7 +48249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlaceholderCharacter: {fileID: 4422845648860592782, guid: e2e032ee4a48a214c8b19a898fa44ce3, type: 3}
   Player1: {fileID: 1460901717897544858, guid: 39529f13222727f46935fce0d9e05faa, type: 3}
-  Player2: {fileID: 4410633837779907367, guid: 7a1ef9befec95694db9fb9852d3bfad7, type: 3}
+  Player2: {fileID: 3883917580766910115, guid: e778d60319852604f90c311418fdc71d, type: 3}
   Player3: {fileID: 3151010248019297981, guid: 6d020f6d2000e1f46b195eb6ca92ae1b, type: 3}
   Player4: {fileID: 2577553177254470347, guid: 7a7c47569b4cf5d44a931024662d695e, type: 3}
 --- !u!114 &1870109135
@@ -47994,6 +48338,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 39
@@ -48038,9 +48386,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -48132,6 +48488,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 6286196537152065596, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8407160628758159275, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -48180,6 +48540,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnakeEnemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8407160628758159278, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
 --- !u!4 &1892813250 stripped
@@ -48202,11 +48566,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &1893346908
 GameObject:
@@ -48217,9 +48581,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1893346909}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemies
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48292,6 +48656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331781, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Radius
       value: 3
@@ -48352,9 +48720,17 @@ PrefabInstance:
       propertyPath: health
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -48373,6 +48749,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
@@ -48418,9 +48798,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -48439,6 +48827,10 @@ PrefabInstance:
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
@@ -48484,9 +48876,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -48795,6 +49195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -48839,9 +49243,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -48908,6 +49320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrogEnemy (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -48952,9 +49368,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584505528846437624, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
@@ -48970,6 +49394,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -49053,6 +49481,10 @@ PrefabInstance:
     - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489468824048366417, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}

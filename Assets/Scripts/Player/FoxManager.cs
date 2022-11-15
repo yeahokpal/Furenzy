@@ -31,6 +31,9 @@ public class FoxManager : MonoBehaviour
 
     Vector2 moveInput;
 
+    public float KnockbackPower = 100;
+    public float KnockbackDuration = 1;
+
     private void Awake()
     {
         instance = this;

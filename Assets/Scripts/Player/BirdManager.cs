@@ -21,10 +21,17 @@ public class BirdManager : MonoBehaviour
     public GameObject health4;
     public GameObject Arrow;
 
+    public static BirdManager instance;
+
     Vector2 moveInput;
+
+    public float KnockbackPower = 100;
+    public float KnockbackDuration = 1;
 
     private void Awake()
     {
+        instance = this;
+
         health1 = GameObject.Find("BirdHealth1");
         health2 = GameObject.Find("BirdHealth2");
         health3 = GameObject.Find("BirdHealth3");
@@ -114,6 +121,21 @@ public class BirdManager : MonoBehaviour
     {
         Health = Health - damage;
     }
+
+    public IEnumerator Knockback(float KnockbackDuration, float KnockbackPower, Transform obj)
+    {
+        float timer = 0;
+
+        while (KnockbackDuration > timer)
+        {
+            timer += Time.deltaTime;
+            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
+            rb.AddForce(-direction * KnockbackPower);
+        }
+
+        yield return 0;
+    }
+
     void Dead()
     {
 

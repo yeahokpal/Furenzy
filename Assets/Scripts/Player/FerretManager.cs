@@ -20,10 +20,17 @@ public class FerretManager : MonoBehaviour
     public GameObject health3;
     public GameObject health4;
 
+    public static FerretManager instance;
+
     Vector2 moveInput;
+
+    public float KnockbackPower = 100;
+    public float KnockbackDuration = 1;
 
     private void Awake()
     {
+        instance = this;
+
         health1 = GameObject.Find("FerretHealth1");
         health2 = GameObject.Find("FerretHealth2");
         health3 = GameObject.Find("FerretHealth3");
@@ -97,6 +104,21 @@ public class FerretManager : MonoBehaviour
     {
         Health = Health - damage; ;
     }
+
+    public IEnumerator Knockback(float KnockbackDuration, float KnockbackPower, Transform obj)
+    {
+        float timer = 0;
+
+        while (KnockbackDuration > timer)
+        {
+            timer += Time.deltaTime;
+            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
+            rb.AddForce(-direction * KnockbackPower);
+        }
+
+        yield return 0;
+    }
+
     void Dead()
     {
 
