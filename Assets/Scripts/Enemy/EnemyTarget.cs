@@ -88,21 +88,16 @@ public class EnemyTarget : MonoBehaviour
         }
     }
 
-    public IEnumerator Knockback(float KnockbackDuration, float KnockbackPower, Transform obj)
+    public IEnumerator HitStun()
     {
-        Debug.Log("Test");
-        float timer = 0;
-        while (KnockbackDuration > timer)
+        GetComponent<AIPath>().maxSpeed = 0;
+        if (!TryGetComponent(out AIPath aiPath))
         {
-            Debug.Log("KnockbackBegin");
-            timer += Time.deltaTime;
-            Vector2 direction = (obj.transform.position - this.transform.position).normalized;
-            rb.AddForce(-direction * KnockbackPower);
-            Debug.Log("KnockbackEnd");
+            yield return new WaitForSeconds(1f);
+            GetComponent<AIPath>().maxSpeed = 3.5f;
         }
-
-        yield return 0;
     }
+
     IEnumerator WaitToDestroy()
     {
         yield return new WaitForSeconds(.2f);

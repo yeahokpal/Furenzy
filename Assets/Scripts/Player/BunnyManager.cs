@@ -150,8 +150,7 @@ public class BunnyManager : MonoBehaviour
                 if (enemy is not CircleCollider2D)
                 {
                     enemy.GetComponent<EnemyTarget>().TakeDamage(StabDamage);
-                    enemy.GetComponent<EnemyTarget>().StartCoroutine(Knockback(KnockbackDuration, KnockbackPower, this.transform));
-                    Debug.Log("Knockback IEnumerator");
+                    StartCoroutine(enemy.GetComponent<EnemyTarget>().HitStun());
                     //StartCoroutine(EnemyTarget.instance.Knockback(KnockbackDuration, KnockbackPower, this.transform));
                 }
             }

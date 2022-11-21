@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.7
+  radius: 0.5
   height: 1
   canMove: 1
   maxSpeed: 3.5
@@ -182,23 +182,8 @@ MonoBehaviour:
   health: 3
   attacker: {fileID: 0}
   KnockbackPower: 100
-  KnockbackDuration: 1
   rb: {fileID: 7584505528846437624}
-  OnHit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4935595870939331783}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  KnockbackDuration: 1
 --- !u!50 &7584505528846437624
 Rigidbody2D:
   serializedVersion: 4

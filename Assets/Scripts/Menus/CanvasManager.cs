@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class CanvasManager : MonoBehaviour
 {
@@ -41,6 +42,6 @@ public class CanvasManager : MonoBehaviour
 
     public void Quit()
     {
-        // Change the scene to the main menu
+        SceneManager.LoadScene("MainMenu");
     }
 }

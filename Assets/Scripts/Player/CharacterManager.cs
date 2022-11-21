@@ -49,7 +49,7 @@ public class CharacterManager : MonoBehaviour
         }*/
 
         if (gameObject.GetComponent<PlayerInputManager>().playerCount == 0 && canRestart)
-            SceneManager.LoadScene("main menu");
+            SceneManager.LoadScene("MainMenu");
     }
 
     public void OnPlayerJoined()
