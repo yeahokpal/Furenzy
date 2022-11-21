@@ -31,6 +31,7 @@ public class BunnyManager : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+    public int StabDamage = 3;
 
     public float KnockbackPower = 100;
     public float KnockbackDuration = 1;
@@ -148,8 +149,9 @@ public class BunnyManager : MonoBehaviour
             {
                 if (enemy is not CircleCollider2D)
                 {
-                    enemy.GetComponent<EnemyTarget>().TakeDamage(1);
-                    StartCoroutine(enemy.GetComponent<EnemyTarget>().OnHit());
+                    enemy.GetComponent<EnemyTarget>().TakeDamage(StabDamage);
+                    enemy.GetComponent<EnemyTarget>().StartCoroutine(Knockback(KnockbackDuration, KnockbackPower, this.transform));
+                    Debug.Log("Knockback IEnumerator");
                     //StartCoroutine(EnemyTarget.instance.Knockback(KnockbackDuration, KnockbackPower, this.transform));
                 }
             }

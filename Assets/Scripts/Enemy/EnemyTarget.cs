@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Pathfinding;
+using System.Collections;
+using UnityEngine;
 
 public class EnemyTarget : MonoBehaviour
 {
@@ -89,22 +88,17 @@ public class EnemyTarget : MonoBehaviour
         }
     }
 
-    public IEnumerator OnHit()
-    {
-        GetComponent<AIPath>().isStopped = true;
-        yield return new WaitForSeconds(0.3f);
-        GetComponent<AIPath>().isStopped = false;
-    }
-
     public IEnumerator Knockback(float KnockbackDuration, float KnockbackPower, Transform obj)
     {
+        Debug.Log("Test");
         float timer = 0;
-
         while (KnockbackDuration > timer)
         {
+            Debug.Log("KnockbackBegin");
             timer += Time.deltaTime;
             Vector2 direction = (obj.transform.position - this.transform.position).normalized;
             rb.AddForce(-direction * KnockbackPower);
+            Debug.Log("KnockbackEnd");
         }
 
         yield return 0;

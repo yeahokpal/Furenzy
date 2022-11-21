@@ -32,7 +32,6 @@ public class Lightning : MonoBehaviour
             {
                 collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
                 canCollide = false;
-                StartCoroutine(collision.gameObject.GetComponent<EnemyTarget>().OnHit());
             }
             StartCoroutine(WaitToDestroy(0f));
         }
