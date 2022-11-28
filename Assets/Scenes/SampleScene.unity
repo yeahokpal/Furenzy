@@ -8813,6 +8813,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.35
       objectReference: {fileID: 0}
+    - target: {fileID: 4935595870939331776, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
+      propertyPath: radius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331779, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_Name
       value: FrogEnemy
@@ -8831,7 +8835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.1449313
+      value: 7.12
       objectReference: {fileID: 0}
     - target: {fileID: 4935595870939331782, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
       propertyPath: m_LocalPosition.z
@@ -47378,6 +47382,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1893346909}
     m_Modifications:
+    - target: {fileID: -7239324122768566794, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3518153840222246901, guid: 6cc217deb51973b489ddd331b9b21364, type: 3}
       propertyPath: m_Enabled
       value: 0
