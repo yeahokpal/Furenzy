@@ -106,13 +106,13 @@ public class BirdManager : MonoBehaviour
         if (canAttack)
         {
             if (moveDir == 1)
-                Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, 180f));
+                Instantiate(Arrow, transform.position + new Vector3(0, .75f, 0), Quaternion.Euler(0f, 0f, 180f));
             else if (moveDir == 2)
-                Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, 90f));
+                Instantiate(Arrow, transform.position + new Vector3(.75f, 0, 0), Quaternion.Euler(0f, 0f, 90f));
             else if (moveDir == 3)
-                Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, 0f));
+                Instantiate(Arrow, transform.position + new Vector3(0, -.75f, 0), Quaternion.Euler(0f, 0f, 0f));
             else if (moveDir == 4)
-                Instantiate(Arrow, transform.position, Quaternion.Euler(0f, 0f, -90f));
+                Instantiate(Arrow, transform.position + new Vector3(-.75f, 0, 0), Quaternion.Euler(0f, 0f, -90f));
             StartCoroutine(Cooldown());
         }
     }
