@@ -12,6 +12,7 @@ public class Apple : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+<<<<<<< Updated upstream
         if (collision.name == "Fox(Clone)")
         {
             collision.GetComponent<FoxManager>().Health++;
@@ -32,6 +33,13 @@ public class Apple : MonoBehaviour
 
         if (collision.name == "Bird(Clone)")
         {
+=======
+        if (collision.tag == "Player")
+        {
+            collision.GetComponent<BunnyManager>().Health++;
+            collision.GetComponent<FoxManager>().Health++;
+            collision.GetComponent<FerretManager>().Health++;
+>>>>>>> Stashed changes
             collision.GetComponent<BirdManager>().Health++;
             Destroy(gameObject); //*dies
         }
