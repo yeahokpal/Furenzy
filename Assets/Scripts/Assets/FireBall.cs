@@ -21,16 +21,12 @@ public class FireBall : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.left * speed, ForceMode2D.Impulse); 
         // Starts coroutine to kill itself
         StartCoroutine(WaitToDestroy());
-        StartCoroutine(WaitToCollide());
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (canCollide)
+        if (collision.transform.tag == "Enemy" && collision is BoxCollider2D)
         {
-            if (collision.transform.tag == "Enemy" && collision is BoxCollider2D)
-            {
-                collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
-            }
+            collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
         }
     }
 
@@ -38,10 +34,5 @@ public class FireBall : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
-    }
-    IEnumerator WaitToCollide()
-    {
-        yield return new WaitForSeconds(.05f);
-        canCollide = true;
     }
 }

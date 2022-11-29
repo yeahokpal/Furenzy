@@ -14,26 +14,38 @@ public class Apple : MonoBehaviour
     {
         if (collision.name == "Fox(Clone)")
         {
-            collision.GetComponent<FoxManager>().Health++;
-            Destroy(gameObject); //*dies
+            if (collision.GetComponent<FoxManager>().Health <= 2)
+            {
+                collision.GetComponent<FoxManager>().Health++;
+                Destroy(gameObject); //*dies
+            }
         }
 
         if (collision.name == "Bunny(Clone)")
         {
-            collision.GetComponent<BunnyManager>().Health++;
-            Destroy(gameObject); //*dies
+            if (collision.GetComponent<BunnyManager>().Health <= 2)
+            {
+                collision.GetComponent<BunnyManager>().Health++;
+                Destroy(gameObject); //*dies
+            }
         }
 
         if (collision.name == "Ferret(Clone)")
         {
-            collision.GetComponent<FerretManager>().Health++;
-            Destroy(gameObject); //*dies
+            if (collision.GetComponent<FerretManager>().Health <= 2)
+            {
+                collision.GetComponent<FerretManager>().Health++;
+                Destroy(gameObject); //*dies
+            }
         }
 
         if (collision.name == "Bird(Clone)")
         {
-            collision.GetComponent<BirdManager>().Health++;
-            Destroy(gameObject); //*dies
+            if (collision.GetComponent<BirdManager>().Health <= 2)
+            {
+                collision.GetComponent<BirdManager>().Health++;
+                Destroy(gameObject); //*dies
+            }
         }
     }
 }
