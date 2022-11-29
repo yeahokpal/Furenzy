@@ -286,7 +286,7 @@
                 {
                     "name": "",
                     "id": "e22e137e-20d6-45be-8b09-fe1cdece20bf",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/#(E)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -319,7 +319,7 @@
                 {
                     "name": "",
                     "id": "664521f2-6f70-4aa6-9fdc-db26c4e10ccc",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

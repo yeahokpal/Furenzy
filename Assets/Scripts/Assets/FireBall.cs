@@ -7,7 +7,6 @@ public class FireBall : MonoBehaviour
 {
     public int damage = 3;
     public int speed = 15;
-    bool canCollide = false;
 
     private void Awake() // Setting Force Direction When it enters the scene
     {
