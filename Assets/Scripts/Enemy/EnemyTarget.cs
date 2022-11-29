@@ -88,14 +88,17 @@ public class EnemyTarget : MonoBehaviour
         }
     }
 
-    public IEnumerator HitStun()
+    public IEnumerator HitStun(float StunTime)
     {
         GetComponent<AIPath>().maxSpeed = 0;
-        if (!TryGetComponent(out AIPath aiPath))
+        Debug.Log("HitStun");
+        if (!TryGetComponent<AIPath>(out AIPath aiPath))
         {
+            Debug.Log("Start Wait");
             yield return new WaitForSeconds(1f);
             GetComponent<AIPath>().maxSpeed = 3.5f;
         }
+        Debug.Log("HitStunEnd");
     }
 
     IEnumerator WaitToDestroy()
@@ -103,4 +106,5 @@ public class EnemyTarget : MonoBehaviour
         yield return new WaitForSeconds(.2f);
         Destroy(gameObject);
     }
+
 }

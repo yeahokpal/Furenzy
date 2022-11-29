@@ -7,7 +7,6 @@ public class Lightning : MonoBehaviour
 {
     public int damage = 1;
     public int speed = 20;
-    bool canCollide = false;
 
     private void Awake() // Setting Force Direction When it enters the scene
     {
@@ -28,7 +27,7 @@ public class Lightning : MonoBehaviour
         if (collision.transform.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
-            canCollide = false;
+            StartCoroutine(collision.gameObject.GetComponent<EnemyTarget>().HitStun(.5f));
         }
         Destroy(gameObject);
     }
