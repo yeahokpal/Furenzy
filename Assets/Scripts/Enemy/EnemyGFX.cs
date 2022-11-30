@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Pathfinding;
+
+public class EnemyGFX : MonoBehaviour
+{
+    public Animator animator;
+    public AIPath aiPath;
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (gameObject.name.Contains("Frog"))
+        {
+            if (aiPath.reachedDestination == true)
+            {
+                animator.Play("FrogIdle");
+            }
+            else
+            {
+                animator.Play("FrogMove");
+            }
+        }
+
+        if (gameObject.name.Contains("Snake"))
+        {
+            if (aiPath.reachedDestination == true)
+            {
+                animator.Play("SnakeIdle");
+            }
+            else
+            {
+                animator.Play("SnakeMove");
+            }
+        }
+    }
+}

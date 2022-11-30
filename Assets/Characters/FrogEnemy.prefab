@@ -4995,7 +4995,7 @@ GameObject:
   - component: {fileID: 4935595869505180641}
   - component: {fileID: 7848956243250310113}
   - component: {fileID: 4935595869505180647}
-  - component: {fileID: 4105661129835784186}
+  - component: {fileID: 2626041563223301779}
   m_Layer: 0
   m_Name: EnemyFrog
   m_TagString: Enemy
@@ -5090,7 +5090,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4105661129835784186
+--- !u!114 &2626041563223301779
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5099,7 +5099,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7489468824048366417}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bd2296e2ddde2640be983524afc2818, type: 3}
+  m_Script: {fileID: 11500000, guid: ea1978e114780954fa3dfe916dc0d189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4935595869505180647}
