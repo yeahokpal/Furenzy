@@ -6,7 +6,7 @@ using TMPro;
 public class Interactable : MonoBehaviour
 {
     public bool heal;
-    public TextMesh UI;
+    public TextMeshProUGUI UI;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
