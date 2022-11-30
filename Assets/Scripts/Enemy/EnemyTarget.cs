@@ -15,9 +15,14 @@ public class EnemyTarget : MonoBehaviour
 
     public float KnockbackDuration = 1;
 
+    private bool AIPathExists;
+    private AIPath aipath;
+
     private void Awake()
     {
-        instance = this;   
+        instance = this;
+
+        AIPathExists = transform.TryGetComponent(out aipath);
     }
     // Update is called once per frame
     void Update()
@@ -88,16 +93,11 @@ public class EnemyTarget : MonoBehaviour
         }
     }
 
-    public IEnumerator HitStun(float StunTime)
+    public IEnumerator HitStunWait(float StunTime)
     {
-        GetComponent<AIPath>().maxSpeed = 0;
-        Debug.Log("HitStun");
-        if (!TryGetComponent<AIPath>(out AIPath aiPath))
-        {
-            Debug.Log("Start Wait");
-            yield return new WaitForSeconds(1f);
-            GetComponent<AIPath>().maxSpeed = 3.5f;
-        }
+        Debug.Log("HitStunWait");
+        yield return new WaitForSeconds(StunTime);
+        aipath.maxSpeed = 3.5f;
         Debug.Log("HitStunEnd");
     }
 
@@ -106,5 +106,4 @@ public class EnemyTarget : MonoBehaviour
         yield return new WaitForSeconds(.2f);
         Destroy(gameObject);
     }
-
 }

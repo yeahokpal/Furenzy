@@ -2,6 +2,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Lightning : MonoBehaviour
 {
@@ -27,7 +28,9 @@ public class Lightning : MonoBehaviour
         if (collision.transform.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
-            StartCoroutine(collision.gameObject.GetComponent<EnemyTarget>().HitStun(.5f));
+            Debug.Log("HitStunBegin");
+            collision.gameObject.GetComponent<AIPath>().maxSpeed = 0;
+            StartCoroutine(collision.gameObject.GetComponent<EnemyTarget>().HitStunWait(.25f));
         }
         Destroy(gameObject);
     }

@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -150,7 +151,9 @@ public class BunnyManager : MonoBehaviour
                 if (enemy is not CircleCollider2D)
                 {
                     enemy.GetComponent<EnemyTarget>().TakeDamage(StabDamage);
-                    StartCoroutine(enemy.GetComponent<EnemyTarget>().HitStun(1f));
+                    Debug.Log("HitStunBegin");
+                    enemy.gameObject.GetComponent<AIPath>().maxSpeed = 0;
+                    StartCoroutine(enemy.GetComponent<EnemyTarget>().HitStunWait(1f));
                 }
             }
         }        
