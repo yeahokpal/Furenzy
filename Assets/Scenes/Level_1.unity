@@ -3589,7 +3589,7 @@ GameObject:
   - component: {fileID: 613845567}
   - component: {fileID: 613845566}
   m_Layer: 0
-  m_Name: TilemapCollisions
+  m_Name: CollisionTiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10214,7 +10214,7 @@ GameObject:
   - component: {fileID: 1366912641}
   - component: {fileID: 1366912640}
   m_Layer: 5
-  m_Name: TilemapGroundTiles
+  m_Name: GroundTiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
