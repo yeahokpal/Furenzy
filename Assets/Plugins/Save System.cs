@@ -5,13 +5,7 @@ using UnityEngine;
 
 public class SqliteManager : MonoBehaviour
 {
-    #region Variables
-
-    GameObject player;
-
-    #endregion
-
-    #region Default Methods
+    string dbName = "URI=file:Inventory.db";
 
     private void Awake()
     {
@@ -21,9 +15,14 @@ public class SqliteManager : MonoBehaviour
         }
     }
 
-    #endregion
+    private void Start()
+    {
+        
+    }
 
-    #region Custom Methods
+
+
+    #region Methods
 
     public void Read(string saveName)
     {
@@ -69,13 +68,10 @@ public class SqliteManager : MonoBehaviour
 
         dbCommand = dbConnection.CreateCommand();
 
-        player = GameObject.Find("player");
-
         dbCommand.CommandText = "CREATE TABLE IF NOT EXISTS Player (health INTEGER, maxhealth INTEGER, playerx FLOAT, playery FLOAT )";
         dbCommand.ExecuteReader();
 
         return dbConnection;
     }
-
     #endregion
 }
