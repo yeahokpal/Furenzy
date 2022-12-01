@@ -61,7 +61,8 @@ public class FoxManager : MonoBehaviour
             moveDir = 4;
         else if (moveInput.x < .25 && moveInput.y > .25)
             moveDir = 1;
-        else moveDir = 3;
+        else if (moveInput.x < .25 && moveInput.y < -.25)
+            moveDir = 3;
 
             rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
 
@@ -122,7 +123,8 @@ public class FoxManager : MonoBehaviour
                 Instantiate(FireBall, transform.position + new Vector3(.75f, 0, 0), Quaternion.Euler(0f, 0f, 90f));
             else if (moveDir == 3)
                 Instantiate(FireBall, transform.position + new Vector3(0, -.75f, 0), Quaternion.Euler(0f, 0f, 0f));
-            else Instantiate(FireBall, transform.position + new Vector3(-.75f, 0, 0), Quaternion.Euler(0f, 0f, -90f));
+            else if (moveDir == 4)
+                Instantiate(FireBall, transform.position + new Vector3(-.75f, 0, 0), Quaternion.Euler(0f, 0f, -90f));
             mana -= .5f;
             canAttack = false;
             StartCoroutine(Cooldown());
@@ -140,7 +142,8 @@ public class FoxManager : MonoBehaviour
                 Instantiate(Lightning, transform.position + new Vector3(.75f, 0, 0), Quaternion.Euler(0f, 0f, 90f));
             else if (moveDir == 3)
                 Instantiate(Lightning, transform.position + new Vector3(0, -1, 0), Quaternion.Euler(0f, 0f, 0f));
-            else Instantiate(Lightning, transform.position + new Vector3(-.75f, 0, 0), Quaternion.Euler(0f, 0f, -90f));
+            else if (moveDir == 4)
+                Instantiate(Lightning, transform.position + new Vector3(-.75f, 0, 0), Quaternion.Euler(0f, 0f, -90f));
             canAttack = false;
             StartCoroutine(Cooldown());
         }

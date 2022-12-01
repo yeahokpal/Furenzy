@@ -15,11 +15,11 @@ public class EnemyGFX : MonoBehaviour
         {
             if (aiPath.reachedDestination == true)
             {
-                animator.Play("FrogIdle");
+                animator.Play("frogIdle");
             }
             else
             {
-                animator.Play("FrogMove");
+                animator.Play("frogHop");
             }
         }
 
