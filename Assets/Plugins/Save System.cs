@@ -15,13 +15,6 @@ public class SqliteManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        
-    }
-
-
-
     #region Methods
 
     public void Read(string saveName)
@@ -55,20 +48,27 @@ public class SqliteManager : MonoBehaviour
         dbConnection.Close();
     }
 
+    // Creates and Opens the Database
     public IDbConnection CreateAndOpenDatabase(string saveName)
     {
+        // Finding the database that is of slot saveName
         string dataBase = "URI=file:" + Application.streamingAssetsPath + "/Saves/" + saveName + ".sqlite";
+        // Initializing dbConnection to the database of saveName
         IDbConnection dbConnection = new SqliteConnection(dataBase);
+        // Opening the saveName database
         dbConnection.Open();
 
+        // Initializes dbCommand to create a command whenever
         IDbCommand dbCommand = dbConnection.CreateCommand();
 
-        dbCommand.CommandText = "CREATE TABLE IF NOT EXISTS Save (seed INTEGER )";
+        // Creating the Save Table
+        dbCommand.CommandText = "CREATE TABLE IF NOT EXISTS Save (level INTEGER, unlocked BOOLEAN, cleared BOOLEAN)";
         dbCommand.ExecuteReader();
 
         dbCommand = dbConnection.CreateCommand();
 
-        dbCommand.CommandText = "CREATE TABLE IF NOT EXISTS Player (health INTEGER, maxhealth INTEGER, playerx FLOAT, playery FLOAT )";
+        // Creating the Player Table
+        dbCommand.CommandText = "CREATE TABLE IF NOT EXISTS Player (character STRING, health INTEGER, mana INTEGER )";
         dbCommand.ExecuteReader();
 
         return dbConnection;
