@@ -7,8 +7,6 @@ public class SqliteManager : MonoBehaviour
 {
     #region Variables
 
-    SavesManager savesManager;
-    healthManager healthManager;
     GameObject player;
 
     #endregion
@@ -36,8 +34,6 @@ public class SqliteManager : MonoBehaviour
 
         dataReader.Read();
 
-        savesManager.currentSave.seed = dataReader.GetInt32(0);
-
         dbConnection.Close();
 
         dbConnection = CreateAndOpenDatabase(saveName);
@@ -47,14 +43,6 @@ public class SqliteManager : MonoBehaviour
 
         dataReader.Read();
 
-        savesManager.currentSave.playerMaxHealth = dataReader.GetInt32(1);
-
-        savesManager.currentSave.playerHealth = dataReader.GetInt32(0);
-
-        savesManager.currentSave.playerx = dataReader.GetFloat(2);
-
-        savesManager.currentSave.playery = dataReader.GetFloat(3);
-
         dbConnection.Close();
     }
 
@@ -63,13 +51,7 @@ public class SqliteManager : MonoBehaviour
         IDbConnection dbConnection = CreateAndOpenDatabase(saveName);
         IDbCommand dbCommand = dbConnection.CreateCommand();
 
-        dbCommand.CommandText = "INSERT OR REPLACE INTO Save (seed) VALUES (" + savesManager.currentSave.seed + ")";
-        dbCommand.ExecuteNonQuery();
-
         dbCommand = dbConnection.CreateCommand();
-
-        dbCommand.CommandText = "INSERT OR REPLACE INTO Player (health, maxhealth, playerx, playery) VALUES (" + healthManager.health + ", " + healthManager.maxHealth + ", " + player.transform.position.x + ", " + player.transform.position.y + ")"; // 10
-        dbCommand.ExecuteNonQuery();
 
         dbConnection.Close();
     }

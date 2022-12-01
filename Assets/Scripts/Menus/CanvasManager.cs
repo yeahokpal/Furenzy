@@ -43,5 +43,6 @@ public class CanvasManager : MonoBehaviour
     public void Quit()
     {
         SceneManager.LoadScene("MainMenu");
+        // Add saving to the file
     }
 }
