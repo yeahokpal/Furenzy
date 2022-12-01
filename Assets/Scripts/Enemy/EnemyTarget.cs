@@ -15,14 +15,11 @@ public class EnemyTarget : MonoBehaviour
 
     public float KnockbackDuration = 1;
 
-    private bool AIPathExists;
     private AIPath aipath;
 
     private void Awake()
     {
         instance = this;
-
-        AIPathExists = transform.TryGetComponent(out aipath);
     }
     // Update is called once per frame
     void Update()
