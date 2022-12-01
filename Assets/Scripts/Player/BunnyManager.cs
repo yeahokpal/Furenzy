@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,12 @@ using UnityEngine.InputSystem;
 
 public class BunnyManager : MonoBehaviour
 {
-    //player stats
+    //Player Stats
     [SerializeField] private float moveSpeed = 5f;
     public int Health = 3;
     public float mana = 1f;
 
-    //movement and animations
+    //Movement and Animations
     public int moveDir;
     public Rigidbody2D rb;
     private InputActionMap playerInput;
@@ -26,7 +27,7 @@ public class BunnyManager : MonoBehaviour
     public GameObject health3;
     public GameObject health4;
 
-    //attacks
+    //Attacks
     public GameObject Knife;
     public Transform attackPoint;
     public float attackRange = 0.5f;
@@ -115,28 +116,24 @@ public class BunnyManager : MonoBehaviour
         if (canAttack)
         {
             //Play Attack Animation
-            if (moveDir == 1)
+            switch (moveDir)
             {
-                animator.SetTrigger("AttackNorth");
-                attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0f, 0.5f, 0f);
-            }
-                
-            else if (moveDir == 2)
-            {
-                animator.SetTrigger("AttackEast");
-                attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0.5f, 0.0f, 0f);
-            }
-                
-            else if (moveDir == 3)
-            {
-                animator.SetTrigger("AttackSouth");
-                attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0f, -0.5f, 0f);
-            }
-                
-            else if (moveDir == 4)
-            {
-                animator.SetTrigger("AttackWest");
-                attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(-0.5f, 0.0f, 0f);
+                case 1:
+                    animator.SetTrigger("AttackNorth");
+                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0f, 0.5f, 0f);
+                    break;
+                case 2:
+                    animator.SetTrigger("AttackEast");
+                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0.5f, 0.0f, 0f);
+                    break;
+                case 3:
+                    animator.SetTrigger("AttackSouth");
+                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0f, -0.5f, 0f);
+                    break;
+                case 4:
+                    animator.SetTrigger("AttackWest");
+                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(-0.5f, 0.0f, 0f);
+                    break;
             }
                 
             StartCoroutine(Cooldown());
@@ -150,8 +147,9 @@ public class BunnyManager : MonoBehaviour
                 if (enemy is not CircleCollider2D)
                 {
                     enemy.GetComponent<EnemyTarget>().TakeDamage(StabDamage);
-                    StartCoroutine(enemy.GetComponent<EnemyTarget>().HitStun());
-                    //StartCoroutine(EnemyTarget.instance.Knockback(KnockbackDuration, KnockbackPower, this.transform));
+                    Debug.Log("HitStunBegin");
+                    enemy.gameObject.GetComponent<AIPath>().maxSpeed = 0;
+                    StartCoroutine(enemy.GetComponent<EnemyTarget>().HitStunWait(1f));
                 }
             }
         }        

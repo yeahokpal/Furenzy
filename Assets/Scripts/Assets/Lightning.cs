@@ -2,16 +2,15 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Lightning : MonoBehaviour
 {
     public int damage = 1;
     public int speed = 20;
-    bool canCollide = false;
 
     private void Awake() // Setting Force Direction When it enters the scene
     {
-        StartCoroutine(WaitToCollide());
         if (gameObject.transform.rotation == Quaternion.Euler(0, 0, 180))
             gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * speed, ForceMode2D.Impulse);
         else if (gameObject.transform.rotation == Quaternion.Euler(0, 0, 90))
@@ -26,15 +25,14 @@ public class Lightning : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (canCollide)
+        if (collision.transform.tag == "Enemy")
         {
-            if (collision.transform.tag == "Enemy")
-            {
-                collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
-                canCollide = false;
-            }
-            StartCoroutine(WaitToDestroy(0f));
+            collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
+            Debug.Log("HitStunBegin");
+            collision.gameObject.GetComponent<AIPath>().maxSpeed = 0;
+            StartCoroutine(collision.gameObject.GetComponent<EnemyTarget>().HitStunWait(.25f));
         }
+        Destroy(gameObject);
     }
 
     IEnumerator WaitToDestroy() // Destroy itself after 2 seconds
@@ -47,11 +45,5 @@ public class Lightning : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Destroy(gameObject);
-    }
-
-    IEnumerator WaitToCollide()
-    {
-        yield return new WaitForSeconds(.05f);
-        canCollide = !canCollide;
     }
 }
