@@ -6,7 +6,7 @@ using TMPro;
 public class Interactable : MonoBehaviour
 {
     public bool heal;
-    public TextMeshProUGUI UI;
+    public TextMeshProUGUI UI = null;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,23 +15,35 @@ public class Interactable : MonoBehaviour
             switch (collision.name)
             {
                 case "Fox(Clone)":
-                    collision.GetComponent<FoxManager>().Health++;
-                    Destroy(gameObject);
+                    if (collision.GetComponent<FoxManager>().Health < 3)
+                    {
+                        collision.GetComponent<FoxManager>().Health++;
+                        Destroy(gameObject);
+                    }
                     break;
 
                 case "Bunny(Clone)":
-                    collision.GetComponent<BunnyManager>().Health++;
-                    Destroy(gameObject);
+                    if (collision.GetComponent<BunnyManager>().Health < 3)
+                    {
+                        collision.GetComponent<BunnyManager>().Health++;
+                        Destroy(gameObject);
+                    }
                     break;
 
                 case "Bird(Clone)":
-                    collision.GetComponent<BirdManager>().Health++;
-                    Destroy(gameObject);
+                    if (collision.GetComponent<BirdManager>().Health < 3)
+                    {
+                        collision.GetComponent<BirdManager>().Health++;
+                        Destroy(gameObject);
+                    }
                     break;
 
                 case "Ferret(Clone)":
-                    collision.GetComponent<FerretManager>().Health++;
-                    Destroy(gameObject);
+                    if (collision.GetComponent<FerretManager>().Health < 3)
+                    {
+                        collision.GetComponent<FerretManager>().Health++;
+                        Destroy(gameObject);
+                    }
                     break;
             }
         }

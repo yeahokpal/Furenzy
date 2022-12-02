@@ -23,7 +23,12 @@ public class SaveSystem : MonoBehaviour
 
     private void Start()
     {
+        int healthTest = 1;
+        string test = "";
         CreateDB();
+        Write("player", "health", 1, healthTest.ToString()); //testing
+        Read("player", "health", 1, test);
+        Debug.Log(test);
     }
 
     private void Update()
@@ -47,14 +52,14 @@ public class SaveSystem : MonoBehaviour
             IDbCommand Command = Connection.CreateCommand();
 
             // Creating the Save Table if it doesn't already exist
-            Command.CommandText = "CREATE TABLE IF NOT EXISTS Save (level INTEGER, unlocked BOOLEAN, cleared BOOLEAN);";
+            Command.CommandText = "CREATE TABLE IF NOT EXISTS Save (id INTEGER, level INTEGER, unlocked INTEGER, cleared INTEGER, playerCount INTEGER);";
             Command.ExecuteReader();
 
             Command = Connection.CreateCommand();
 
 
             // Creating the Player Table if it doesn't already exist
-            Command.CommandText = "CREATE TABLE IF NOT EXISTS Player (character STRING, health INTEGER, mana INTEGER);";
+            Command.CommandText = "CREATE TABLE IF NOT EXISTS Player (id INTEGER, character TEXT, health INTEGER, mana INTEGER);";
 
             Command.ExecuteNonQuery();
             Connection.Close();
@@ -63,36 +68,93 @@ public class SaveSystem : MonoBehaviour
 
     public void Read(string table, string column, int id, string variableToChange) // DONE ----- TEST!!
     {
-        // Connecting to the database
+        Debug.Log("Start Read");
+        using (var connection = new SqliteConnection(dbName))
+        {
+            connection.Open();
+
+            //Setting up an object command to allow db caontrol
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM " + table + " ORDER BY id";
+                command.ExecuteNonQuery();
+
+                
+                IDataReader dataReader = command.ExecuteReader();
+                variableToChange = ($"{dataReader.GetInt32(id)} {dataReader[column]}");
+                Debug.Log("End Read");
+            }
+            connection.Close();
+        }
+
+
+
+
+
+
+        /*// Connecting to the database
         IDbConnection Connection = new SqliteConnection(dbName);
         IDbCommand Command = Connection.CreateCommand();
 
         // Accessing the desired table
+        Connection.Open();
         Command.CommandText = "SELECT * FROM " + table + " ORDER BY id";
+        
         IDataReader dataReader = Command.ExecuteReader();
-        Command.ExecuteReader();
 
         // Reading and changing variableToChange
         while (dataReader.Read())
         {
-            Connection.Open();
-
+            Debug.Log("reading data");
             //variableToChange = table --> id/row --> column
             variableToChange = ($"{dataReader.GetInt32(id)} {dataReader[column]}");
         }
 
-        Connection.Close();
+        Connection.Close();*/
     }
 
-    public void Write(string saveName)
+    public void Write(string table, string column, int row, string variableToUse)
     {
+        using (var connection = new SqliteConnection(dbName))
+        {
+            Debug.Log("Start Write");
+            connection.Open();
+
+            //Setting up an object command to allow db caontrol
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM " + table + " WHERE id =" + row;
+                command.ExecuteNonQuery();
+
+
+                IDataReader dataReader = command.ExecuteReader();
+                command.CommandText = "INSERT INTO " + table + " (" + 
+                //($"{dataReader.GetInt32(row)} {dataReader[column]}") = variableToUse;
+                Debug.Log("End Write");
+            }
+            connection.Close();
+        }
+
+        /*Debug.Log("Start Write");
         IDbConnection Connection = new SqliteConnection(dbName);
         IDbCommand Command = Connection.CreateCommand();
 
-        Command = Connection.CreateCommand();
-        //dbCommand.CommandText = add values
+        Connection.Open();
 
-        Connection.Close();
+        Command.CommandText = "SELECT * FROM " + table + " ORDER BY id";
+
+        IDataReader dataReader = Command.ExecuteReader();
+
+        while (dataReader.Read())
+        {
+            Command = Connection.CreateCommand();
+
+            Command.CommandText = "INSERT INTO " + table + " (" + column + ") VALUES(" + variableToUse + ");";
+            Command.ExecuteNonQuery();
+            Debug.Log("End Write");
+        }
+
+        Connection.Close();*/
     }
 
     // Creates and Opens the Database
