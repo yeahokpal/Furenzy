@@ -30,6 +30,8 @@ public class CharacterSelect : MonoBehaviour
     {
         numOfPlayers = GameObject.Find("PlayerSelectManager").GetComponent<PlayerInputManager>().playerCount;
 
+        Debug.Log(numOfPlayers);
+
         switch (numOfPlayers)
         {
             case 1:
