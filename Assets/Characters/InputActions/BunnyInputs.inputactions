@@ -329,6 +329,17 @@
                 },
                 {
                     "name": "",
+                    "id": "2837adea-d92b-4536-b952-62ee43290004",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Knife",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4132603a-ed48-40cf-b90f-990e84f6a4c6",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
@@ -342,6 +353,17 @@
                     "name": "",
                     "id": "e6b01e9c-767a-45e0-be10-706407f00705",
                     "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Stab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd2314bb-8f8e-46a0-a5d2-d9ade7e6607e",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
