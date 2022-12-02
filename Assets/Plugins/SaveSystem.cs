@@ -87,11 +87,6 @@ public class SaveSystem : MonoBehaviour
             connection.Close();
         }
 
-
-
-
-
-
         /*// Connecting to the database
         IDbConnection Connection = new SqliteConnection(dbName);
         IDbCommand Command = Connection.CreateCommand();
@@ -128,8 +123,9 @@ public class SaveSystem : MonoBehaviour
 
 
                 IDataReader dataReader = command.ExecuteReader();
-                command.CommandText = "INSERT INTO " + table + " (" + 
+                command.CommandText = "INSERT " + variableToUse + " INTO " + table + " (" + column + ") VALUES (" + row + ");"; // TEST THIS LINE
                 //($"{dataReader.GetInt32(row)} {dataReader[column]}") = variableToUse;
+                command.ExecuteNonQuery();
                 Debug.Log("End Write");
             }
             connection.Close();
