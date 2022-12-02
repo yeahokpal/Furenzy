@@ -7,10 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour
 {
-    public GameObject P1_Join;
-    public GameObject P2_Join;
-    public GameObject P3_Join;
-    public GameObject P4_Join;
+    #region GameObject Variables
+    public GameObject P1_Join, P2_Join, P3_Join, P4_Join;
+    public GameObject P1_Fox, P2_Fox, P3_Fox, P4_Fox;
+    public GameObject P1_Bunny, P2_Bunny, P3_Bunny, P4_Bunny;
+    public GameObject P1_Bird, P2_Bird, P3_Bird, P4_Bird;
+    public GameObject P1_Ferret, P2_Ferret, P3_Ferret, P4_Ferret;
+    #endregion
+
     public PlayerInputManager InputManager;
 
     public int numOfPlayers = 0;
