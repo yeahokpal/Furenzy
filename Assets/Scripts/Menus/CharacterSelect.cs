@@ -11,27 +11,24 @@ public class CharacterSelect : MonoBehaviour
     public GameObject P2_Join;
     public GameObject P3_Join;
     public GameObject P4_Join;
+    public PlayerInputManager InputManager;
 
-    int numOfPlayers;
+    public int numOfPlayers = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        InputManager = GameObject.Find("PlayerSelectManager").GetComponent<PlayerInputManager>();
+        Debug.Log("Initial Player Count: " + numOfPlayers);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayerJoined()
     {
-
-    }
-
-    public void RemovePlayerJoinObjects()
-    {
-        numOfPlayers = GameObject.Find("PlayerSelectManager").GetComponent<PlayerInputManager>().playerCount;
+        //updates player count when a control joins
+        numOfPlayers = InputManager.playerCount;
 
         Debug.Log(numOfPlayers);
-
+        
+        //removes the "press +" message if there are players joined
         switch (numOfPlayers)
         {
             case 1:
