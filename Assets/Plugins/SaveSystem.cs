@@ -23,7 +23,8 @@ public class SaveSystem : MonoBehaviour
 
     private void Start()
     {
-        CreateDB();
+        if (!File.Exists("Database.db"))
+            CreateDB();
     }
 
     private void Update()
@@ -47,78 +48,99 @@ public class SaveSystem : MonoBehaviour
             IDbCommand Command = Connection.CreateCommand();
 
             // Creating the Save Table if it doesn't already exist
-            Command.CommandText = "CREATE TABLE IF NOT EXISTS Save (level INTEGER, unlocked BOOLEAN, cleared BOOLEAN);";
+            Command.CommandText = "CREATE TABLE IF NOT EXISTS Save (id INTEGER, level INTEGER, unlocked INTEGER, cleared INTEGER, playerCount INTEGER);";
             Command.ExecuteReader();
 
             Command = Connection.CreateCommand();
 
 
             // Creating the Player Table if it doesn't already exist
-            Command.CommandText = "CREATE TABLE IF NOT EXISTS Player (character STRING, health INTEGER, mana INTEGER);";
+            Command.CommandText = "CREATE TABLE IF NOT EXISTS Player (id INTEGER, character TEXT, health INTEGER, mana INTEGER);";
 
             Command.ExecuteNonQuery();
+
+            Command = Connection.CreateCommand();
+
+            #region Initial Writes to Tables
+
+            // Initial Write for Save Table
+
+            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level') VALUES (1, '1');";
+            Command.ExecuteNonQuery();
+
+            Command = Connection.CreateCommand();
+            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level') VALUES (2, '2');";
+            Command.ExecuteNonQuery();
+
+            Command = Connection.CreateCommand();
+            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level') VALUES (3, '3');";
+            Command.ExecuteNonQuery();
+
+            // Initial Writes for Player Table
+
+            Command = Connection.CreateCommand();
+
+            Command.CommandText = "INSERT OR REPLACE INTO Player ('id', 'character', 'health', 'mana') VALUES (1, 'Fox', 3, 1);";
+            Command.ExecuteNonQuery();
+            Command = Connection.CreateCommand();
+
+            Command.CommandText = "INSERT OR REPLACE INTO Player ('id', 'character', 'health', 'mana') VALUES (2, 'Bunny', 3, 1);";
+            Command.ExecuteNonQuery();
+
+            Command = Connection.CreateCommand();
+            Command.CommandText = "INSERT OR REPLACE INTO Player ('id', 'character', 'health', 'mana') VALUES (3, 'Bird', 3, 1);";
+            Command.ExecuteNonQuery();
+
+            Command = Connection.CreateCommand();
+            Command.CommandText = "INSERT OR REPLACE INTO Player ('id', 'character', 'health', 'mana') VALUES (4, 'Ferret', 3, 1);";
+            Command.ExecuteNonQuery();
+
+            Command = Connection.CreateCommand();
+            #endregion
+
             Connection.Close();
         }
     }
 
-    public void Read(string table, string column, int id, string variableToChange) // DONE ----- TEST!!
+    public string Read(string table, string column, int row, string variableToChange) // DONE ----- TEST!!
     {
-        // Connecting to the database
-        IDbConnection Connection = new SqliteConnection(dbName);
-        IDbCommand Command = Connection.CreateCommand();
-
-        // Accessing the desired table
-        Command.CommandText = "SELECT * FROM " + table + " ORDER BY id";
-        IDataReader dataReader = Command.ExecuteReader();
-        Command.ExecuteReader();
-
-        // Reading and changing variableToChange
-        while (dataReader.Read())
+        using (var connection = new SqliteConnection(dbName))
         {
-            Connection.Open();
+            connection.Open();
 
-            //variableToChange = table --> id/row --> column
-            variableToChange = ($"{dataReader.GetInt32(id)} {dataReader[column]}");
+            //Setting up an object command to allow db caontrol
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM " + table + " ORDER BY id;";
+                command.ExecuteNonQuery();
+
+                command.CommandText = "SELECT DISTINCT " + column + " FROM " + table + " WHERE id = " + row + " ORDER BY id;";
+                variableToChange = command.ExecuteScalar().ToString();
+            }
+            connection.Close();
+
+            return variableToChange;
         }
-
-        Connection.Close();
     }
 
-    public void Write(string saveName)
+    public void Write(string table, string column, int row, string variableToUse)
     {
-        IDbConnection Connection = new SqliteConnection(dbName);
-        IDbCommand Command = Connection.CreateCommand();
+        using (var connection = new SqliteConnection(dbName))
+        {
+            connection.Open();
 
-        Command = Connection.CreateCommand();
-        //dbCommand.CommandText = add values
+            //Setting up an object command to allow db caontrol
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT DISTINCT " + column + " FROM " + table + " WHERE id = " + row + " ORDER BY id;"; // NOT GETTING AN EXISTING ROW
+                command.ExecuteNonQuery();
 
-        Connection.Close();
+                //IDataReader dataReader = command.ExecuteReader();
+                command.CommandText = "UPDATE " + table + " SET " + column + " = " + variableToUse + " WHERE id = " + row;
+                command.ExecuteNonQuery();
+            }
+            connection.Close();
+        }
     }
-
-    // Creates and Opens the Database
-    /*public IDbConnection CreateAndOpenDatabase(string saveName)
-    {
-        // Finding the database that is of slot saveName
-        string dataBase = "URI=file:" + Application.streamingAssetsPath + "/Saves/" + saveName + ".sqlite";
-        // Initializing dbConnection to the database of saveName
-        IDbConnection dbConnection = new SqliteConnection(dataBase);
-        // Opening the saveName database
-        dbConnection.Open();
-
-        // Initializes dbCommand to create a command whenever
-        IDbCommand dbCommand = dbConnection.CreateCommand();
-
-        // Creating the Save Table
-        dbCommand.CommandText = "CREATE TABLE IF NOT EXISTS Save (level INTEGER, unlocked BOOLEAN, cleared BOOLEAN);";
-        dbCommand.ExecuteReader();
-
-        dbCommand = dbConnection.CreateCommand();
-
-        // Creating the Player Table
-        dbCommand.CommandText = "CREATE TABLE IF NOT EXISTS Player (character STRING, health INTEGER, mana INTEGER );";
-        dbCommand.ExecuteReader();
-
-        return dbConnection;
-    }*/
     #endregion
 }
