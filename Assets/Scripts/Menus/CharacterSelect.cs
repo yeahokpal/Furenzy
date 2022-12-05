@@ -37,16 +37,26 @@ public class CharacterSelect : MonoBehaviour
         {
             case 1:
                 P1_Join.SetActive(false);
+                P1_Fox.SetActive(true);
                 break;
             case 2:
                 P2_Join.SetActive(false);
+                P2_Bunny.SetActive(true);
                 break;
             case 3:
                 P3_Join.SetActive(false);
+                P3_Bird.SetActive(true);
                 break;
             case 4:
+                InputManager.DisableJoining();
                 P4_Join.SetActive(false);
+                P4_Ferret.SetActive(true);
                 break;
         }
+    }
+
+    public void NextOrPrevSprite()
+    {
+        //if(InputManager.)
     }
 }
