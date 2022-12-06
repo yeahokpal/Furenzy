@@ -8,6 +8,12 @@ public class EnemyGFX : MonoBehaviour
     public Animator animator;
     public AIPath aiPath;
 
+    private void Awake()
+    {
+        animator = gameObject.GetComponent<Animator>();
+        aiPath = gameObject.GetComponent<AIPath>();
+    }
+
     // Update is called once per frame
     void Update()
     {
