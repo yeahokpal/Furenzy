@@ -9,10 +9,13 @@ public class CharacterSelect : MonoBehaviour
 {
     #region GameObject Variables
     public GameObject P1_Join, P2_Join, P3_Join, P4_Join;
+    public GameObject P1_Up, P2_Up, P3_Up, P4_Up;
+    public GameObject P1_Down, P2_Down, P3_Down, P4_Down;
     public GameObject P1_Fox, P2_Fox, P3_Fox, P4_Fox;
     public GameObject P1_Bunny, P2_Bunny, P3_Bunny, P4_Bunny;
     public GameObject P1_Bird, P2_Bird, P3_Bird, P4_Bird;
     public GameObject P1_Ferret, P2_Ferret, P3_Ferret, P4_Ferret;
+    public GameObject P2_Prefab, P3_Prefab, P4_Prefab;
     #endregion
 
     public PlayerInputManager InputManager;
@@ -32,24 +35,35 @@ public class CharacterSelect : MonoBehaviour
 
         Debug.Log(numOfPlayers);
         
-        //removes the "press +" message if there are players joined
+        //removes placeholder objects if there are players joined
         switch (numOfPlayers)
         {
             case 1:
                 P1_Join.SetActive(false);
+                P1_Up.SetActive(true);
+                P1_Down.SetActive(true);
                 P1_Fox.SetActive(true);
+                InputManager.playerPrefab = P2_Prefab;
                 break;
             case 2:
                 P2_Join.SetActive(false);
+                P2_Up.SetActive(true);
+                P2_Down.SetActive(true);
                 P2_Bunny.SetActive(true);
+                InputManager.playerPrefab = P3_Prefab;
                 break;
             case 3:
                 P3_Join.SetActive(false);
+                P3_Up.SetActive(true);
+                P3_Down.SetActive(true);
                 P3_Bird.SetActive(true);
+                InputManager.playerPrefab = P4_Prefab;
                 break;
             case 4:
                 InputManager.DisableJoining();
                 P4_Join.SetActive(false);
+                P4_Up.SetActive(true);
+                P4_Down.SetActive(true);
                 P4_Ferret.SetActive(true);
                 break;
         }
