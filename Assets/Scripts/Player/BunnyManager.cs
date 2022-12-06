@@ -14,7 +14,6 @@ public class BunnyManager : MonoBehaviour
     //Movement and Animations
     public int moveDir;
     public Rigidbody2D rb;
-    private InputActionMap playerInput;
     public Animator animator;
     bool canAttack = true;
     public static BunnyManager instance;
