@@ -96,6 +96,13 @@ public class BirdManager : MonoBehaviour
         currentHealthSprite.SetActive(true);
     }
 
+    private void Dead()
+    {
+        LevelManager.instance.GameOver();
+        gameObject.SetActive(false);
+    }
+
+
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
@@ -135,11 +142,6 @@ public class BirdManager : MonoBehaviour
         yield return 0;
     }
 
-    void Dead()
-    {
-        GameObject.Find("PlayerInputManager").GetComponent<CharacterManager>().Player3 = null;
-        gameObject.SetActive(false);
-    }
     private void OnPause()
     {
         var CanvasManager = GameObject.Find("UI Elements").GetComponent<CanvasManager>();

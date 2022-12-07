@@ -107,6 +107,12 @@ public class FoxManager : MonoBehaviour
         currentHealthSprite.SetActive(true);
     }
 
+    private void Dead()
+    {
+        LevelManager.instance.GameOver();
+        gameObject.SetActive(false);
+    }
+
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
@@ -153,8 +159,6 @@ public class FoxManager : MonoBehaviour
     {
         gameObject.GetComponent<ParticleSystem>().Play();
         Health = Health - damage;
-        if (Health == 0)
-            StartCoroutine(Dead());
     }
 
     public IEnumerator Knockback(float KnockbackDuration, float KnockbackPower, Transform obj)
@@ -169,13 +173,6 @@ public class FoxManager : MonoBehaviour
         }
 
         yield return 0;
-    }
-    IEnumerator Dead()
-    {
-        yield return new WaitForSeconds(.2f);
-        GameObject.Find("PlayerInputManager").GetComponent<CharacterManager>().Player1 = null;
-        OnDeath.Invoke();
-        gameObject.SetActive(false);
     }
 
     private void OnPause()
