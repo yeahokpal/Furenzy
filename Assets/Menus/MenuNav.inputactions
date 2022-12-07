@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Select",
+                    "name": "Yes",
                     "type": "Button",
                     "id": "e313a41e-960b-48b3-844d-7281faca47b1",
                     "expectedControlType": "Button",
@@ -33,6 +33,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Start",
+                    "type": "Button",
+                    "id": "f02a6b39-4a3a-49c4-a072-4144570f65bf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Point",
                     "type": "PassThrough",
                     "id": "6cd311ca-75dd-49bf-b7d3-65c37fba652c",
@@ -40,15 +49,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Join/Confirm",
-                    "type": "Button",
-                    "id": "f02a6b39-4a3a-49c4-a072-4144570f65bf",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -176,11 +176,11 @@
                 {
                     "name": "",
                     "id": "644e96c9-00d1-4b81-b3f2-f224d1d6096d",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Select",
+                    "action": "Yes",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -191,7 +191,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Select",
+                    "action": "Yes",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -202,14 +202,14 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Select",
+                    "action": "Yes",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "3ce6883f-4d24-4f45-ae90-4c6953897aed",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -246,7 +246,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Join/Confirm",
+                    "action": "Start",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -257,7 +257,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Join/Confirm",
+                    "action": "Start",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
