@@ -324,7 +324,7 @@ MonoBehaviour:
   m_ActionsAsset: {fileID: -944628639613478452, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_PointAction: {fileID: 3718512263163430116, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_MoveAction: {fileID: 6257524260831345091, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
-  m_SubmitAction: {fileID: 0}
+  m_SubmitAction: {fileID: -3066226189073238630, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_CancelAction: {fileID: 911426634759062351, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_LeftClickAction: {fileID: -3066226189073238630, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_MiddleClickAction: {fileID: 0}
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_TrackedDevicePositionAction: {fileID: 0}
   m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
-  m_PointerBehavior: 2
+  m_PointerBehavior: 0
   m_CursorLockBehavior: 0
 --- !u!1 &332088575
 GameObject:
@@ -1034,7 +1034,7 @@ MonoBehaviour:
   m_TrackedDevicePositionAction: {fileID: 0}
   m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
-  m_PointerBehavior: 2
+  m_PointerBehavior: 0
   m_CursorLockBehavior: 0
 --- !u!114 &664640287
 MonoBehaviour:
@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_TrackedDevicePositionAction: {fileID: 0}
   m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
-  m_PointerBehavior: 2
+  m_PointerBehavior: 0
   m_CursorLockBehavior: 0
 --- !u!114 &851167828
 MonoBehaviour:
@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_ActionsAsset: {fileID: -944628639613478452, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_PointAction: {fileID: 3718512263163430116, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_MoveAction: {fileID: 6257524260831345091, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
-  m_SubmitAction: {fileID: 0}
+  m_SubmitAction: {fileID: -3066226189073238630, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_CancelAction: {fileID: 911426634759062351, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_LeftClickAction: {fileID: -3066226189073238630, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_MiddleClickAction: {fileID: 0}
@@ -1588,7 +1588,7 @@ MonoBehaviour:
   m_TrackedDevicePositionAction: {fileID: 0}
   m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
-  m_PointerBehavior: 2
+  m_PointerBehavior: 0
   m_CursorLockBehavior: 0
 --- !u!114 &909836173
 MonoBehaviour:
@@ -4696,6 +4696,10 @@ MonoBehaviour:
   P2_Manager: {fileID: 115494473}
   P3_Manager: {fileID: 851167826}
   P4_Manager: {fileID: 664640285}
+  P1_Check: {fileID: 654988563}
+  P2_Check: {fileID: 1946535416}
+  P3_Check: {fileID: 361559688}
+  P4_Check: {fileID: 2033217411}
   InputManager: {fileID: 1486244235}
   numOfPlayers: 0
 --- !u!1 &1671045838
