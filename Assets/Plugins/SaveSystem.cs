@@ -143,5 +143,11 @@ public class SaveSystem : MonoBehaviour
             connection.Close();
         }
     }
+
+    public void DeleteDatabase()
+    {
+        File.Delete("Database.db");
+        CreateDB();
+    }
     #endregion
 }
