@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6647284845694830732}
   - component: {fileID: 8407160626904002698}
   - component: {fileID: 3518153840222246901}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SnakeSprite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 3316113007192396120}
   - component: {fileID: 6049144972668720466}
   - component: {fileID: -7239324122768566794}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SnakeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -5103,4 +5103,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

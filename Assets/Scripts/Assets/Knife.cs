@@ -20,7 +20,6 @@ public class Knife : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.left * speed, ForceMode2D.Impulse);
         // Starts coroutine to kill itself
         StartCoroutine(WaitToDestroy());
-        StartCoroutine(WaitToCollide());
     }
     private void OnCollisionEnter2D(Collision2D collision) // If it hits an enemy, deal damage
     {
@@ -37,10 +36,5 @@ public class Knife : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
-    }
-    IEnumerator WaitToCollide()
-    {
-        yield return new WaitForSeconds(.05f);
-        canCollide = true;
     }
 }

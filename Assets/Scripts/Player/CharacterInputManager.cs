@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class CharacterManager : MonoBehaviour
+public class CharacterInputManager : MonoBehaviour
 {
     GameObject playerInput;
 
-    bool canRestart = false;
 
     public GameObject PlaceholderCharacter;
     public GameObject Player1;
@@ -29,7 +28,6 @@ public class CharacterManager : MonoBehaviour
         }
         else if (gameObject.GetComponent<PlayerInputManager>().playerCount == 1)
         {
-            canRestart = true;
             playerInput = Player2;
             gameObject.GetComponent<PlayerInputManager>().playerPrefab = playerInput;
         }
@@ -47,9 +45,6 @@ public class CharacterManager : MonoBehaviour
         {
             some sort of error message
         }*/
-
-        if (gameObject.GetComponent<PlayerInputManager>().playerCount == 0 && canRestart)
-            SceneManager.LoadScene("MainMenu");
     }
 
     public void OnPlayerJoined()
