@@ -31,6 +31,7 @@ public class Lightning : MonoBehaviour
             Debug.Log("HitStunBegin");
             collision.gameObject.GetComponent<AIPath>().maxSpeed = 0;
             StartCoroutine(collision.gameObject.GetComponent<EnemyTarget>().HitStunWait(.25f));
+            GameObject.Find("Fox(Clone)").GetComponent<PlayerManager>().MP_Up();
         }
         Destroy(gameObject);
     }

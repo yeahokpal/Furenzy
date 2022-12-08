@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1460901717897544847}
   - component: {fileID: 1460901717897544851}
-  - component: {fileID: -2523393851382069854}
+  - component: {fileID: 9098318062732184469}
   - component: {fileID: 1460901717897544850}
   - component: {fileID: 1460901717897544852}
   - component: {fileID: 1460901717897544848}
@@ -91,7 +91,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2523393851382069854
+--- !u!114 &9098318062732184469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,12 +100,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1460901717897544858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e7eace68d1a0f045b8c0c6ca9730ef8, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f6142fb611f4924793e4a79f07784ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  FireBall: {fileID: 432442249930084551, guid: 95af1012853bd974d807e4b556db0ec0, type: 3}
-  Lightning: {fileID: 6659846886312819330, guid: b9597b5e82e865e4f812cd4cae1d1039, type: 3}
   rb: {fileID: 1460901717897544850}
   animator: {fileID: 1460901717897544852}
   moveDir: 0
@@ -116,7 +114,7 @@ MonoBehaviour:
   health2: {fileID: 0}
   health3: {fileID: 0}
   health4: {fileID: 0}
-  foxFill: {fileID: 0}
+  healthFill: {fileID: 0}
   OnDeath:
     m_PersistentCalls:
       m_Calls:
@@ -132,6 +130,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  KnockbackPower: 100
+  KnockbackDuration: 1
+  FireBall: {fileID: 432442249930084551, guid: 95af1012853bd974d807e4b556db0ec0, type: 3}
+  Lightning: {fileID: 6659846886312819330, guid: b9597b5e82e865e4f812cd4cae1d1039, type: 3}
+  Knife: {fileID: 0}
+  attackPoint: {fileID: 0}
+  attackRange: 0.5
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  StabDamage: 3
 --- !u!50 &1460901717897544850
 Rigidbody2D:
   serializedVersion: 4

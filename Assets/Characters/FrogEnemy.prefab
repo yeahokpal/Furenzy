@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7584505528846437624}
   - component: {fileID: 2222470834537099829}
   - component: {fileID: 7142743139071882815}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FrogEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4996,7 +4996,7 @@ GameObject:
   - component: {fileID: 7848956243250310113}
   - component: {fileID: 4935595869505180647}
   - component: {fileID: 2626041563223301779}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EnemyFrog
   m_TagString: Enemy
   m_Icon: {fileID: 0}

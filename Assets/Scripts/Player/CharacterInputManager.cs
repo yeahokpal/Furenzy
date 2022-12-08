@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class CharacterManager : MonoBehaviour
+public class CharacterInputManager : MonoBehaviour
 {
     GameObject playerInput;
 
