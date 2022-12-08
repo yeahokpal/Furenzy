@@ -112,6 +112,8 @@ MonoBehaviour:
   health2: {fileID: 0}
   health3: {fileID: 0}
   health4: {fileID: 0}
+  KnockbackPower: 100
+  KnockbackDuration: 1
 --- !u!50 &2577553177254470345
 Rigidbody2D:
   serializedVersion: 4
