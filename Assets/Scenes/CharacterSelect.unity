@@ -4701,7 +4701,6 @@ MonoBehaviour:
   P3_Check: {fileID: 361559688}
   P4_Check: {fileID: 2033217411}
   InputManager: {fileID: 1486244235}
-  numOfPlayers: 0
 --- !u!1 &1671045838
 GameObject:
   m_ObjectHideFlags: 0
@@ -5561,7 +5560,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1658064574}
         m_TargetAssemblyTypeName: CharacterSelect, Assembly-CSharp
-        m_MethodName: TestClick
+        m_MethodName: P1_Down_Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
