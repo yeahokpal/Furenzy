@@ -216,7 +216,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1961382383}
-    m_SelectOnDown: {fileID: 1961382383}
+    m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 115494476}
   - component: {fileID: 115494475}
   - component: {fileID: 115494477}
+  - component: {fileID: 115494478}
   m_Layer: 0
   m_Name: P2_Manager
   m_TagString: Untagged
@@ -335,6 +336,18 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!114 &115494478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115494473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2e0ba2368d73f4397e6c8a105eb539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &332088575
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,6 +1012,7 @@ GameObject:
   - component: {fileID: 664640288}
   - component: {fileID: 664640287}
   - component: {fileID: 664640286}
+  - component: {fileID: 664640289}
   m_Layer: 0
   m_Name: P4_Manager
   m_TagString: Untagged
@@ -1025,7 +1039,7 @@ MonoBehaviour:
   m_ActionsAsset: {fileID: -944628639613478452, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_PointAction: {fileID: 3718512263163430116, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_MoveAction: {fileID: 6257524260831345091, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
-  m_SubmitAction: {fileID: 0}
+  m_SubmitAction: {fileID: -3066226189073238630, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_CancelAction: {fileID: 911426634759062351, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_LeftClickAction: {fileID: -3066226189073238630, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_MiddleClickAction: {fileID: 0}
@@ -1067,6 +1081,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &664640289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664640285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2e0ba2368d73f4397e6c8a105eb539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &673956994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,6 +1365,7 @@ GameObject:
   - component: {fileID: 851167829}
   - component: {fileID: 851167828}
   - component: {fileID: 851167827}
+  - component: {fileID: 851167830}
   m_Layer: 0
   m_Name: P3_Manager
   m_TagString: Untagged
@@ -1365,7 +1392,7 @@ MonoBehaviour:
   m_ActionsAsset: {fileID: -944628639613478452, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_PointAction: {fileID: 3718512263163430116, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_MoveAction: {fileID: 6257524260831345091, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
-  m_SubmitAction: {fileID: 0}
+  m_SubmitAction: {fileID: -3066226189073238630, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_CancelAction: {fileID: 911426634759062351, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_LeftClickAction: {fileID: -3066226189073238630, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_MiddleClickAction: {fileID: 0}
@@ -1407,6 +1434,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &851167830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851167826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2e0ba2368d73f4397e6c8a105eb539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &888731551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,6 +1592,7 @@ GameObject:
   - component: {fileID: 909836174}
   - component: {fileID: 909836173}
   - component: {fileID: 909836172}
+  - component: {fileID: 909836175}
   m_Layer: 0
   m_Name: P1_Manager
   m_TagString: Untagged
@@ -1621,6 +1661,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &909836175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909836171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2e0ba2368d73f4397e6c8a105eb539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &953409793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,7 +1728,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1561837032}
-    m_SelectOnDown: {fileID: 1561837032}
+    m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -1706,7 +1758,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1658064574}
         m_TargetAssemblyTypeName: CharacterSelect, Assembly-CSharp
-        m_MethodName: TestClick
+        m_MethodName: P2_Down_Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2798,7 +2850,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1653375282}
-    m_SelectOnDown: {fileID: 1653375282}
+    m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -3766,7 +3818,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 953409795}
+    m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 953409795}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -3797,7 +3849,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1658064574}
         m_TargetAssemblyTypeName: CharacterSelect, Assembly-CSharp
-        m_MethodName: TestClick
+        m_MethodName: P2_Up_Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4463,7 +4515,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 1237310906}
+    m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 1237310906}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -4793,7 +4845,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 1934498694}
+    m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 1934498694}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -4824,7 +4876,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1658064574}
         m_TargetAssemblyTypeName: CharacterSelect, Assembly-CSharp
-        m_MethodName: TestClick
+        m_MethodName: P1_Up_Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5530,7 +5582,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1671045842}
-    m_SelectOnDown: {fileID: 1671045842}
+    m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -5738,7 +5790,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 34704131}
+    m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 34704131}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
