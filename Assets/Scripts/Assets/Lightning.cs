@@ -1,3 +1,10 @@
+/*
+ * Programmer: Jack
+ * Purpose: Setting up values for a newly made Lightning
+ * Input: Player input
+ * Output: Lightning Attack
+ */
+
 using System.Collections;
 using System;
 using System.Collections.Generic;

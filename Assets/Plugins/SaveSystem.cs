@@ -1,3 +1,10 @@
+/*
+ * Programmer: Jack
+ * Purpose: Create and Use a Database for saving and loading data
+ * Input: Player saves variables to database
+ * Output: Loading saved variables
+ */
+
 using Mono.Data.Sqlite;
 using System.Data;
 using System.Data.Common;
@@ -38,7 +45,7 @@ public class SaveSystem : MonoBehaviour
 
     #region Methods
 
-    public void CreateDB() // DONE!!
+    public void CreateDB()
     {
         // Create DB connection
         using (var Connection = new SqliteConnection(dbName))
@@ -66,15 +73,15 @@ public class SaveSystem : MonoBehaviour
 
             // Initial Write for Save Table
 
-            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level') VALUES (1, '1');";
+            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (1, '1', 0, 0);";
             Command.ExecuteNonQuery();
 
             Command = Connection.CreateCommand();
-            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level') VALUES (2, '2');";
+            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (2, '2', 0, 0);";
             Command.ExecuteNonQuery();
 
             Command = Connection.CreateCommand();
-            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level') VALUES (3, '3');";
+            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (3, '3', 0, 0);";
             Command.ExecuteNonQuery();
 
             // Initial Writes for Player Table
@@ -103,7 +110,7 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    public string Read(string table, string column, int row, string variableToChange) // DONE ----- TEST!!
+    public string Read(string table, string column, int row, string variableToChange)
     {
         using (var connection = new SqliteConnection(dbName))
         {
@@ -144,7 +151,7 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    public void DeleteDatabase()
+    public void DeleteAndRecreateDatabase()
     {
         File.Delete("Database.db");
         CreateDB();

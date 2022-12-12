@@ -1,3 +1,8 @@
+/*
+ * Programmer: Jack
+ * Purpose: Being a univeral script for interactable objects
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,33 +20,33 @@ public class Interactable : MonoBehaviour
             switch (collision.name)
             {
                 case "Fox(Clone)":
-                    if (collision.GetComponent<FoxManager>().Health < 3)
+                    if (collision.GetComponent<PlayerManager>().Health < 3)
                     {
-                        collision.GetComponent<FoxManager>().Health++;
+                        collision.GetComponent<PlayerManager>().Health++;
                         Destroy(gameObject);
                     }
                     break;
 
                 case "Bunny(Clone)":
-                    if (collision.GetComponent<BunnyManager>().Health < 3)
+                    if (collision.GetComponent<PlayerManager>().Health < 3)
                     {
-                        collision.GetComponent<BunnyManager>().Health++;
+                        collision.GetComponent<PlayerManager>().Health++;
                         Destroy(gameObject);
                     }
                     break;
 
                 case "Bird(Clone)":
-                    if (collision.GetComponent<BirdManager>().Health < 3)
+                    if (collision.GetComponent<PlayerManager>().Health < 3)
                     {
-                        collision.GetComponent<BirdManager>().Health++;
+                        collision.GetComponent<PlayerManager>().Health++;
                         Destroy(gameObject);
                     }
                     break;
 
                 case "Ferret(Clone)":
-                    if (collision.GetComponent<FerretManager>().Health < 3)
+                    if (collision.GetComponent<PlayerManager>().Health < 3)
                     {
-                        collision.GetComponent<FerretManager>().Health++;
+                        collision.GetComponent<PlayerManager>().Health++;
                         Destroy(gameObject);
                     }
                     break;

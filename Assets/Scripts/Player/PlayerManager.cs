@@ -1,3 +1,10 @@
+/*
+ * Programmer: Jack
+ * Purpose: Manages user inputs and calls actions from them
+ * Input: Player inputs
+ * Output: Player actions
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

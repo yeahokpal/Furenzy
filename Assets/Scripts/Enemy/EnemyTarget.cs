@@ -15,7 +15,7 @@ public class EnemyTarget : MonoBehaviour
 
     public float KnockbackDuration = 1;
 
-    private AIPath aipath;
+    public AIPath aipath;
 
     private void Awake()
     {
@@ -73,6 +73,7 @@ public class EnemyTarget : MonoBehaviour
         yield return new WaitForSeconds(StunTime);
         if (aipath != null) aipath.maxSpeed = 3.5f;
         Debug.Log("HitStunEnd");
+        
     }
 
     IEnumerator WaitToDestroy()

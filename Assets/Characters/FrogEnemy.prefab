@@ -184,6 +184,7 @@ MonoBehaviour:
   KnockbackPower: 100
   rb: {fileID: 7584505528846437624}
   KnockbackDuration: 1
+  aipath: {fileID: 4935595870939331776}
 --- !u!50 &7584505528846437624
 Rigidbody2D:
   serializedVersion: 4

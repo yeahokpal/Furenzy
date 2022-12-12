@@ -1,3 +1,10 @@
+/*
+ * Programmer: Jack
+ * Purpose: Setting up values for a newly made Arrow
+ * Input: Player input
+ * Output: Arrow Attack
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

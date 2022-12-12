@@ -304,6 +304,7 @@ MonoBehaviour:
   KnockbackPower: 100
   rb: {fileID: -7239324122768566794}
   KnockbackDuration: 1
+  aipath: {fileID: 4935595870939331776, guid: 49120a80e17dbfe469b1b38dbc2ed699, type: 3}
 --- !u!198 &3316113007192396120
 ParticleSystem:
   m_ObjectHideFlags: 0
