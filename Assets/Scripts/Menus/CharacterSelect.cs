@@ -29,7 +29,7 @@ public class CharacterSelect : MonoBehaviour
     public PlayerInputManager InputManager;
 
     private int numOfPlayers = 0;
-    private int P1_Active_Sprite = 1, P2_Active_Sprite = 1, P3_Active_Sprite = 1, P4_Active_Sprite = 1;
+    private int P1_Active_Sprite = 1, P2_Active_Sprite = 2, P3_Active_Sprite = 3, P4_Active_Sprite = 4;
 
     #endregion
 
@@ -96,9 +96,12 @@ public class CharacterSelect : MonoBehaviour
         }
     }
 
+    #region P1 Button Click Methods
     public void P1_Down_Click()//player 1 presses down arrow
     {
         ++P1_Active_Sprite;
+        if (P1_Active_Sprite == 5)
+            P1_Active_Sprite = 1;
         //sets correct player sprite active according to P1_Active_Sprite
         switch (P1_Active_Sprite)
         {
@@ -106,7 +109,7 @@ public class CharacterSelect : MonoBehaviour
                 P1_Fox.SetActive(true);
                 P1_Bunny.SetActive(false);
                 P1_Bird.SetActive(false);
-                P1_Ferret.SetActive(false);              
+                P1_Ferret.SetActive(false);
                 break;
             case 2:
                 P1_Fox.SetActive(false);
@@ -125,7 +128,6 @@ public class CharacterSelect : MonoBehaviour
                 P1_Bunny.SetActive(false);
                 P1_Bird.SetActive(false);
                 P1_Ferret.SetActive(true);
-                P1_Active_Sprite = 0;//makes variable 0 so that next time button is pressed it equals 1
                 break;
             default:
                 Debug.Log("invalid player number " + P1_Active_Sprite);
@@ -134,11 +136,288 @@ public class CharacterSelect : MonoBehaviour
         Debug.Log("P1 Active Sprite: " + P1_Active_Sprite);
     }
 
-    public void TestClick()
+    public void P1_Up_Click()//player 1 presses up arrow
     {
-        Debug.Log("Click");
-        P1_Check.SetActive(true);
+        --P1_Active_Sprite;
+        if (P1_Active_Sprite == 0)
+            P1_Active_Sprite = 4;
+        //sets correct player sprite active according to P1_Active_Sprite
+        switch (P1_Active_Sprite)
+        {
+            case 1:
+                P1_Fox.SetActive(true);
+                P1_Bunny.SetActive(false);
+                P1_Bird.SetActive(false);
+                P1_Ferret.SetActive(false);
+                break;
+            case 2:
+                P1_Fox.SetActive(false);
+                P1_Bunny.SetActive(true);
+                P1_Bird.SetActive(false);
+                P1_Ferret.SetActive(false);
+                break;
+            case 3:
+                P1_Fox.SetActive(false);
+                P1_Bunny.SetActive(false);
+                P1_Bird.SetActive(true);
+                P1_Ferret.SetActive(false);
+                break;
+            case 4:
+                P1_Fox.SetActive(false);
+                P1_Bunny.SetActive(false);
+                P1_Bird.SetActive(false);
+                P1_Ferret.SetActive(true);
+                break;
+            default:
+                Debug.Log("invalid player number " + P1_Active_Sprite);
+                break;
+        }
+        Debug.Log("P1 Active Sprite: " + P1_Active_Sprite);
     }
+
+    #endregion
+
+    #region P2 Button Click Methods
+    public void P2_Down_Click()//player 2 presses down arrow
+    {
+        ++P2_Active_Sprite;
+        if (P2_Active_Sprite == 5)
+            P2_Active_Sprite = 1;
+        //sets correct player sprite active according to P2_Active_Sprite
+        switch (P2_Active_Sprite)
+        {
+            case 1:
+                P2_Fox.SetActive(true);
+                P2_Bunny.SetActive(false);
+                P2_Bird.SetActive(false);
+                P2_Ferret.SetActive(false);
+                break;
+            case 2:
+                P2_Fox.SetActive(false);
+                P2_Bunny.SetActive(true);
+                P2_Bird.SetActive(false);
+                P2_Ferret.SetActive(false);
+                break;
+            case 3:
+                P2_Fox.SetActive(false);
+                P2_Bunny.SetActive(false);
+                P2_Bird.SetActive(true);
+                P2_Ferret.SetActive(false);
+                break;
+            case 4:
+                P2_Fox.SetActive(false);
+                P2_Bunny.SetActive(false);
+                P2_Bird.SetActive(false);
+                P2_Ferret.SetActive(true);
+                break;
+            default:
+                Debug.Log("invalid player number " + P2_Active_Sprite);
+                break;
+        }
+        Debug.Log("P2 Active Sprite: " + P2_Active_Sprite);
+    }
+
+    public void P2_Up_Click()//player 2 presses up arrow
+    {
+        --P2_Active_Sprite;
+        if (P2_Active_Sprite == 0)
+            P2_Active_Sprite = 4;
+        //sets correct player sprite active according to P2_Active_Sprite
+        switch (P2_Active_Sprite)
+        {
+            case 1:
+                P2_Fox.SetActive(true);
+                P2_Bunny.SetActive(false);
+                P2_Bird.SetActive(false);
+                P2_Ferret.SetActive(false);
+                break;
+            case 2:
+                P2_Fox.SetActive(false);
+                P2_Bunny.SetActive(true);
+                P2_Bird.SetActive(false);
+                P2_Ferret.SetActive(false);
+                break;
+            case 3:
+                P2_Fox.SetActive(false);
+                P2_Bunny.SetActive(false);
+                P2_Bird.SetActive(true);
+                P2_Ferret.SetActive(false);
+                break;
+            case 4:
+                P2_Fox.SetActive(false);
+                P2_Bunny.SetActive(false);
+                P2_Bird.SetActive(false);
+                P2_Ferret.SetActive(true);
+                break;
+            default:
+                Debug.Log("invalid player number " + P2_Active_Sprite);
+                break;
+        }
+        Debug.Log("P2 Active Sprite: " + P2_Active_Sprite);
+    }
+
+    #endregion
+
+    #region P3 Button Click Methods
+    public void P3_Down_Click()//player 3 presses down arrow
+    {
+        ++P3_Active_Sprite;
+        if (P3_Active_Sprite == 5)
+            P3_Active_Sprite = 1;
+        //sets correct player sprite active according to P3_Active_Sprite
+        switch (P3_Active_Sprite)
+        {
+            case 1:
+                P3_Fox.SetActive(true);
+                P3_Bunny.SetActive(false);
+                P3_Bird.SetActive(false);
+                P3_Ferret.SetActive(false);
+                break;
+            case 2:
+                P3_Fox.SetActive(false);
+                P3_Bunny.SetActive(true);
+                P3_Bird.SetActive(false);
+                P3_Ferret.SetActive(false);
+                break;
+            case 3:
+                P3_Fox.SetActive(false);
+                P3_Bunny.SetActive(false);
+                P3_Bird.SetActive(true);
+                P3_Ferret.SetActive(false);
+                break;
+            case 4:
+                P3_Fox.SetActive(false);
+                P3_Bunny.SetActive(false);
+                P3_Bird.SetActive(false);
+                P3_Ferret.SetActive(true);
+                break;
+            default:
+                Debug.Log("invalid player number " + P3_Active_Sprite);
+                break;
+        }
+        Debug.Log("P3 Active Sprite: " + P3_Active_Sprite);
+    }
+
+    public void P3_Up_Click()//player 3 presses up arrow
+    {
+        --P3_Active_Sprite;
+        if (P3_Active_Sprite == 0)
+            P3_Active_Sprite = 4;
+        //sets correct player sprite active according to P3_Active_Sprite
+        switch (P3_Active_Sprite)
+        {
+            case 1:
+                P3_Fox.SetActive(true);
+                P3_Bunny.SetActive(false);
+                P3_Bird.SetActive(false);
+                P3_Ferret.SetActive(false);
+                break;
+            case 2:
+                P3_Fox.SetActive(false);
+                P3_Bunny.SetActive(true);
+                P3_Bird.SetActive(false);
+                P3_Ferret.SetActive(false);
+                break;
+            case 3:
+                P3_Fox.SetActive(false);
+                P3_Bunny.SetActive(false);
+                P3_Bird.SetActive(true);
+                P3_Ferret.SetActive(false);
+                break;
+            case 4:
+                P3_Fox.SetActive(false);
+                P3_Bunny.SetActive(false);
+                P3_Bird.SetActive(false);
+                P3_Ferret.SetActive(true);
+                break;
+            default:
+                Debug.Log("invalid player number " + P3_Active_Sprite);
+                break;
+        }
+        Debug.Log("P3 Active Sprite: " + P3_Active_Sprite);
+    }
+    #endregion
+
+    #region P4 Button Click Methods
+    public void P4_Down_Click()//player 4 presses down arrow
+    {
+        ++P4_Active_Sprite;
+        if (P4_Active_Sprite == 5)
+            P4_Active_Sprite = 1;
+        //sets correct player sprite active according to P4_Active_Sprite
+        switch (P4_Active_Sprite)
+        {
+            case 1:
+                P4_Fox.SetActive(true);
+                P4_Bunny.SetActive(false);
+                P4_Bird.SetActive(false);
+                P4_Ferret.SetActive(false);
+                break;
+            case 2:
+                P4_Fox.SetActive(false);
+                P4_Bunny.SetActive(true);
+                P4_Bird.SetActive(false);
+                P4_Ferret.SetActive(false);
+                break;
+            case 3:
+                P4_Fox.SetActive(false);
+                P4_Bunny.SetActive(false);
+                P4_Bird.SetActive(true);
+                P4_Ferret.SetActive(false);
+                break;
+            case 4:
+                P4_Fox.SetActive(false);
+                P4_Bunny.SetActive(false);
+                P4_Bird.SetActive(false);
+                P4_Ferret.SetActive(true);
+                break;
+            default:
+                Debug.Log("invalid player number " + P4_Active_Sprite);
+                break;
+        }
+        Debug.Log("P4 Active Sprite: " + P4_Active_Sprite);
+    }
+
+    public void P4_Up_Click()//player 4 presses up arrow
+    {
+        --P4_Active_Sprite;
+        if (P4_Active_Sprite == 0)
+            P4_Active_Sprite = 4;
+        //sets correct player sprite active according to P4_Active_Sprite
+        switch (P4_Active_Sprite)
+        {
+            case 1:
+                P4_Fox.SetActive(true);
+                P4_Bunny.SetActive(false);
+                P4_Bird.SetActive(false);
+                P4_Ferret.SetActive(false);
+                break;
+            case 2:
+                P4_Fox.SetActive(false);
+                P4_Bunny.SetActive(true);
+                P4_Bird.SetActive(false);
+                P4_Ferret.SetActive(false);
+                break;
+            case 3:
+                P4_Fox.SetActive(false);
+                P4_Bunny.SetActive(false);
+                P4_Bird.SetActive(true);
+                P4_Ferret.SetActive(false);
+                break;
+            case 4:
+                P4_Fox.SetActive(false);
+                P4_Bunny.SetActive(false);
+                P4_Bird.SetActive(false);
+                P4_Ferret.SetActive(true);
+                break;
+            default:
+                Debug.Log("invalid player number " + P4_Active_Sprite);
+                break;
+        }
+        Debug.Log("P4 Active Sprite: " + P4_Active_Sprite);
+    }
+
+    #endregion
 
     #endregion
 }

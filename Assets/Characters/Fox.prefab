@@ -134,6 +134,7 @@ MonoBehaviour:
   KnockbackDuration: 1
   FireBall: {fileID: 432442249930084551, guid: 95af1012853bd974d807e4b556db0ec0, type: 3}
   Lightning: {fileID: 6659846886312819330, guid: b9597b5e82e865e4f812cd4cae1d1039, type: 3}
+  Arrow: {fileID: 0}
   Knife: {fileID: 0}
   attackPoint: {fileID: 0}
   attackRange: 0.5
