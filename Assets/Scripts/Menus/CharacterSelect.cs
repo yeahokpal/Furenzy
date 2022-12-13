@@ -25,10 +25,12 @@ public class CharacterSelect : MonoBehaviour
     public GameObject P1_Prefab, P2_Prefab, P3_Prefab, P4_Prefab;
     public GameObject P1_Manager, P2_Manager, P3_Manager, P4_Manager;
     public GameObject P1_Check, P2_Check, P3_Check, P4_Check;
+    public GameObject P1_OK, P2_OK, P3_OK, P4_OK;
 
     public PlayerInputManager InputManager;
 
-    private int numOfPlayers = 0;
+    private int numOfPlayers = 0, readyPlayers = 0;
+    private int P1_Character, P2_Character, P3_Character, P4_Character;
     private int P1_Active_Sprite = 1, P2_Active_Sprite = 2, P3_Active_Sprite = 3, P4_Active_Sprite = 4;
 
     #endregion
@@ -60,6 +62,7 @@ public class CharacterSelect : MonoBehaviour
             case 1:
                 //makes sure each player manager knows what canvas it is in control of.  same for other super long lines in this statement
                 GameObject.Find("P1_Menu_Controls(Clone)").GetComponent<PlayerInput>().uiInputModule = P1_Manager.GetComponent<InputSystemUIInputModule>();
+                P1_OK.SetActive(true);
                 P1_Join.SetActive(false);
                 P1_Up.SetActive(true);
                 P1_Down.SetActive(true);
@@ -69,6 +72,7 @@ public class CharacterSelect : MonoBehaviour
             //2 players
             case 2:
                 GameObject.Find("P2_Menu_Controls(Clone)").GetComponent<PlayerInput>().uiInputModule = P2_Manager.GetComponent<InputSystemUIInputModule>();
+                P2_OK.SetActive(true);
                 P2_Join.SetActive(false);
                 P2_Up.SetActive(true);
                 P2_Down.SetActive(true);
@@ -78,6 +82,7 @@ public class CharacterSelect : MonoBehaviour
             //3 players
             case 3:
                 GameObject.Find("P3_Menu_Controls(Clone)").GetComponent<PlayerInput>().uiInputModule = P3_Manager.GetComponent<InputSystemUIInputModule>();
+                P3_OK.SetActive(true);
                 P3_Join.SetActive(false);
                 P3_Up.SetActive(true);
                 P3_Down.SetActive(true);
@@ -88,11 +93,24 @@ public class CharacterSelect : MonoBehaviour
             case 4:
                 GameObject.Find("P4_Menu_Controls(Clone)").GetComponent<PlayerInput>().uiInputModule = P4_Manager.GetComponent<InputSystemUIInputModule>();
                 InputManager.DisableJoining();
+                P4_OK.SetActive(true);
                 P4_Join.SetActive(false);
                 P4_Up.SetActive(true);
                 P4_Down.SetActive(true);
                 P4_Ferret.SetActive(true);
                 break;
+        }
+    }
+
+    public void VerifyPlayers()
+    {
+        if(readyPlayers == InputManager.playerCount)
+        {
+            if ((P1_Character == P2_Character) || (P1_Character == P3_Character) || (P1_Character == P4_Character))
+            {
+                //just commenting here so i know what i was doing
+                //make sure to verify the rest of the players, "P2_Character == P1_Character" etc.
+            }
         }
     }
 
@@ -175,6 +193,20 @@ public class CharacterSelect : MonoBehaviour
         Debug.Log("P1 Active Sprite: " + P1_Active_Sprite);
     }
 
+    public void P1_OK_Click()
+    {
+        ++readyPlayers;
+        P1_Check.SetActive(true);
+        if (P1_Fox.activeSelf == true)
+            P1_Character = 1;
+        if (P1_Bunny.activeSelf == true)
+            P1_Character = 2;
+        if (P1_Bird.activeSelf == true)
+            P1_Character = 3;
+        if (P1_Ferret.activeSelf == true)
+            P1_Character = 4;
+    }
+
     #endregion
 
     #region P2 Button Click Methods
@@ -254,6 +286,20 @@ public class CharacterSelect : MonoBehaviour
                 break;
         }
         Debug.Log("P2 Active Sprite: " + P2_Active_Sprite);
+    }
+
+    public void P2_OK_Click()
+    {
+        ++readyPlayers;
+        P2_Check.SetActive(true);
+        if (P2_Fox.activeSelf == true)
+            P2_Character = 1;
+        if (P2_Bunny.activeSelf == true)
+            P2_Character = 2;
+        if (P2_Bird.activeSelf == true)
+            P2_Character = 3;
+        if (P2_Ferret.activeSelf == true)
+            P2_Character = 4;
     }
 
     #endregion
