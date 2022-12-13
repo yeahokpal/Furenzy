@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
     {
         if (LevelManager.instance == null) instance = this;
         else Destroy(gameObject);
-        save = GameObject.Find("SaveSystem").GetComponent<SaveSystem>();
+        save = GameObject.Find("SaveManager").GetComponent<SaveSystem>();
     }
 
     public void GameOver()
