@@ -11,7 +11,10 @@ using TMPro;
 public class Interactable : MonoBehaviour
 {
     public bool heal;
-    public TextMeshProUGUI UI = null;
+    public bool die;
+    public TextMeshProUGUI UIToIncrease = null;
+    public TextMeshProUGUI UIToRead = null;
+    public Sprite newSprite;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -53,11 +56,27 @@ public class Interactable : MonoBehaviour
             }
         }
 
-        if (UI != null)
+        if (die)
+            Destroy(gameObject);
+
+        if (UIToIncrease != null)
         {
-            int num = int.Parse(UI.text);
+            int num = int.Parse(UIToIncrease.text);
             ++num;
-            UI.text = num.ToString();
+            UIToIncrease.text = num.ToString();
+        }
+
+        if (newSprite != null)
+        {
+            if (UIToRead != null)
+            {
+                if (int.Parse(UIToRead.text) > 0)
+                {
+                    UIToRead.text = (int.Parse(UIToRead.text) - 1).ToString();
+                    gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
+                }
+            }
+            else { gameObject.GetComponent<SpriteRenderer>().sprite = newSprite; }
         }
     }
 }

@@ -22,6 +22,7 @@ public class PlayerManager : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator;
+    public AudioSource audioSource;
     public int moveDir;
     public int Health = 3;
     public float mana = 1f;
@@ -33,6 +34,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject health4;
     public GameObject healthFill;
     public UnityEvent OnDeath;
+    public AudioClip Hit;
+    public AudioClip Hurt;
+    public AudioClip Shoot;
 
     Vector2 moveInput;
 
@@ -51,6 +55,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
+        audioSource = gameObject.GetComponent<AudioSource>();
         instance = this;
 
         switch (gameObject.name)
@@ -145,8 +150,8 @@ public class PlayerManager : MonoBehaviour
         }
         currentHealthSprite.SetActive(true);
     }
-    #region Attacking
 
+    #region Attacking
     // Fox
     public void OnFireBall()
     {
@@ -163,6 +168,8 @@ public class PlayerManager : MonoBehaviour
                 Instantiate(FireBall, transform.position + new Vector3(-.75f, 0, 0), Quaternion.Euler(0f, 0f, -90f));
             mana -= .5f;
             canAttack = false;
+            audioSource.clip = Shoot;
+            audioSource.Play();
             StartCoroutine(Cooldown());
         }
     }
@@ -181,9 +188,10 @@ public class PlayerManager : MonoBehaviour
                 Instantiate(Lightning, transform.position + new Vector3(-.75f, 0, 0), Quaternion.Euler(0f, 0f, -90f));
             canAttack = false;
             StartCoroutine(Cooldown());
+            audioSource.clip = Shoot;
+            audioSource.Play();
         }
     }
-
     // Bunny
     public void OnStab()
     {
@@ -209,6 +217,8 @@ public class PlayerManager : MonoBehaviour
                     attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(-0.5f, 0.0f, 0f);
                     break;
             }
+            audioSource.clip = Shoot; // Add melee sound
+            audioSource.Play();
 
             StartCoroutine(Cooldown());
 
@@ -221,9 +231,7 @@ public class PlayerManager : MonoBehaviour
                 if (enemy is not CircleCollider2D)
                 {
                     enemy.GetComponent<EnemyTarget>().TakeDamage(StabDamage);
-                    Debug.Log("HitStunBegin");
-                    enemy.gameObject.GetComponent<AIPath>().maxSpeed = 0;
-                    StartCoroutine(enemy.GetComponent<EnemyTarget>().HitStunWait(1f));
+                    enemy.GetComponent<EnemyTarget>().HitStunWait(.5f);
                     MP_Up();
                 }
             }
@@ -245,6 +253,9 @@ public class PlayerManager : MonoBehaviour
             StartCoroutine(Cooldown());
 
             mana -= .5f;
+
+            audioSource.clip = Shoot;
+            audioSource.Play();
         }
     }
     private void OnDrawGizmosSelected()
@@ -254,7 +265,6 @@ public class PlayerManager : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-
     // Bird
     public void OnShootOne()
     {
@@ -269,9 +279,10 @@ public class PlayerManager : MonoBehaviour
             else if (moveDir == 4)
                 Instantiate(Arrow, transform.position + new Vector3(-.75f, 0, 0), Quaternion.Euler(0f, 0f, -90f));
             StartCoroutine(Cooldown());
+            audioSource.clip = Shoot;
+            audioSource.Play();
         }
     }
-
     // All
     public void MP_Up()
     {
@@ -289,7 +300,6 @@ public class PlayerManager : MonoBehaviour
     {
         moveInput = value.Get<Vector2>();
     }
-
     private void OnPause()
     {
         var CanvasManager = GameObject.Find("UI Elements").GetComponent<CanvasManager>();
@@ -299,8 +309,6 @@ public class PlayerManager : MonoBehaviour
         else
             CanvasManager.Pause();
     }
-
-
     #endregion
     #region Health
     private void Dead()
@@ -308,13 +316,13 @@ public class PlayerManager : MonoBehaviour
         LevelManager.instance.GameOver();
         gameObject.SetActive(false);
     }
-
     public void TakeDamage(int damage)
     {
         gameObject.GetComponent<ParticleSystem>().Play();
         Health = Health - damage;
+        audioSource.clip = Hurt;
+        audioSource.Play();
     }
-
     public IEnumerator Knockback(float KnockbackDuration, float KnockbackPower, Transform obj)
     {
         float timer = 0;
@@ -327,7 +335,5 @@ public class PlayerManager : MonoBehaviour
         }
         yield return 0;
     }
-
-
     #endregion
 }

@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class EnemyTarget : MonoBehaviour
 {
-    bool i = false;
-    GameObject tracking;
     public int health;
-    public GameObject attacker;
     public float KnockbackPower = 100;
-
-    public static EnemyTarget instance;
-    public Rigidbody2D rb;
-
     public float KnockbackDuration = 1;
 
+    public GameObject attacker;
+    public Rigidbody2D rb;
+    public static EnemyTarget instance;
+    public AudioSource audioSource;
+    public AudioClip Hit;
     public AIPath aipath;
+
+    private bool i = false;
+
+    private GameObject tracking;
 
     private void Awake()
     {
@@ -61,6 +63,7 @@ public class EnemyTarget : MonoBehaviour
     {    
         health = health - damage;
         gameObject.GetComponent<ParticleSystem>().Play();
+        audioSource.Play();
         if (health <= 0)
         {
             StartCoroutine(WaitToDestroy());
@@ -69,11 +72,11 @@ public class EnemyTarget : MonoBehaviour
 
     public IEnumerator HitStunWait(float StunTime)
     {
+        aipath.maxSpeed = 0f;
         Debug.Log("HitStunWait");
         yield return new WaitForSeconds(StunTime);
-        if (aipath != null) aipath.maxSpeed = 3.5f;
+        aipath.maxSpeed = 3.5f;
         Debug.Log("HitStunEnd");
-        
     }
 
     IEnumerator WaitToDestroy()
