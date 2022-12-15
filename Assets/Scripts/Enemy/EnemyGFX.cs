@@ -40,5 +40,17 @@ public class EnemyGFX : MonoBehaviour
                 animator.Play("SnakeMove");
             }
         }
+
+        if (gameObject.name.Contains("Bat"))
+        {
+            if (aiPath.reachedDestination == true)
+            {
+                animator.Play("BatIdle");
+            }
+            else
+            {
+                animator.Play("BatMove");
+            }
+        }
     }
 }

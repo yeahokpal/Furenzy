@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6659846886312819343}
   - component: {fileID: 6659846886312819329}
   - component: {fileID: 7233205487629590367}
-  - component: {fileID: 5178326279990380540}
+  - component: {fileID: -7694343160223189344}
   m_Layer: 0
   m_Name: Lightning
   m_TagString: Untagged
@@ -4915,7 +4915,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5178326279990380540
+--- !u!114 &-7694343160223189344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4924,8 +4924,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6659846886312819330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0fa8d64a05422549bef3308ec81ec0c, type: 3}
+  m_Script: {fileID: 11500000, guid: d81cba47bf027c54ab282d22847f5244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
   speed: 20
+  trigger: 0
+  collide: 1
