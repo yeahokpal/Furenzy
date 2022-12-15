@@ -14,6 +14,7 @@ public class BirdManager : MonoBehaviour
     public int Health = 3;
     public float mana = 1f;
     bool canAttack = true;
+    bool canDash = true;
     public GameObject currentHealthSprite;
     public GameObject health1;
     public GameObject health2;
@@ -106,6 +107,14 @@ public class BirdManager : MonoBehaviour
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+    }
+
+    public void OnDash()
+    {
+        if (canDash)
+        {
+
+        }
     }
 
     public void OnShootOne()
