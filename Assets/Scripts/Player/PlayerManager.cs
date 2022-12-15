@@ -1,5 +1,5 @@
 /*
- * Programmer: Jack / Caden
+ * Programmer: Jack / Caden / Sliman
  * Purpose: Manages user inputs and calls actions from them
  * Input: Player inputs
  * Output: Player actions
@@ -27,6 +27,7 @@ public class PlayerManager : MonoBehaviour
     public int Health = 3;
     public float mana = 1f;
     bool canAttack = true;
+    bool canDash = true;
     public GameObject currentHealthSprite;
     public GameObject health1;
     public GameObject health2;
@@ -300,6 +301,15 @@ public class PlayerManager : MonoBehaviour
     {
         moveInput = value.Get<Vector2>();
     }
+
+    public void OnDash()
+    {
+        if (canDash)
+        {
+
+        }
+    }
+
     private void OnPause()
     {
         var CanvasManager = GameObject.Find("UI Elements").GetComponent<CanvasManager>();
