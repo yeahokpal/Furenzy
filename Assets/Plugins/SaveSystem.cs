@@ -7,9 +7,7 @@
 
 using Mono.Data.Sqlite;
 using System.Data;
-using System.Data.Common;
 using System.IO;
-using System.Windows.Input;
 using UnityEngine;
 
 public class SaveSystem : MonoBehaviour
@@ -20,6 +18,7 @@ public class SaveSystem : MonoBehaviour
     GameObject Bird;
     GameObject Ferret;
 
+    #region Default Regions
     private void Awake()
     {
         if (!Directory.Exists(Application.streamingAssetsPath + "/Saves/"))
@@ -42,8 +41,9 @@ public class SaveSystem : MonoBehaviour
         Bird = GameObject.Find("Bird(Clone)");
         Ferret = GameObject.Find("Ferret(Clone)");
     }
+    #endregion
 
-    #region Methods
+    #region Custom Methods
 
     public void CreateDB()
     {
