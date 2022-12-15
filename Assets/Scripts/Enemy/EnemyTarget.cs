@@ -83,6 +83,7 @@ public class EnemyTarget : MonoBehaviour
     public void TakeDamage(int damage)//enemy takes damage
     {    
         health = health - damage;
+        StartCoroutine(HitStunWait(.5f));
         gameObject.GetComponent<ParticleSystem>().Play();
         audioSource.Play();
         if (health <= 0)
@@ -94,10 +95,10 @@ public class EnemyTarget : MonoBehaviour
     public IEnumerator HitStunWait(float StunTime)//creates a delay between when player hits and when enemy can move again
     {
         aipath.maxSpeed = 0f;
-        Debug.Log("HitStunWait");
+        aipath.canMove = false;
         yield return new WaitForSeconds(StunTime);
         aipath.maxSpeed = 3.5f;
-        Debug.Log("HitStunEnd");
+        aipath.canMove = true;
     }
 
     IEnumerator WaitToDestroy()//destroys enemy on death
