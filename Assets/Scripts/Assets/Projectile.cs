@@ -1,20 +1,17 @@
 /*
  * Programmer: Jack
- * Purpose: Setting up values for a newly made Lightning
- * Input: Player input
- * Output: Lightning Attack
+ * Purpose: Be a universal controller for projectiles
+ * Input: Player inputs
+ * Output: Player actions
  */
 
 using System.Collections;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
 
-public class Lightning : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
-    public int damage = 1;
-    public int speed = 20;
+    public int damage, speed;
+    public bool trigger, collide;
 
     private void Awake() // Setting Force Direction When it enters the scene
     {
@@ -32,24 +29,31 @@ public class Lightning : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Enemy")
+        if (collide)
         {
-            collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
-            collision.gameObject.GetComponent<EnemyTarget>().HitStunWait(.5f);
-            GameObject.Find("Fox(Clone)").GetComponent<PlayerManager>().MP_Up();
+            if (collision.transform.tag == "Enemy")
+            {
+                collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
+                GameObject.Find("Fox(Clone)").GetComponent<PlayerManager>().MP_Up();
+            }
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (trigger)
+        {
+            if (collision.transform.tag == "Enemy" && collision is BoxCollider2D)
+            {
+                collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
+            }
+        }
     }
 
     IEnumerator WaitToDestroy() // Destroy itself after 2 seconds
     {
         yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
-    }
-
-    IEnumerator WaitToDestroy(float time) // Destroy itself after 2 seconds
-    {
-        yield return new WaitForSeconds(time);
         Destroy(gameObject);
     }
 }

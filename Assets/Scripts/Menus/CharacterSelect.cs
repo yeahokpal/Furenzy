@@ -5,6 +5,7 @@
  * Output: Each player's character choice
  */
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
@@ -26,11 +27,12 @@ public class CharacterSelect : MonoBehaviour
     public GameObject P1_Manager, P2_Manager, P3_Manager, P4_Manager;
     public GameObject P1_Check, P2_Check, P3_Check, P4_Check;
     public GameObject P1_OK, P2_OK, P3_OK, P4_OK;
+    public GameObject Character_Select_Error;
 
     public PlayerInputManager InputManager;
 
     private int numOfPlayers = 0, readyPlayers = 0;
-    private int P1_Character, P2_Character, P3_Character, P4_Character;
+    private int P1_Character = 20, P2_Character = 200, P3_Character = 2000, P4_Character = 20000;
     private int P1_Active_Sprite = 1, P2_Active_Sprite = 2, P3_Active_Sprite = 3, P4_Active_Sprite = 4;
 
     #endregion
@@ -48,7 +50,7 @@ public class CharacterSelect : MonoBehaviour
 
     #region Custom Methods
 
-    public void PlayerJoined()
+    public void PlayerJoined()//happens when a player joins scene
     {
         //updates player count when a control joins
         numOfPlayers = InputManager.playerCount;
@@ -102,16 +104,65 @@ public class CharacterSelect : MonoBehaviour
         }
     }
 
-    public void VerifyPlayers()
+    public void VerifyPlayers()//runs everytime a player presses "OK!" button
     {
         if(readyPlayers == InputManager.playerCount)
         {
-            if ((P1_Character == P2_Character) || (P1_Character == P3_Character) || (P1_Character == P4_Character))
+            if ((P1_Character == P2_Character) || (P1_Character == P3_Character) || (P1_Character == P4_Character || P2_Character == P3_Character || P2_Character == P4_Character || P3_Character == P4_Character))
             {
-                //just commenting here so i know what i was doing
-                //make sure to verify the rest of the players, "P2_Character == P1_Character" etc.
+                readyPlayers = 0;
+                P1_Check.SetActive(false);
+                P2_Check.SetActive(false);
+                P3_Check.SetActive(false);
+                P4_Check.SetActive(false);
+                switch (InputManager.playerCount)
+                {
+                    case 1:
+                        P1_Up.SetActive(true);
+                        P1_Down.SetActive(true);
+                        break;
+                    case 2:
+                        P1_Up.SetActive(true);
+                        P1_Down.SetActive(true);
+                        P2_Up.SetActive(true);
+                        P2_Down.SetActive(true);
+                        break;
+                    case 3:
+                        P1_Up.SetActive(true);
+                        P1_Down.SetActive(true);
+                        P2_Up.SetActive(true);
+                        P2_Down.SetActive(true);
+                        P3_Up.SetActive(true);
+                        P3_Down.SetActive(true);
+                        break;
+                    case 4:
+                        P1_Up.SetActive(true);
+                        P1_Down.SetActive(true);
+                        P2_Up.SetActive(true);
+                        P2_Down.SetActive(true);
+                        P3_Up.SetActive(true);
+                        P3_Down.SetActive(true);
+                        P4_Up.SetActive(true);
+                        P4_Down.SetActive(true);
+                        break;
+                }
+                P1_Up.SetActive(true);
+                P1_Down.SetActive(true);
+                P2_Up.SetActive(true);
+                Character_Select_Error.SetActive(true);
+                StartCoroutine(Delay());
+            }
+            else
+            {
+                SceneManager.LoadScene("HubWorld");
             }
         }
+    }
+
+    public IEnumerator Delay()//just used to display error to player
+    {
+        yield return new WaitForSeconds(3f);
+        Character_Select_Error.SetActive(false);
     }
 
     #region P1 Button Click Methods
@@ -195,16 +246,22 @@ public class CharacterSelect : MonoBehaviour
 
     public void P1_OK_Click()
     {
-        ++readyPlayers;
-        P1_Check.SetActive(true);
-        if (P1_Fox.activeSelf == true)
-            P1_Character = 1;
-        if (P1_Bunny.activeSelf == true)
-            P1_Character = 2;
-        if (P1_Bird.activeSelf == true)
-            P1_Character = 3;
-        if (P1_Ferret.activeSelf == true)
-            P1_Character = 4;
+        if (P1_Check.activeSelf == false)
+        {
+            ++readyPlayers;
+            P1_Check.SetActive(true);
+            P1_Up.SetActive(false);
+            P1_Down.SetActive(false);
+            if (P1_Fox.activeSelf == true)
+                P1_Character = 1;
+            if (P1_Bunny.activeSelf == true)
+                P1_Character = 2;
+            if (P1_Bird.activeSelf == true)
+                P1_Character = 3;
+            if (P1_Ferret.activeSelf == true)
+                P1_Character = 4;
+            VerifyPlayers();
+        }      
     }
 
     #endregion
@@ -290,16 +347,22 @@ public class CharacterSelect : MonoBehaviour
 
     public void P2_OK_Click()
     {
-        ++readyPlayers;
-        P2_Check.SetActive(true);
-        if (P2_Fox.activeSelf == true)
-            P2_Character = 1;
-        if (P2_Bunny.activeSelf == true)
-            P2_Character = 2;
-        if (P2_Bird.activeSelf == true)
-            P2_Character = 3;
-        if (P2_Ferret.activeSelf == true)
-            P2_Character = 4;
+        if (P2_Check.activeSelf == false)
+        {
+            ++readyPlayers;
+            P2_Check.SetActive(true);
+            P2_Up.SetActive(false);
+            P2_Down.SetActive(false);
+            if (P2_Fox.activeSelf == true)
+                P2_Character = 1;
+            if (P2_Bunny.activeSelf == true)
+                P2_Character = 2;
+            if (P2_Bird.activeSelf == true)
+                P2_Character = 3;
+            if (P2_Ferret.activeSelf == true)
+                P2_Character = 4;
+            VerifyPlayers();
+        }     
     }
 
     #endregion
@@ -382,6 +445,27 @@ public class CharacterSelect : MonoBehaviour
         }
         Debug.Log("P3 Active Sprite: " + P3_Active_Sprite);
     }
+
+    public void P3_OK_Click()
+    {
+        if (P3_Check.activeSelf == false)
+        {
+            ++readyPlayers;
+            P3_Check.SetActive(true);
+            P3_Up.SetActive(false);
+            P3_Down.SetActive(false);
+            if (P3_Fox.activeSelf == true)
+                P3_Character = 1;
+            if (P3_Bunny.activeSelf == true)
+                P3_Character = 2;
+            if (P3_Bird.activeSelf == true)
+                P3_Character = 3;
+            if (P3_Ferret.activeSelf == true)
+                P3_Character = 4;
+            VerifyPlayers();
+        }      
+    }
+
     #endregion
 
     #region P4 Button Click Methods
@@ -462,6 +546,26 @@ public class CharacterSelect : MonoBehaviour
         }
         Debug.Log("P4 Active Sprite: " + P4_Active_Sprite);
     }
+
+    public void P4_OK_Click()
+    {
+        if (P4_Check.activeSelf == false)
+        {
+            ++readyPlayers;
+            P4_Check.SetActive(true);
+            P4_Up.SetActive(false);
+            P4_Down.SetActive(false);
+            if (P4_Fox.activeSelf == true)
+                P4_Character = 1;
+            if (P4_Bunny.activeSelf == true)
+                P4_Character = 2;
+            if (P4_Bird.activeSelf == true)
+                P4_Character = 3;
+            if (P4_Ferret.activeSelf == true)
+                P4_Character = 4;
+            VerifyPlayers();
+        }
+    }      
 
     #endregion
 
