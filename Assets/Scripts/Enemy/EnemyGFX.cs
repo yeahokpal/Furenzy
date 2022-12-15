@@ -1,13 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+/*
+ * Programmer: Caden
+ * Purpose: Make enemies play their south idle if they are not seeking a player
+ * Input: If enemy is tracking
+ * Output: Correct enemy animation
+ */
+
 using UnityEngine;
 using Pathfinding;
 
 public class EnemyGFX : MonoBehaviour
 {
+    #region Variables
     public Animator animator;
     public AIPath aiPath;
 
+    #endregion
+
+    #region Default Methods
     private void Awake()
     {
         animator = gameObject.GetComponent<Animator>();
@@ -19,7 +28,7 @@ public class EnemyGFX : MonoBehaviour
     {
         if (gameObject.name.Contains("Frog"))
         {
-            if (aiPath.reachedDestination == true)
+            if (aiPath.hasPath == true)
             {
                 animator.Play("frogIdle");
             }
@@ -31,7 +40,7 @@ public class EnemyGFX : MonoBehaviour
 
         if (gameObject.name.Contains("Snake"))
         {
-            if (aiPath.reachedDestination == true)
+            if (aiPath.hasPath == true)
             {
                 animator.Play("SnakeIdle");
             }
@@ -41,4 +50,5 @@ public class EnemyGFX : MonoBehaviour
             }
         }
     }
+    #endregion
 }
