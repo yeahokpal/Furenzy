@@ -6,28 +6,18 @@
  */
 
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using Pathfinding;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static PlayerManager instance;
+    #region Variables
 
-    [SerializeField] private float moveSpeed = 5f;
-    private InputActionMap playerInput;
-
-    public Rigidbody2D rb;
-    public Animator animator;
-    public AudioSource audioSource;
-    public int moveDir;
+    //Player Stats
     public int Health = 3;
     public float mana = 1f;
-    bool canAttack = true;
-    bool canDash = true;
     public GameObject currentHealthSprite;
     public GameObject health1;
     public GameObject health2;
@@ -35,16 +25,30 @@ public class PlayerManager : MonoBehaviour
     public GameObject health4;
     public GameObject healthFill;
     public UnityEvent OnDeath;
+
+    //Knockback / Hitstun
+    public static PlayerManager instance;
+    public float KnockbackPower = 100;
+    public float KnockbackDuration = 1;
+
+    //Movement
+    [SerializeField] private float moveSpeed = 5f;
+    public Rigidbody2D rb;
+    Vector2 moveInput;
+
+    //Animations
+    public Animator animator;
+    public int moveDir;
+
+    //Audio
+    public AudioSource audioSource;
     public AudioClip Hit;
     public AudioClip Hurt;
     public AudioClip Shoot;
 
-    Vector2 moveInput;
-
-    public float KnockbackPower = 100;
-    public float KnockbackDuration = 1;
-
-    // Characters
+    //Abilities / Attacks
+    bool canAttack = true;
+    bool canDash = true;
     [SerializeField] private GameObject FireBall;
     [SerializeField] private GameObject Lightning;
     public GameObject Arrow;
@@ -53,6 +57,10 @@ public class PlayerManager : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public int StabDamage = 3;
+
+    #endregion
+
+    #region Default Methods
 
     private void Awake()
     {
@@ -94,7 +102,7 @@ public class PlayerManager : MonoBehaviour
         currentHealthSprite = health1;
     }
 
-    void Update()
+    private void Update()
     {
         // Filling the mana bar appropriately
         if (mana > 1f)
@@ -151,6 +159,10 @@ public class PlayerManager : MonoBehaviour
         }
         currentHealthSprite.SetActive(true);
     }
+
+    #endregion
+
+    #region Custom Methods
 
     #region Attacking
     // Fox
@@ -296,6 +308,7 @@ public class PlayerManager : MonoBehaviour
         canAttack = true;
     }
     #endregion
+
     #region Movement / UI
     public void OnMove(InputValue value)
     {
@@ -320,6 +333,7 @@ public class PlayerManager : MonoBehaviour
             CanvasManager.Pause();
     }
     #endregion
+
     #region Health
     private void Dead()
     {
@@ -346,4 +360,7 @@ public class PlayerManager : MonoBehaviour
         yield return 0;
     }
     #endregion
+
+    #endregion
+
 }
