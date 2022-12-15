@@ -51,25 +51,25 @@ public class CanvasManager : MonoBehaviour
         #region Characters
         if (GameObject.Find("Fox(Clone)"))
         {
-            FoxManager fox = GameObject.Find("Fox(Clone)").GetComponent<FoxManager>();
+            PlayerManager fox = GameObject.Find("Fox(Clone)").GetComponent<PlayerManager>();
             saveManager.Write("Player", "health", 1, fox.Health.ToString());
             saveManager.Write("Player", "mana", 1, fox.mana.ToString());
         }
         if (GameObject.Find("Bunny(Clone)"))
         {
-            BunnyManager bunny = GameObject.Find("Bunny(Clone)").GetComponent<BunnyManager>();
+            PlayerManager bunny = GameObject.Find("Bunny(Clone)").GetComponent<PlayerManager>();
             saveManager.Write("Player", "health", 1, bunny.Health.ToString());
             saveManager.Write("Player", "mana", 1, bunny.mana.ToString());
         }
         if (GameObject.Find("Bird(Clone)"))
         {
-            BirdManager bird = GameObject.Find("Bird(Clone)").GetComponent<BirdManager>();
+            PlayerManager bird = GameObject.Find("Bird(Clone)").GetComponent<PlayerManager>();
             saveManager.Write("Player", "health", 1, bird.Health.ToString());
             saveManager.Write("Player", "mana", 1, bird.mana.ToString());
         }
         if (GameObject.Find("Ferret(Clone)"))
         {
-            FerretManager ferret = GameObject.Find("Ferret(Clone)").GetComponent<FerretManager>();
+            PlayerManager ferret = GameObject.Find("Ferret(Clone)").GetComponent<PlayerManager>();
             saveManager.Write("Player", "health", 1, ferret.Health.ToString());
             saveManager.Write("Player", "mana", 1, ferret.mana.ToString());
         }

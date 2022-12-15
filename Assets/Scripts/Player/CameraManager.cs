@@ -1,3 +1,10 @@
+/*
+ * Programmer: Jack
+ * Purpose: Making the camera follow the midpoit of all active players
+ * Input: Player positional data
+ * Output: Camera position / scale
+ */
+
 using System;
 using System.Collections;
 using System.Collections.Generic;

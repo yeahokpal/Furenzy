@@ -1,3 +1,10 @@
+/*
+ * Programmer: Jack
+ * Purpose: Setting up values for a newly made Fireball
+ * Input: Player input
+ * Output: Fireball Attack
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;

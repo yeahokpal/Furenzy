@@ -1,3 +1,10 @@
+/*
+ * Programmer: Jack
+ * Purpose: Setting up values for a newly made Knife
+ * Input: Player input
+ * Output: Knife Attack
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

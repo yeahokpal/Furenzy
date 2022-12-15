@@ -1,3 +1,8 @@
+/*
+ * Programmer: Jack
+ * Purpose: Being a univeral script for interactable objects
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +11,10 @@ using TMPro;
 public class Interactable : MonoBehaviour
 {
     public bool heal;
-    public TextMeshProUGUI UI = null;
+    public bool die;
+    public TextMeshProUGUI UIToIncrease = null;
+    public TextMeshProUGUI UIToRead = null;
+    public Sprite newSprite;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,44 +23,60 @@ public class Interactable : MonoBehaviour
             switch (collision.name)
             {
                 case "Fox(Clone)":
-                    if (collision.GetComponent<FoxManager>().Health < 3)
+                    if (collision.GetComponent<PlayerManager>().Health < 3)
                     {
-                        collision.GetComponent<FoxManager>().Health++;
+                        collision.GetComponent<PlayerManager>().Health++;
                         Destroy(gameObject);
                     }
                     break;
 
                 case "Bunny(Clone)":
-                    if (collision.GetComponent<BunnyManager>().Health < 3)
+                    if (collision.GetComponent<PlayerManager>().Health < 3)
                     {
-                        collision.GetComponent<BunnyManager>().Health++;
+                        collision.GetComponent<PlayerManager>().Health++;
                         Destroy(gameObject);
                     }
                     break;
 
                 case "Bird(Clone)":
-                    if (collision.GetComponent<BirdManager>().Health < 3)
+                    if (collision.GetComponent<PlayerManager>().Health < 3)
                     {
-                        collision.GetComponent<BirdManager>().Health++;
+                        collision.GetComponent<PlayerManager>().Health++;
                         Destroy(gameObject);
                     }
                     break;
 
                 case "Ferret(Clone)":
-                    if (collision.GetComponent<FerretManager>().Health < 3)
+                    if (collision.GetComponent<PlayerManager>().Health < 3)
                     {
-                        collision.GetComponent<FerretManager>().Health++;
+                        collision.GetComponent<PlayerManager>().Health++;
                         Destroy(gameObject);
                     }
                     break;
             }
         }
 
-        if (UI != null)
+        if (die)
+            Destroy(gameObject);
+
+        if (UIToIncrease != null)
         {
-            int num = int.Parse(UI.text);
+            int num = int.Parse(UIToIncrease.text);
             ++num;
-            UI.text = num.ToString();
+            UIToIncrease.text = num.ToString();
+        }
+
+        if (newSprite != null)
+        {
+            if (UIToRead != null)
+            {
+                if (int.Parse(UIToRead.text) > 0)
+                {
+                    UIToRead.text = (int.Parse(UIToRead.text) - 1).ToString();
+                    gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
+                }
+            }
+            else { gameObject.GetComponent<SpriteRenderer>().sprite = newSprite; }
         }
     }
 }
