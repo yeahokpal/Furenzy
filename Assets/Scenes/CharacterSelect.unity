@@ -4462,10 +4462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac8587da9767ff4c9b64145522c065b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  P1Controls: {fileID: 0}
-  P2Controls: {fileID: 0}
-  P3Controls: {fileID: 0}
-  P4Controls: {fileID: 0}
   AllCharacterSprites:
   - {fileID: 1727799752}
   - {fileID: 1099163510}
@@ -4483,7 +4479,9 @@ MonoBehaviour:
   - {fileID: 1241179286}
   - {fileID: 1185667609}
   - {fileID: 1597611751}
+  PlaceholderCharacter: {fileID: 4422845648860592782, guid: e2e032ee4a48a214c8b19a898fa44ce3, type: 3}
   PlayerSprites: []
+  InputManager: {fileID: 0}
 --- !u!1 &1490635276
 GameObject:
   m_ObjectHideFlags: 0

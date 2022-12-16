@@ -9,20 +9,21 @@ using UnityEditor.SceneManagement;
 public class PlayerSelectManager : MonoBehaviour
 {
     public GameObject[] AllCharacterSprites;
+    public GameObject PlaceholderCharacter;
+
     public List<string> PlayerSprites;
     public InputDevice[] ControllerNames;
+    public PlayerInputManager InputManager;
 
     private void Awake()
     {
+        InputManager = GameObject.Find("PlayerSelectManager").GetComponent<PlayerInputManager>();
         ControllerNames = new InputDevice[4];
         DontDestroyOnLoad(this);
     }
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name == "HubWorld")
-        {
-            Destroy(GetComponent<PlayerInputManager>());
-        }
+        
     }
     public void AddCharactersToList()
     {
@@ -39,5 +40,8 @@ public class PlayerSelectManager : MonoBehaviour
         if (GameObject.Find("P4_Menu_Controls(Clone)")) { ControllerNames[4] = (GameObject.Find("P4_Menu_Controls(Clone)").GetComponent<PlayerInput>().devices[0]); }
         Debug.Log(ControllerNames[1]);
         Debug.Log(ControllerNames[2]);
+
+        InputManager.playerPrefab = PlaceholderCharacter;
+        Destroy(GetComponent<PlayerInputManager>());
     }
 }
