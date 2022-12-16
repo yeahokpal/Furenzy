@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 332088578}
   - component: {fileID: 332088577}
   m_Layer: 0
-  m_Name: Bird
+  m_Name: P1Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1132,7 +1132,7 @@ GameObject:
   - component: {fileID: 629853605}
   - component: {fileID: 629853604}
   m_Layer: 0
-  m_Name: Fox
+  m_Name: P3Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1561,7 +1561,7 @@ GameObject:
   - component: {fileID: 842399512}
   - component: {fileID: 842399511}
   m_Layer: 0
-  m_Name: Bird
+  m_Name: P2Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2434,7 +2434,7 @@ GameObject:
   - component: {fileID: 1069901751}
   - component: {fileID: 1069901750}
   m_Layer: 0
-  m_Name: Ferret
+  m_Name: P2Ferret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2545,7 +2545,7 @@ GameObject:
   - component: {fileID: 1099163513}
   - component: {fileID: 1099163512}
   m_Layer: 0
-  m_Name: Bunny
+  m_Name: P1Bunny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2621,7 +2621,7 @@ GameObject:
   - component: {fileID: 1101120303}
   - component: {fileID: 1101120302}
   m_Layer: 0
-  m_Name: Bunny
+  m_Name: P2Bunny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2697,7 +2697,7 @@ GameObject:
   - component: {fileID: 1139125065}
   - component: {fileID: 1139125064}
   m_Layer: 0
-  m_Name: Ferret
+  m_Name: P3Ferret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2984,7 +2984,7 @@ GameObject:
   - component: {fileID: 1185667612}
   - component: {fileID: 1185667611}
   m_Layer: 0
-  m_Name: Bird
+  m_Name: P4Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3060,7 +3060,7 @@ GameObject:
   - component: {fileID: 1210624686}
   - component: {fileID: 1210624685}
   m_Layer: 0
-  m_Name: Bunny
+  m_Name: P3Bunny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3136,7 +3136,7 @@ GameObject:
   - component: {fileID: 1222359146}
   - component: {fileID: 1222359145}
   m_Layer: 0
-  m_Name: Fox
+  m_Name: P4Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3345,7 +3345,7 @@ GameObject:
   - component: {fileID: 1241179289}
   - component: {fileID: 1241179288}
   m_Layer: 0
-  m_Name: Bunny
+  m_Name: P4Bunny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4281,7 +4281,7 @@ GameObject:
   - component: {fileID: 1426121550}
   - component: {fileID: 1426121549}
   m_Layer: 0
-  m_Name: Fox
+  m_Name: P2Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4355,6 +4355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1486244236}
   - component: {fileID: 1486244235}
+  - component: {fileID: 1486244237}
   m_Layer: 0
   m_Name: PlayerSelectManager
   m_TagString: Untagged
@@ -4449,6 +4450,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1486244237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486244234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac8587da9767ff4c9b64145522c065b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  P1Controls: {fileID: 0}
+  P2Controls: {fileID: 0}
+  P3Controls: {fileID: 0}
+  P4Controls: {fileID: 0}
+  AllCharacterSprites:
+  - {fileID: 1727799752}
+  - {fileID: 1099163510}
+  - {fileID: 332088575}
+  - {fileID: 1547457783}
+  - {fileID: 1426121547}
+  - {fileID: 1101120300}
+  - {fileID: 842399509}
+  - {fileID: 1069901748}
+  - {fileID: 629853602}
+  - {fileID: 1210624683}
+  - {fileID: 1571109368}
+  - {fileID: 1139125062}
+  - {fileID: 1222359143}
+  - {fileID: 1241179286}
+  - {fileID: 1185667609}
+  - {fileID: 1597611751}
+  PlayerSprites: []
 --- !u!1 &1490635276
 GameObject:
   m_ObjectHideFlags: 0
@@ -4531,7 +4566,7 @@ GameObject:
   - component: {fileID: 1547457786}
   - component: {fileID: 1547457785}
   m_Layer: 0
-  m_Name: Ferret
+  m_Name: P1Ferret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4740,7 +4775,7 @@ GameObject:
   - component: {fileID: 1571109371}
   - component: {fileID: 1571109370}
   m_Layer: 0
-  m_Name: Bird
+  m_Name: P3Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5085,7 +5120,7 @@ GameObject:
   - component: {fileID: 1597611754}
   - component: {fileID: 1597611753}
   m_Layer: 0
-  m_Name: Ferret
+  m_Name: P4Ferret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5580,6 +5615,7 @@ MonoBehaviour:
   P3_OK: {fileID: 1815270436}
   P4_OK: {fileID: 1295462775}
   Character_Select_Error: {fileID: 241940980}
+  playerSelectManager: {fileID: 0}
   InputManager: {fileID: 1486244235}
 --- !u!1 &1671045838
 GameObject:
@@ -5726,7 +5762,7 @@ GameObject:
   - component: {fileID: 1727799755}
   - component: {fileID: 1727799754}
   m_Layer: 0
-  m_Name: Fox
+  m_Name: P1Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

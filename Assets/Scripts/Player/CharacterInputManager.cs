@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -7,7 +8,8 @@ using UnityEngine.SceneManagement;
 public class CharacterInputManager : MonoBehaviour
 {
     GameObject playerInput;
-
+    PlayerSelectManager playerSelectManager;
+    PlayerInputManager playerInputManager;
 
     public GameObject PlaceholderCharacter;
     public GameObject Player1;
@@ -17,29 +19,37 @@ public class CharacterInputManager : MonoBehaviour
     private void Start()
     {
         playerInput = PlaceholderCharacter;
+        playerInputManager = GetComponent<PlayerInputManager>();
+        playerSelectManager = GameObject.Find("PlayerSelectManager").GetComponent<PlayerSelectManager>();
     }
 
     private void Update()
     {
-        if (gameObject.GetComponent<PlayerInputManager>().playerCount == 0)
+        /*if (Find a way to read the device's name)
+        {
+
+        }*/
+
+
+        if (playerInputManager.playerCount == 0)
         {
             playerInput = Player1;
-            gameObject.GetComponent<PlayerInputManager>().playerPrefab = playerInput;
+            playerInputManager.playerPrefab = playerInput;
         }
-        else if (gameObject.GetComponent<PlayerInputManager>().playerCount == 1)
+        else if (playerInputManager.playerCount == 1)
         {
             playerInput = Player2;
-            gameObject.GetComponent<PlayerInputManager>().playerPrefab = playerInput;
+            playerInputManager.playerPrefab = playerInput;
         }
-        else if (gameObject.GetComponent<PlayerInputManager>().playerCount == 2)
+        else if (playerInputManager.playerCount == 2)
         {
             playerInput = Player3;
-            gameObject.GetComponent<PlayerInputManager>().playerPrefab = playerInput;
+            playerInputManager.playerPrefab = playerInput;
         }
-        else if (gameObject.GetComponent<PlayerInputManager>().playerCount == 3)
+        else if (playerInputManager.playerCount == 3)
         {
             playerInput = Player4;
-            gameObject.GetComponent<PlayerInputManager>().playerPrefab = playerInput;
+            playerInputManager.playerPrefab = playerInput;
         }
         /*else
         {

@@ -28,6 +28,7 @@ public class CharacterSelect : MonoBehaviour
     public GameObject P1_Check, P2_Check, P3_Check, P4_Check;
     public GameObject P1_OK, P2_OK, P3_OK, P4_OK;
     public GameObject Character_Select_Error;
+    public PlayerSelectManager playerSelectManager;
 
     public PlayerInputManager InputManager;
 
@@ -43,6 +44,7 @@ public class CharacterSelect : MonoBehaviour
     {
         //creating a variable from player input manager
         InputManager = GameObject.Find("PlayerSelectManager").GetComponent<PlayerInputManager>();
+        playerSelectManager = GameObject.Find("PlayerSelectManager").GetComponent<PlayerSelectManager>();
         Debug.Log("Initial Player Count: " + numOfPlayers);
     }
 
@@ -154,6 +156,7 @@ public class CharacterSelect : MonoBehaviour
             }
             else
             {
+                playerSelectManager.AddCharactersToList();
                 SceneManager.LoadScene("HubWorld");
             }
         }
