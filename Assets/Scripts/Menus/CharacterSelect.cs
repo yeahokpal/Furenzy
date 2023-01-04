@@ -157,6 +157,7 @@ public class CharacterSelect : MonoBehaviour
             else
             {
                 playerSelectManager.AddCharactersToList();
+                playerSelectManager.AddCharactersToList();
                 SceneManager.LoadScene("HubWorld");
             }
         }

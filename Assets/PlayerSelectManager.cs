@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,6 +11,7 @@ public class PlayerSelectManager : MonoBehaviour
 {
     public GameObject[] AllCharacterSprites;
     public GameObject PlaceholderCharacter;
+    public GameObject Fox, Bunny, Bird, Ferret;
 
     public List<string> PlayerSprites;
     public InputDevice[] ControllerNames;
@@ -42,6 +44,7 @@ public class PlayerSelectManager : MonoBehaviour
         Debug.Log(ControllerNames[2]);
 
         InputManager.playerPrefab = PlaceholderCharacter;
+
         Destroy(GetComponent<PlayerInputManager>());
     }
 }

@@ -29,27 +29,6 @@ public class CharacterInputManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(playerInputManager.
-        if (playerInputManager.GetComponent<InputDevice>().device.name.ToString() == playerSelectManager.ControllerNames[1].ToString())
-        {
-            switch (playerSelectManager.PlayerSprites[1])
-            {
-                case "Fox":
-                    playerInputManager.playerPrefab = Fox;
-                    break;
-                case "Bunny":
-                    playerInputManager.playerPrefab = Bunny;
-                    break;
-                case "Bird":
-                    playerInputManager.playerPrefab = Bird;
-                    break;
-                case "Ferret":
-                    playerInputManager.playerPrefab = Ferret;
-                    break;
-            }
-
-        }
-
         if (playerInputManager.playerCount == 0)
         {
             playerInput = Player1;
