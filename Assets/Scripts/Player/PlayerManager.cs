@@ -120,7 +120,7 @@ public class PlayerManager : MonoBehaviour
         else if (moveInput.x < .25 && moveInput.y < -.25)
             moveDir = 3;
 
-        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+        
 
         // Defining variables used by Animator
         animator.SetInteger("MoveDir", moveDir);
@@ -142,7 +142,7 @@ public class PlayerManager : MonoBehaviour
                 health1.SetActive(false);
                 health3.SetActive(false);
                 health4.SetActive(false);
-                break; 
+                break;
             case 1:
                 currentHealthSprite = health3;
                 health1.SetActive(false);
@@ -283,14 +283,21 @@ public class PlayerManager : MonoBehaviour
     {
         if (canAttack)
         {
-            if (moveDir == 1)
-                Instantiate(Arrow, transform.position + new Vector3(0, .75f, 0), Quaternion.Euler(0f, 0f, 180f));
-            else if (moveDir == 2)
-                Instantiate(Arrow, transform.position + new Vector3(.75f, 0, 0), Quaternion.Euler(0f, 0f, 90f));
-            else if (moveDir == 3)
-                Instantiate(Arrow, transform.position + new Vector3(0, -.75f, 0), Quaternion.Euler(0f, 0f, 0f));
-            else if (moveDir == 4)
-                Instantiate(Arrow, transform.position + new Vector3(-.75f, 0, 0), Quaternion.Euler(0f, 0f, -90f));
+            switch (moveDir)
+            {
+                case 1:
+                    Instantiate(Arrow, transform.position + new Vector3(0, 1f, 0), Quaternion.Euler(0f, 0f, 180f));
+                    break;
+                case 2:
+                    Instantiate(Arrow, transform.position + new Vector3(.75f, 0, 0), Quaternion.Euler(0f, 0f, 90f));
+                    break;
+                case 3:
+                    Instantiate(Arrow, transform.position + new Vector3(0, -1f, 0), Quaternion.Euler(0f, 0f, 0f));
+                    break;
+                case 4:
+                    Instantiate(Arrow, transform.position + new Vector3(-.75f, 0, 0), Quaternion.Euler(0f, 0f, -90f));
+                    break;
+            }
             StartCoroutine(Cooldown());
             audioSource.clip = Shoot;
             audioSource.Play();
@@ -313,13 +320,20 @@ public class PlayerManager : MonoBehaviour
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
 
     public void OnDash()
     {
-        if (canDash)
-        {
+        Debug.Log("Dash");
+        rb.AddForce(moveInput * 50, ForceMode2D.Impulse);
+        Debug.Log("DONE");
 
+        if (mana >= .5f)
+        {
+            mana -= .5f;
+
+            
         }
     }
 

@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class CharacterInputManager : MonoBehaviour
 {
     GameObject playerInput;
-    PlayerSelectManager playerSelectManager;
     PlayerInputManager playerInputManager;
 
     public GameObject PlaceholderCharacter;
@@ -24,9 +23,7 @@ public class CharacterInputManager : MonoBehaviour
     private void Start()
     {
         playerInputManager = GetComponent<PlayerInputManager>();
-        playerSelectManager = GameObject.Find("PlayerSelectManager").GetComponent<PlayerSelectManager>();
     }
-
     private void Update()
     {
         if (playerInputManager.playerCount == 0)
