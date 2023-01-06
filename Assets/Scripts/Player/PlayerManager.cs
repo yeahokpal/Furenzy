@@ -35,6 +35,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     public Rigidbody2D rb;
     Vector2 moveInput;
+    bool canMove = true;
 
     //Animations
     public Animator animator;
@@ -104,6 +105,11 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
+        if (canMove)
+        {
+            rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
+        }
+
         // Filling the mana bar appropriately
         if (mana > 1f)
             mana = 1f;
@@ -320,20 +326,18 @@ public class PlayerManager : MonoBehaviour
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-        rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
     }
 
-    public void OnDash()
+    public IEnumerator OnDash()
     {
-        Debug.Log("Dash");
-        rb.AddForce(moveInput * 50, ForceMode2D.Impulse);
-        Debug.Log("DONE");
-
         if (mana >= .5f)
         {
             mana -= .5f;
-
-            
+            rb.AddForce(moveInput * 10, ForceMode2D.Impulse);
+            canMove = false;
+            yield return new WaitForSeconds(.4f);
+            canMove = true;
+            rb.velocity = new Vector2(0f, 0f);
         }
     }
 

@@ -18,7 +18,7 @@ public class SaveSystem : MonoBehaviour
     GameObject Bird;
     GameObject Ferret;
 
-    #region Default Regions
+    #region Default Methods
     private void Awake()
     {
         if (!Directory.Exists(Application.streamingAssetsPath + "/Saves/"))
@@ -60,7 +60,6 @@ public class SaveSystem : MonoBehaviour
             Command.ExecuteReader();
 
             Command = Connection.CreateCommand();
-
 
             // Creating the Player Table if it doesn't already exist
             Command.CommandText = "CREATE TABLE IF NOT EXISTS Player (id INTEGER, character TEXT, health INTEGER, mana INTEGER);";
