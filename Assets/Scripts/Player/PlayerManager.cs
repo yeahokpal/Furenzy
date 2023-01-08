@@ -164,6 +164,8 @@ public class PlayerManager : MonoBehaviour
                 break;
         }
         currentHealthSprite.SetActive(true);
+
+        GetComponentInParent<Transform>().position = gameObject.transform.position;
     }
 
     #endregion

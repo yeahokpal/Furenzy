@@ -15,6 +15,7 @@ public class CharacterInputManager : MonoBehaviour
     public GameObject Player2;
     public GameObject Player3;
     public GameObject Player4;
+    PlayerSelectManager playerSelectManager;
 
     public GameObject Fox;
     public GameObject Bunny;
@@ -26,30 +27,28 @@ public class CharacterInputManager : MonoBehaviour
     }
     private void Update()
     {
-        if (playerInputManager.playerCount == 0)
+        if (GameObject.Find("PlayerSelectManager"))
+            playerSelectManager = GameObject.Find("PlayerSelectManager").GetComponent<PlayerSelectManager>();
+
+        if (playerInputManager.GetComponent<InputDevice>().device.name.ToString() == playerSelectManager.ControllerNames[1].ToString())
         {
-            playerInput = Player1;
-            playerInputManager.playerPrefab = playerInput;
+            switch (playerSelectManager.PlayerSprites[1])
+            {
+                case "Fox":
+                    playerInputManager.playerPrefab = Fox;
+                    break;
+                case "Bunny":
+                    playerInputManager.playerPrefab = Bunny;
+                    break;
+                case "Bird":
+                    playerInputManager.playerPrefab = Bird;
+                    break;
+                case "Ferret":
+                    playerInputManager.playerPrefab = Ferret;
+                    break;
+            }
+
         }
-        else if (playerInputManager.playerCount == 1)
-        {
-            playerInput = Player2;
-            playerInputManager.playerPrefab = playerInput;
-        }
-        else if (playerInputManager.playerCount == 2)
-        {
-            playerInput = Player3;
-            playerInputManager.playerPrefab = playerInput;
-        }
-        else if (playerInputManager.playerCount == 3)
-        {
-            playerInput = Player4;
-            playerInputManager.playerPrefab = playerInput;
-        }
-        /*else
-        {
-            some sort of error message
-        }*/
     }
 
     public void OnPlayerJoined()
