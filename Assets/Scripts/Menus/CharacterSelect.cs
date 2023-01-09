@@ -28,6 +28,7 @@ public class CharacterSelect : MonoBehaviour
     public GameObject P1_Check, P2_Check, P3_Check, P4_Check;
     public GameObject P1_OK, P2_OK, P3_OK, P4_OK;
     public GameObject Character_Select_Error;
+    public GameObject Fox_Character, Bunny_Character, Bird_Character, Ferret_Character;
     public PlayerSelectManager playerSelectManager;
 
     public PlayerInputManager InputManager;
@@ -156,7 +157,35 @@ public class CharacterSelect : MonoBehaviour
             }
             else
             {
-                playerSelectManager.AddCharactersToList();
+                //playerSelectManager.AddCharactersToList();
+                //playerSelectManager.AddCharactersToList();
+                if (GameObject.Find("P1_Menu_Controls(Clone)") != null)
+                {
+                    switch (P1_Character)
+                    {
+                        case 1:
+                            Instantiate(Fox_Character, GameObject.Find("P1_Menu_Controls(Clone)").transform);
+                            break;
+                    }
+                    DontDestroyOnLoad(GameObject.Find("P1_Menu_Controls(Clone)"));
+
+                }
+                    
+                if (GameObject.Find("P2_Menu_Controls(Clone)") != null)
+                {
+                    DontDestroyOnLoad(GameObject.Find("P2_Menu_Controls(Clone)"));
+                }
+                    
+                if (GameObject.Find("P3_Menu_Controls(Clone)") != null)
+                {
+                    DontDestroyOnLoad(GameObject.Find("P3_Menu_Controls(Clone)"));
+                }
+                    
+                if (GameObject.Find("P4_Menu_Controls(Clone)") != null)
+                {
+                    DontDestroyOnLoad(GameObject.Find("P4_Menu_Controls(Clone)"));
+                }
+                    
                 SceneManager.LoadScene("HubWorld");
             }
         }

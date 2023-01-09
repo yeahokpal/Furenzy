@@ -9,16 +9,15 @@ using Mono.Data.Sqlite;
 using System.Data;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveSystem : MonoBehaviour
 {
     string dbName = "URI=file:Database.db";
-    GameObject Fox;
-    GameObject Bunny;
-    GameObject Bird;
-    GameObject Ferret;
 
-    #region Default Regions
+    public Sprite CheckFilled;
+
+    #region Default Methods
     private void Awake()
     {
         if (!Directory.Exists(Application.streamingAssetsPath + "/Saves/"))
@@ -36,10 +35,64 @@ public class SaveSystem : MonoBehaviour
 
     private void Update()
     {
-        Fox = GameObject.Find("Fox(Clone)");
-        Bunny = GameObject.Find("Bunny(Clone)");
-        Bird = GameObject.Find("Bird(Clone)");
-        Ferret = GameObject.Find("Ferret(Clone)");
+        // Setting HubWorld Level Gates According to Save Data
+        string isItTrue = "";
+
+        GameObject lvl1;
+        GameObject lvl2;
+        GameObject lvl3;
+
+        if (SceneManager.GetActiveScene().name == "HubWorld")
+        {
+            lvl1 = GameObject.Find("Level_1");
+            lvl2 = GameObject.Find("Level_2");
+            lvl3 = GameObject.Find("Level_3");
+
+            // Deciding to allow entry into levels
+
+            Read("Save", "unlocked", 1, isItTrue);
+            if (isItTrue != "0")
+            {
+                lvl1.SetActive(false);
+            }
+            isItTrue = "";
+
+            Read("Save", "unlocked", 2, isItTrue);
+            if (isItTrue != "0")
+            {
+                lvl2.SetActive(false);
+            }
+            isItTrue = "";
+
+            Read("Save", "unlocked", 3, isItTrue);
+            if (isItTrue != "0")
+            {
+                lvl3.SetActive(false);
+            }
+            isItTrue = "";
+
+            // Deciding if levels have been completed
+
+            Read("Save", "cleared", 1, isItTrue);
+            if (isItTrue != "0")
+            {
+                lvl1.GetComponent<SpriteRenderer>().sprite = CheckFilled;
+            }
+            isItTrue = "";
+
+            Read("Save", "cleared", 2, isItTrue);
+            if (isItTrue != "0")
+            {
+                lvl2.GetComponent<SpriteRenderer>().sprite = CheckFilled;
+            }
+            isItTrue = "";
+
+            Read("Save", "cleared", 3, isItTrue);
+            if (isItTrue != "0")
+            {
+                lvl3.GetComponent<SpriteRenderer>().sprite = CheckFilled;
+            }
+        }
     }
     #endregion
 
@@ -60,7 +113,6 @@ public class SaveSystem : MonoBehaviour
             Command.ExecuteReader();
 
             Command = Connection.CreateCommand();
-
 
             // Creating the Player Table if it doesn't already exist
             Command.CommandText = "CREATE TABLE IF NOT EXISTS Player (id INTEGER, character TEXT, health INTEGER, mana INTEGER);";

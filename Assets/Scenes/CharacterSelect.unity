@@ -4462,26 +4462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac8587da9767ff4c9b64145522c065b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllCharacterSprites:
-  - {fileID: 1727799752}
-  - {fileID: 1099163510}
-  - {fileID: 332088575}
-  - {fileID: 1547457783}
-  - {fileID: 1426121547}
-  - {fileID: 1101120300}
-  - {fileID: 842399509}
-  - {fileID: 1069901748}
-  - {fileID: 629853602}
-  - {fileID: 1210624683}
-  - {fileID: 1571109368}
-  - {fileID: 1139125062}
-  - {fileID: 1222359143}
-  - {fileID: 1241179286}
-  - {fileID: 1185667609}
-  - {fileID: 1597611751}
-  PlaceholderCharacter: {fileID: 4422845648860592782, guid: e2e032ee4a48a214c8b19a898fa44ce3, type: 3}
-  PlayerSprites: []
-  InputManager: {fileID: 0}
+  InputManager: {fileID: 1486244234}
 --- !u!1 &1490635276
 GameObject:
   m_ObjectHideFlags: 0
@@ -5613,6 +5594,10 @@ MonoBehaviour:
   P3_OK: {fileID: 1815270436}
   P4_OK: {fileID: 1295462775}
   Character_Select_Error: {fileID: 241940980}
+  Fox_Character: {fileID: 1460901717897544858, guid: 39529f13222727f46935fce0d9e05faa, type: 3}
+  Bunny_Character: {fileID: 4410633837779907367, guid: 7a1ef9befec95694db9fb9852d3bfad7, type: 3}
+  Bird_Character: {fileID: 3151010248019297981, guid: 6d020f6d2000e1f46b195eb6ca92ae1b, type: 3}
+  Ferret_Character: {fileID: 2577553177254470347, guid: 7a7c47569b4cf5d44a931024662d695e, type: 3}
   playerSelectManager: {fileID: 0}
   InputManager: {fileID: 1486244235}
 --- !u!1 &1671045838

@@ -11,7 +11,6 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public int damage, speed;
-    public bool trigger, collide;
 
     private void Awake() // Setting Force Direction When it enters the scene
     {
@@ -23,31 +22,36 @@ public class Projectile : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.down * speed, ForceMode2D.Impulse);
         else if (gameObject.transform.rotation == Quaternion.Euler(0, 0, -90))
             gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.left * speed, ForceMode2D.Impulse);
-        // Starts coroutine to k*ll itself
+        // Starts coroutine to destroy itself
         StartCoroutine(WaitToDestroy());
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collide)
+        if (collision.transform.tag == "Enemy")
         {
-            if (collision.transform.tag == "Enemy")
+            switch (gameObject.name)
             {
-                collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
-                GameObject.Find("Fox(Clone)").GetComponent<PlayerManager>().MP_Up();
+                case "Fireball":
+                    GameObject.Find("Fox(Clone)").GetComponent<PlayerManager>().MP_Up();
+                    break;
+                case "Lightning":
+                    GameObject.Find("Fox(Clone)").GetComponent<PlayerManager>().MP_Up();
+                    break;
+                case "Arrow":
+                    GameObject.Find("Bird(Clone)").GetComponent<PlayerManager>().MP_Up();
+                    break;
             }
-            Destroy(gameObject);
+            collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
         }
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (trigger)
+        if (collision.transform.tag == "Enemy" && collision is BoxCollider2D)
         {
-            if (collision.transform.tag == "Enemy" && collision is BoxCollider2D)
-            {
-                collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
-            }
+            collision.gameObject.GetComponent<EnemyTarget>().TakeDamage(damage);
         }
     }
 

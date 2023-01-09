@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -8,20 +9,21 @@ using UnityEditor.SceneManagement;
 
 public class PlayerSelectManager : MonoBehaviour
 {
-    public GameObject[] AllCharacterSprites;
-    public GameObject PlaceholderCharacter;
+    //public GameObject[] AllCharacterSprites;
+    //public GameObject PlaceholderCharacter;
+    //public GameObject Fox, Bunny, Bird, Ferret;
 
-    public List<string> PlayerSprites;
-    public InputDevice[] ControllerNames;
-    public PlayerInputManager InputManager;
+   // public List<string> PlayerSprites;
+   // public InputDevice[] ControllerNames;
+    public GameObject InputManager;
 
     private void Awake()
     {
-        InputManager = GameObject.Find("PlayerSelectManager").GetComponent<PlayerInputManager>();
-        ControllerNames = new InputDevice[4];
-        DontDestroyOnLoad(this);
+        //InputManager = GameObject.Find("PlayerSelectManager").GetComponent<PlayerInputManager>();
+        //ControllerNames = new InputDevice[4];
+        DontDestroyOnLoad(InputManager);
     }
-    private void Update()
+    /*private void Update()
     {
         
     }
@@ -42,6 +44,7 @@ public class PlayerSelectManager : MonoBehaviour
         Debug.Log(ControllerNames[2]);
 
         InputManager.playerPrefab = PlaceholderCharacter;
+
         Destroy(GetComponent<PlayerInputManager>());
-    }
+    }*/
 }

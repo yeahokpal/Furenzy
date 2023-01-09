@@ -106,7 +106,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -4970,11 +4970,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6142fb611f4924793e4a79f07784ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rb: {fileID: 3151010248019297983, guid: 6d020f6d2000e1f46b195eb6ca92ae1b, type: 3}
-  animator: {fileID: 3151010248019297980, guid: 6d020f6d2000e1f46b195eb6ca92ae1b, type: 3}
-  audioSource: {fileID: 9199588179596792350, guid: 6d020f6d2000e1f46b195eb6ca92ae1b, type: 3}
-  moveDir: 0
   Health: 3
   mana: 1
   currentHealthSprite: {fileID: 0}
@@ -4986,11 +4981,16 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
+  KnockbackPower: 100
+  KnockbackDuration: 1
+  moveSpeed: 5
+  rb: {fileID: 3151010248019297983, guid: 6d020f6d2000e1f46b195eb6ca92ae1b, type: 3}
+  animator: {fileID: 3151010248019297980, guid: 6d020f6d2000e1f46b195eb6ca92ae1b, type: 3}
+  moveDir: 0
+  audioSource: {fileID: 9199588179596792350, guid: 6d020f6d2000e1f46b195eb6ca92ae1b, type: 3}
   Hit: {fileID: 8300000, guid: 407daba3c0f5b684380bd7c61b295565, type: 3}
   Hurt: {fileID: 8300000, guid: 3629ae88150dae84ba27b5f0cc238bca, type: 3}
   Shoot: {fileID: 8300000, guid: b46680ddaa2136148b3a04c5a1583d9f, type: 3}
-  KnockbackPower: 100
-  KnockbackDuration: 1
   FireBall: {fileID: 0}
   Lightning: {fileID: 0}
   Arrow: {fileID: 0}
