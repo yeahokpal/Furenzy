@@ -227,6 +227,13 @@ public class PlayerManager : MonoBehaviour
             }
         }
     }
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
     public void OnKnife()
     {
         if (Time.timeScale == 1f && canAttack && mana >= .5f)
@@ -247,13 +254,6 @@ public class PlayerManager : MonoBehaviour
             audioSource.clip = Shoot;
             audioSource.Play();
         }
-    }
-    private void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null)
-            return;
-
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
     // Bird
     public void OnShootOne()

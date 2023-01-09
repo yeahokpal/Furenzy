@@ -17,6 +17,13 @@ public class SaveSystem : MonoBehaviour
 
     public Sprite CheckFilled;
 
+    GameObject lvl1;
+    GameObject lvl2;
+    GameObject lvl3;
+    GameObject check1;
+    GameObject check2;
+    GameObject check3;
+
     #region Default Methods
     private void Awake()
     {
@@ -36,61 +43,61 @@ public class SaveSystem : MonoBehaviour
     private void Update()
     {
         // Setting HubWorld Level Gates According to Save Data
-        string isItTrue = "";
-
-        GameObject lvl1;
-        GameObject lvl2;
-        GameObject lvl3;
+        string isItTrue = "0";
 
         if (SceneManager.GetActiveScene().name == "HubWorld")
         {
             lvl1 = GameObject.Find("Level_1");
             lvl2 = GameObject.Find("Level_2");
             lvl3 = GameObject.Find("Level_3");
+            check1 = GameObject.Find("CheckBox1");
+            check2 = GameObject.Find("CheckBox2");
+            check3 = GameObject.Find("CheckBox3");
 
             // Deciding to allow entry into levels
 
             Read("Save", "unlocked", 1, isItTrue);
-            if (isItTrue != "0")
+            if (int.Parse(isItTrue) == 1)
             {
-                lvl1.SetActive(false);
+                lvl1.GetComponent<BoxCollider2D>().enabled = false;
             }
-            isItTrue = "";
+            isItTrue = "0";
 
             Read("Save", "unlocked", 2, isItTrue);
-            if (isItTrue != "0")
+            if (int.Parse(isItTrue) == 1)
             {
-                lvl2.SetActive(false);
+                lvl2.GetComponent<BoxCollider2D>().enabled = false;
             }
-            isItTrue = "";
+            isItTrue = "0";
 
             Read("Save", "unlocked", 3, isItTrue);
-            if (isItTrue != "0")
+            if (int.Parse(isItTrue) == 1)
             {
-                lvl3.SetActive(false);
+                lvl3.GetComponent<BoxCollider2D>().enabled = false;
             }
-            isItTrue = "";
+            isItTrue = "0";
 
             // Deciding if levels have been completed
 
             Read("Save", "cleared", 1, isItTrue);
-            if (isItTrue != "0")
+            Debug.Log(isItTrue);
+            if (int.Parse(isItTrue) == 1)
             {
-                lvl1.GetComponent<SpriteRenderer>().sprite = CheckFilled;
+                check1.GetComponent<SpriteRenderer>().sprite = CheckFilled;
             }
-            isItTrue = "";
+            isItTrue = "0";
 
             Read("Save", "cleared", 2, isItTrue);
-            if (isItTrue != "0")
+            if (int.Parse(isItTrue) == 1)
             {
-                lvl2.GetComponent<SpriteRenderer>().sprite = CheckFilled;
+                check2.GetComponent<SpriteRenderer>().sprite = CheckFilled;
             }
-            isItTrue = "";
+            isItTrue = "0";
 
             Read("Save", "cleared", 3, isItTrue);
-            if (isItTrue != "0")
+            if (int.Parse(isItTrue) == 1)
             {
-                lvl3.GetComponent<SpriteRenderer>().sprite = CheckFilled;
+                check3.GetComponent<SpriteRenderer>().sprite = CheckFilled;
             }
         }
     }
@@ -125,15 +132,15 @@ public class SaveSystem : MonoBehaviour
 
             // Initial Write for Save Table
 
-            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (1, '1', 0, 0);";
+            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (1, '1', 0, 1);";
             Command.ExecuteNonQuery();
 
             Command = Connection.CreateCommand();
-            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (2, '2', 0, 0);";
+            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (2, '2', 0, 1);";
             Command.ExecuteNonQuery();
 
             Command = Connection.CreateCommand();
-            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (3, '3', 0, 0);";
+            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (3, '3', 0, 1);";
             Command.ExecuteNonQuery();
 
             // Initial Writes for Player Table
@@ -162,7 +169,7 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    public string Read(string table, string column, int row, string variableToChange)
+    public string Read(string table, string column, int row, string variableToChange) // FIX!!
     {
         using (var connection = new SqliteConnection(dbName))
         {
@@ -171,14 +178,13 @@ public class SaveSystem : MonoBehaviour
             //Setting up an object command to allow db caontrol
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "SELECT * FROM " + table + " ORDER BY id;";
-                command.ExecuteNonQuery();
+                command.CommandText = "SELECT " + column + " FROM " + table + " WHERE id = " + row + ";";
+                command.ExecuteScalar();
 
-                command.CommandText = "SELECT DISTINCT " + column + " FROM " + table + " WHERE id = " + row + " ORDER BY id;";
+                //command.CommandText = "SELECT " + column + ", id FROM " + table + " WHERE id = " + row + ";";
                 variableToChange = command.ExecuteScalar().ToString();
             }
             connection.Close();
-
             return variableToChange;
         }
     }
@@ -192,7 +198,7 @@ public class SaveSystem : MonoBehaviour
             //Setting up an object command to allow db caontrol
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "SELECT DISTINCT " + column + " FROM " + table + " WHERE id = " + row + " ORDER BY id;"; // NOT GETTING AN EXISTING ROW
+                command.CommandText = "SELECT DISTINCT " + column + " FROM " + table + " WHERE id = " + row + " ORDER BY id;";
                 command.ExecuteNonQuery();
 
                 //IDataReader dataReader = command.ExecuteReader();
