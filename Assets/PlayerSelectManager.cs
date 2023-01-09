@@ -25,7 +25,7 @@ public class PlayerSelectManager : MonoBehaviour
     }
     /*private void Update()
     {
-        
+
     }
     public void AddCharactersToList()
     {
