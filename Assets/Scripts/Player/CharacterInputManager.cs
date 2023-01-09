@@ -29,7 +29,7 @@ public class CharacterInputManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(playerInputManager.
+        Debug.Log(playerInputManager);
         if (playerInputManager.GetComponent<InputDevice>().device.name.ToString() == playerSelectManager.ControllerNames[1].ToString())
         {
             switch (playerSelectManager.PlayerSprites[1])
