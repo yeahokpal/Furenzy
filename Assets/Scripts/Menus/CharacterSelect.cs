@@ -29,10 +29,7 @@ public class CharacterSelect : MonoBehaviour
     public GameObject P1_OK, P2_OK, P3_OK, P4_OK;
     public GameObject Character_Select_Error;
     public GameObject Fox_Character, Bunny_Character, Bird_Character, Ferret_Character;
-    public PlayerSelectManager playerSelectManager;
-
     public PlayerInputManager InputManager;
-
     private int numOfPlayers = 0, readyPlayers = 0;
     private int P1_Character = 20, P2_Character = 200, P3_Character = 2000, P4_Character = 20000;
     private int P1_Active_Sprite = 1, P2_Active_Sprite = 2, P3_Active_Sprite = 3, P4_Active_Sprite = 4;
@@ -45,8 +42,7 @@ public class CharacterSelect : MonoBehaviour
     {
         //creating a variable from player input manager
         InputManager = GameObject.Find("PlayerSelectManager").GetComponent<PlayerInputManager>();
-        playerSelectManager = GameObject.Find("PlayerSelectManager").GetComponent<PlayerSelectManager>();
-        Debug.Log("Initial Player Count: " + numOfPlayers);
+        //Debug.Log("Initial Player Count: " + numOfPlayers);
     }
 
     #endregion
@@ -58,7 +54,7 @@ public class CharacterSelect : MonoBehaviour
         //updates player count when a control joins
         numOfPlayers = InputManager.playerCount;
 
-        Debug.Log("Number of Players: " + numOfPlayers);
+        //Debug.Log("Number of Players: " + numOfPlayers);
 
         //removes placeholder objects if there are players joined and activates default player sprite
         switch (numOfPlayers)
@@ -157,8 +153,6 @@ public class CharacterSelect : MonoBehaviour
             }
             else
             {
-                //playerSelectManager.AddCharactersToList();
-                //playerSelectManager.AddCharactersToList();
                 if (GameObject.Find("P1_Menu_Controls(Clone)") != null)
                 {
                     switch (P1_Character)
@@ -166,26 +160,80 @@ public class CharacterSelect : MonoBehaviour
                         case 1:
                             Instantiate(Fox_Character, GameObject.Find("P1_Menu_Controls(Clone)").transform);
                             break;
+                        case 2:
+                            Instantiate(Bunny_Character, GameObject.Find("P1_Menu_Controls(Clone)").transform);
+                            break;
+                        case 3:
+                            Instantiate(Bird_Character, GameObject.Find("P1_Menu_Controls(Clone)").transform);
+                            break;
+                        case 4:
+                            Instantiate(Ferret_Character, GameObject.Find("P1_Menu_Controls(Clone)").transform);
+                            break;
                     }
                     DontDestroyOnLoad(GameObject.Find("P1_Menu_Controls(Clone)"));
-
                 }
                     
                 if (GameObject.Find("P2_Menu_Controls(Clone)") != null)
                 {
+                    switch (P2_Character)
+                    {
+                        case 1:
+                            Instantiate(Fox_Character, GameObject.Find("P2_Menu_Controls(Clone)").transform);
+                            break;
+                        case 2:
+                            Instantiate(Bunny_Character, GameObject.Find("P2_Menu_Controls(Clone)").transform);
+                            break;
+                        case 3:
+                            Instantiate(Bird_Character, GameObject.Find("P2_Menu_Controls(Clone)").transform);
+                            break;
+                        case 4:
+                            Instantiate(Ferret_Character, GameObject.Find("P2_Menu_Controls(Clone)").transform);
+                            break;
+                    }
                     DontDestroyOnLoad(GameObject.Find("P2_Menu_Controls(Clone)"));
                 }
                     
                 if (GameObject.Find("P3_Menu_Controls(Clone)") != null)
                 {
+                    switch (P3_Character)
+                    {
+                        case 1:
+                            Instantiate(Fox_Character, GameObject.Find("P3_Menu_Controls(Clone)").transform);
+                            break;
+                        case 2:
+                            Instantiate(Bunny_Character, GameObject.Find("P3_Menu_Controls(Clone)").transform);
+                            break;
+                        case 3:
+                            Instantiate(Bird_Character, GameObject.Find("P3_Menu_Controls(Clone)").transform);
+                            break;
+                        case 4:
+                            Instantiate(Ferret_Character, GameObject.Find("P3_Menu_Controls(Clone)").transform);
+                            break;
+                    }
                     DontDestroyOnLoad(GameObject.Find("P3_Menu_Controls(Clone)"));
                 }
                     
                 if (GameObject.Find("P4_Menu_Controls(Clone)") != null)
                 {
+                    switch (P4_Character)
+                    {
+                        case 1:
+                            Instantiate(Fox_Character, GameObject.Find("P4_Menu_Controls(Clone)").transform);
+                            break;
+                        case 2:
+                            Instantiate(Bunny_Character, GameObject.Find("P4_Menu_Controls(Clone)").transform);
+                            break;
+                        case 3:
+                            Instantiate(Bird_Character, GameObject.Find("P4_Menu_Controls(Clone)").transform);
+                            break;
+                        case 4:
+                            Instantiate(Ferret_Character, GameObject.Find("P4_Menu_Controls(Clone)").transform);
+                            break;
+                    }
                     DontDestroyOnLoad(GameObject.Find("P4_Menu_Controls(Clone)"));
                 }
-                    
+
+                DontDestroyOnLoad(InputManager);
                 SceneManager.LoadScene("HubWorld");
             }
         }

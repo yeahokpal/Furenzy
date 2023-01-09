@@ -15,7 +15,6 @@ public class CharacterInputManager : MonoBehaviour
     public GameObject Player2;
     public GameObject Player3;
     public GameObject Player4;
-    PlayerSelectManager playerSelectManager;
 
     public GameObject Fox;
     public GameObject Bunny;
@@ -27,7 +26,7 @@ public class CharacterInputManager : MonoBehaviour
     }
     private void Update()
     {
-        if (GameObject.Find("PlayerSelectManager"))
+        /*if (GameObject.Find("PlayerSelectManager"))
             playerSelectManager = GameObject.Find("PlayerSelectManager").GetComponent<PlayerSelectManager>();
 
         if (playerInputManager.GetComponent<InputDevice>().device.name.ToString() == playerSelectManager.ControllerNames[1].ToString())
@@ -48,7 +47,7 @@ public class CharacterInputManager : MonoBehaviour
                     break;
             }
 
-        }
+        }*/
     }
 
     public void OnPlayerJoined()

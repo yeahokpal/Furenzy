@@ -18,6 +18,7 @@ public class PlayerManager : MonoBehaviour
     //Player Stats
     public int Health = 3;
     public float mana = 1f;
+    bool canSearchForUI = true;
     public GameObject currentHealthSprite;
     public GameObject health1;
     public GameObject health2;
@@ -68,43 +69,13 @@ public class PlayerManager : MonoBehaviour
         audioSource = gameObject.GetComponent<AudioSource>();
         instance = this;
 
-        switch (gameObject.name)
-        {
-            case "Fox(Clone)":
-                health1 = GameObject.Find("FoxHealth1");
-                health2 = GameObject.Find("FoxHealth2");
-                health3 = GameObject.Find("FoxHealth3");
-                health4 = GameObject.Find("FoxHealth4");
-                healthFill = GameObject.Find("FoxFill");
-                break;
-            case "Bunny(Clone)":
-                Debug.Log("working");
-                health1 = GameObject.Find("BunnyHealth1");
-                health2 = GameObject.Find("BunnyHealth2");
-                health3 = GameObject.Find("BunnyHealth3");
-                health4 = GameObject.Find("BunnyHealth4");
-                healthFill = GameObject.Find("BunnyFill");
-                break;
-            case "Bird(Clone)":
-                health1 = GameObject.Find("BirdHealth1");
-                health2 = GameObject.Find("BirdHealth2");
-                health3 = GameObject.Find("BirdHealth3");
-                health4 = GameObject.Find("BirdHealth4");
-                healthFill = GameObject.Find("BirdFill");
-                break;
-            case "Ferret(Clone)":
-                health1 = GameObject.Find("FerretHealth1");
-                health2 = GameObject.Find("FerretHealth2");
-                health3 = GameObject.Find("FerretHealth3");
-                health4 = GameObject.Find("FerretHealth4");
-                healthFill = GameObject.Find("FerretFill");
-                break;
-        }
+        
         currentHealthSprite = health1;
     }
 
     private void Update()
     {
+        FindHealthUI();
         if (canMove)
         {
             rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
@@ -125,8 +96,6 @@ public class PlayerManager : MonoBehaviour
             moveDir = 1;
         else if (moveInput.x < .25 && moveInput.y < -.25)
             moveDir = 3;
-
-        
 
         // Defining variables used by Animator
         animator.SetInteger("MoveDir", moveDir);
@@ -325,6 +294,46 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     #region Movement / UI
+
+    public void FindHealthUI()
+    {
+        if (canSearchForUI)
+        {
+            switch (gameObject.name)
+            {
+                case "Fox(Clone)":
+                    health1 = GameObject.Find("FoxHealth1");
+                    health2 = GameObject.Find("FoxHealth2");
+                    health3 = GameObject.Find("FoxHealth3");
+                    health4 = GameObject.Find("FoxHealth4");
+                    healthFill = GameObject.Find("FoxFill");
+                    break;
+                case "Bunny(Clone)":
+                    Debug.Log("working");
+                    health1 = GameObject.Find("BunnyHealth1");
+                    health2 = GameObject.Find("BunnyHealth2");
+                    health3 = GameObject.Find("BunnyHealth3");
+                    health4 = GameObject.Find("BunnyHealth4");
+                    healthFill = GameObject.Find("BunnyFill");
+                    break;
+                case "Bird(Clone)":
+                    health1 = GameObject.Find("BirdHealth1");
+                    health2 = GameObject.Find("BirdHealth2");
+                    health3 = GameObject.Find("BirdHealth3");
+                    health4 = GameObject.Find("BirdHealth4");
+                    healthFill = GameObject.Find("BirdFill");
+                    break;
+                case "Ferret(Clone)":
+                    health1 = GameObject.Find("FerretHealth1");
+                    health2 = GameObject.Find("FerretHealth2");
+                    health3 = GameObject.Find("FerretHealth3");
+                    health4 = GameObject.Find("FerretHealth4");
+                    healthFill = GameObject.Find("FerretFill");
+                    break;
+            }
+            canSearchForUI = false;
+        }
+    }
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
