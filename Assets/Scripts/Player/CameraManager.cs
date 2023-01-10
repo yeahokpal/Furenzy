@@ -100,7 +100,7 @@ public class CameraManager : MonoBehaviour
             ferretY = 0;
         }
 
-        Debug.Log(numOfPlayers);
+        //Debug.Log(numOfPlayers);
 
         if (GameObject.Find("Fox(Clone)") || GameObject.Find("Bunny(Clone)") || GameObject.Find("Bird(Clone)") || GameObject.Find("Ferret(Clone)"))
         {

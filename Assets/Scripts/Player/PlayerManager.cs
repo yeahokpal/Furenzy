@@ -309,7 +309,6 @@ public class PlayerManager : MonoBehaviour
                     healthFill = GameObject.Find("FoxFill");
                     break;
                 case "Bunny(Clone)":
-                    Debug.Log("working");
                     health1 = GameObject.Find("BunnyHealth1");
                     health2 = GameObject.Find("BunnyHealth2");
                     health3 = GameObject.Find("BunnyHealth3");
