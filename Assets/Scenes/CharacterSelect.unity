@@ -5584,6 +5584,7 @@ MonoBehaviour:
   Bunny_Character: {fileID: 4410633837779907367, guid: 7a1ef9befec95694db9fb9852d3bfad7, type: 3}
   Bird_Character: {fileID: 3151010248019297981, guid: 6d020f6d2000e1f46b195eb6ca92ae1b, type: 3}
   Ferret_Character: {fileID: 2577553177254470347, guid: 7a7c47569b4cf5d44a931024662d695e, type: 3}
+  PlayerActions: {fileID: -944628639613478452, guid: 2302da94ae7edfa43bb9cf4f275373c2, type: 3}
   InputManager: {fileID: 1486244235}
 --- !u!1 &1671045838
 GameObject:

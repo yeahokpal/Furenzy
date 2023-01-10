@@ -81,7 +81,7 @@ public class SaveSystem : MonoBehaviour
             // Deciding if levels have been completed
 
             Read("Save", "cleared", 1, isItTrue);
-            Debug.Log(isItTrue);
+            //Debug.Log(isItTrue);
             if (int.Parse(isItTrue) == 1)
             {
                 check1.GetComponent<SpriteRenderer>().sprite = CheckFilled;
