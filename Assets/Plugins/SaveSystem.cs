@@ -8,6 +8,7 @@
 using Mono.Data.Sqlite;
 using System.Data;
 using System.IO;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -116,7 +117,7 @@ public class SaveSystem : MonoBehaviour
             IDbCommand Command = Connection.CreateCommand();
 
             // Creating the Save Table if it doesn't already exist
-            Command.CommandText = "CREATE TABLE IF NOT EXISTS Save (id INTEGER, level INTEGER, unlocked INTEGER, cleared INTEGER, playerCount INTEGER);";
+            Command.CommandText = "CREATE TABLE IF NOT EXISTS Save (id INTEGER, level INTEGER, unlocked INTEGER, cleared INTEGER);";
             Command.ExecuteReader();
 
             Command = Connection.CreateCommand();
@@ -178,11 +179,23 @@ public class SaveSystem : MonoBehaviour
             //Setting up an object command to allow db caontrol
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "SELECT " + column + " FROM " + table + " WHERE id = " + row + ";";
+                /*command.CommandText = "SELECT DISTINCT " + column + " FROM " + table + " WHERE id = " + row + " ORDER BY id;";
+                command.CommandText = "SELECT " + column + ", id FROM " + table + " WHERE id = " + row + ";";
                 command.ExecuteScalar();
 
-                //command.CommandText = "SELECT " + column + ", id FROM " + table + " WHERE id = " + row + ";";
-                variableToChange = command.ExecuteScalar().ToString();
+                variableToChange = new SqliteCommand(command.CommandText, connection).ToString();
+
+
+
+
+                variableToChange = command.ExecuteScalar().ToString();*/
+
+
+
+
+                
+                command.CommandText = "SELECT " + column + ", id FROM " + table + " WHERE id = " + row + ";";
+                variableToChange = command.ExecuteReader().Read().ToString();
             }
             connection.Close();
             return variableToChange;

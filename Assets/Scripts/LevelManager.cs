@@ -1,5 +1,6 @@
 /*
- * Programmer: Sliman / Jack
+ * Programmer: Jack / Slimane
+ * Purpose: To Determine when to change scene
  */
 using System.Collections;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ public class LevelManager : MonoBehaviour
         save = GameObject.Find("SaveManager").GetComponent<SaveSystem>();
     }
 
+
+    // Toggleing The death Screen when you die
     public void GameOver()
     {
         UIManager _ui = GetComponent<UIManager>();

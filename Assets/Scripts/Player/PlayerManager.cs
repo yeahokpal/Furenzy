@@ -1,5 +1,5 @@
 /*
- * Programmer: Jack / Caden / Sliman
+ * Programmer: Jack / Caden
  * Purpose: Manages user inputs and calls actions from them
  * Input: Player inputs
  * Output: Player actions
@@ -391,5 +391,4 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     #endregion
-
 }
