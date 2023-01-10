@@ -194,7 +194,7 @@ public class SaveSystem : MonoBehaviour
 
 
                 
-                command.CommandText = "SELECT " + column + ", id FROM " + table + " WHERE id = " + row + ";";
+                command.CommandText = "SELECT " + column + ", id FROM " + table + " WHERE id = " + row.ToString() + ";";
                 variableToChange = command.ExecuteReader().Read().ToString();
             }
             connection.Close();
@@ -211,11 +211,11 @@ public class SaveSystem : MonoBehaviour
             //Setting up an object command to allow db caontrol
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "SELECT DISTINCT " + column + " FROM " + table + " WHERE id = " + row + " ORDER BY id;";
+                command.CommandText = "SELECT DISTINCT " + column + " FROM " + table + " WHERE id = " + row.ToString() + " ORDER BY id;";
                 command.ExecuteNonQuery();
 
                 //IDataReader dataReader = command.ExecuteReader();
-                command.CommandText = "UPDATE " + table + " SET " + column + " = " + variableToUse + " WHERE id = " + row;
+                command.CommandText = "UPDATE " + table + " SET " + column + " = " + variableToUse + " WHERE id = " + row.ToString();
                 command.ExecuteNonQuery();
             }
             connection.Close();
