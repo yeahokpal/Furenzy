@@ -50,7 +50,7 @@ public class EnemyGFX : MonoBehaviour
             }
         }
 
-        if (gameObject.name.Contains("Bat"))
+        if (gameObject.name.Contains("BatEnemy"))
         {
             if (aiPath.reachedDestination == true)
             {
