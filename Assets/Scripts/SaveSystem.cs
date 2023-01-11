@@ -57,22 +57,22 @@ public class SaveSystem : MonoBehaviour
 
             // Deciding to allow entry into levels
 
-            Read("Save", "unlocked", 1, isItTrue);
-            if (int.Parse(isItTrue) == 1)
+            isItTrue = Read("Save", "unlocked", 1);
+            if (isItTrue == "1")
             {
                 lvl1.GetComponent<BoxCollider2D>().enabled = false;
             }
             isItTrue = "0";
 
-            Read("Save", "unlocked", 2, isItTrue);
-            if (int.Parse(isItTrue) == 1)
+            isItTrue = Read("Save", "unlocked", 2);
+            if (isItTrue == "1")
             {
                 lvl2.GetComponent<BoxCollider2D>().enabled = false;
             }
             isItTrue = "0";
 
-            Read("Save", "unlocked", 3, isItTrue);
-            if (int.Parse(isItTrue) == 1)
+            isItTrue = Read("Save", "unlocked", 3);
+            if (isItTrue == "1")
             {
                 lvl3.GetComponent<BoxCollider2D>().enabled = false;
             }
@@ -80,23 +80,23 @@ public class SaveSystem : MonoBehaviour
 
             // Deciding if levels have been completed
 
-            Read("Save", "cleared", 1, isItTrue);
-            //Debug.Log(isItTrue);
-            if (int.Parse(isItTrue) == 1)
+            isItTrue = Read("Save", "cleared", 1);
+            if (isItTrue == "1")
             {
+                Debug.Log("working");
                 check1.GetComponent<SpriteRenderer>().sprite = CheckFilled;
             }
             isItTrue = "0";
 
-            Read("Save", "cleared", 2, isItTrue);
-            if (int.Parse(isItTrue) == 1)
+            isItTrue = Read("Save", "cleared", 2);
+            if (isItTrue == "1")
             {
                 check2.GetComponent<SpriteRenderer>().sprite = CheckFilled;
             }
             isItTrue = "0";
 
-            Read("Save", "cleared", 3, isItTrue);
-            if (int.Parse(isItTrue) == 1)
+            isItTrue = Read("Save", "cleared", 3);
+            if (isItTrue == "1")
             {
                 check3.GetComponent<SpriteRenderer>().sprite = CheckFilled;
             }
@@ -133,15 +133,15 @@ public class SaveSystem : MonoBehaviour
 
             // Initial Write for Save Table
 
-            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (1, '1', 0, 1);";
+            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (1, '1', 0, 0);";
             Command.ExecuteNonQuery();
 
             Command = Connection.CreateCommand();
-            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (2, '2', 0, 1);";
+            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (2, '2', 0, 0);";
             Command.ExecuteNonQuery();
 
             Command = Connection.CreateCommand();
-            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (3, '3', 0, 1);";
+            Command.CommandText = "INSERT OR REPLACE INTO Save ('id', 'level', 'unlocked', 'cleared') VALUES (3, '3', 0, 0);";
             Command.ExecuteNonQuery();
 
             // Initial Writes for Player Table
@@ -170,35 +170,15 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    public string Read(string table, string column, int row, string variableToChange) // FIX!!
+    public string Read(string table, string column, int row)
     {
-        using (var connection = new SqliteConnection(dbName))
+        using (SqliteConnection connection = new SqliteConnection(dbName))
         {
             connection.Open();
-
-            //Setting up an object command to allow db caontrol
-            using (var command = connection.CreateCommand())
-            {
-                /*command.CommandText = "SELECT DISTINCT " + column + " FROM " + table + " WHERE id = " + row + " ORDER BY id;";
-                command.CommandText = "SELECT " + column + ", id FROM " + table + " WHERE id = " + row + ";";
-                command.ExecuteScalar();
-
-                variableToChange = new SqliteCommand(command.CommandText, connection).ToString();
-
-
-
-
-                variableToChange = command.ExecuteScalar().ToString();*/
-
-
-
-
-                
-                command.CommandText = "SELECT " + column + ", id FROM " + table + " WHERE id = " + row.ToString() + ";";
-                variableToChange = command.ExecuteReader().Read().ToString();
-            }
-            connection.Close();
-            return variableToChange;
+            SqliteCommand cmd = new SqliteCommand("SELECT " + column + " FROM " + table + " WHERE id = " + row.ToString(), connection);
+            SqliteDataReader reader = cmd.ExecuteReader();
+            
+            return reader.GetValue(0).ToString();
         }
     }
 

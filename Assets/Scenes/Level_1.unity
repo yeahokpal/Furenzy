@@ -7818,6 +7818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   save: {fileID: 0}
+  WinText: {fileID: 750590271}
 --- !u!4 &782945197
 Transform:
   m_ObjectHideFlags: 0

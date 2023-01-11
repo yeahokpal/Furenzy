@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "EventLog",
+                    "type": "Button",
+                    "id": "bc7c9dd8-383a-4ebb-8844-a295dfff7c61",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -348,6 +357,17 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "11702687-3802-46fa-8604-8d106741a005",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EventLog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -363,6 +383,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "EventLog",
+                    "type": "Button",
+                    "id": "244a15d5-cb57-4f58-9745-cecef0343631",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Look",
@@ -698,6 +727,17 @@
                     "action": "Stab",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1eadac02-220c-4344-b037-1c8d84fc0a89",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EventLog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -745,6 +785,15 @@
                     "name": "Dash",
                     "type": "Button",
                     "id": "d07267f1-9f7e-4237-b69a-aa44a7cd33b0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "EventLog",
+                    "type": "Button",
+                    "id": "fc4da8a8-f7c8-4691-8fdb-6d2091aa2d1a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1048,6 +1097,17 @@
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7a198a0c-cb3a-416c-993e-b05d62a81c89",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EventLog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -1086,6 +1146,15 @@
                     "name": "Pause",
                     "type": "Button",
                     "id": "141046e4-a982-4fdf-ab0f-e572bed53942",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "EventLog",
+                    "type": "Button",
+                    "id": "20f8e9c1-d3f8-4b7b-ba98-70aa6736f71f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1345,6 +1414,17 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ca587c16-db33-45ff-a562-6f01b2031f1c",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EventLog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -1360,6 +1440,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "EventLog",
+                    "type": "Button",
+                    "id": "030c7cad-a72c-47cb-bfb4-a9f58a940ad8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Yes",
@@ -1605,6 +1694,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5044c5b3-d0cb-4815-8500-bf426803b902",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EventLog",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

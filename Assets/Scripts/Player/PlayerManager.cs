@@ -50,7 +50,6 @@ public class PlayerManager : MonoBehaviour
 
     //Abilities / Attacks
     bool canAttack = true;
-    bool canDash = true;
     [SerializeField] private GameObject FireBall;
     [SerializeField] private GameObject Lightning;
     public GameObject Arrow;
@@ -66,9 +65,9 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
+        GameObject.Find("SaveManager").GetComponent<EventLog>().enabled = false;
         audioSource = gameObject.GetComponent<AudioSource>();
         instance = this;
-
         
         currentHealthSprite = health1;
     }
@@ -361,6 +360,14 @@ public class PlayerManager : MonoBehaviour
             CanvasManager.Pause();
     }
     #endregion
+
+    private void OnEventLog()
+    {
+        if (GameObject.Find("SaveManager").GetComponent<EventLog>().enabled == true)
+            GameObject.Find("SaveManager").GetComponent<EventLog>().enabled = false;
+        else
+            GameObject.Find("SaveManager").GetComponent<EventLog>().enabled = true;
+    }
 
     #region Health
     private void Dead()
