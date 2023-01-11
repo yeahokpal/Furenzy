@@ -63,7 +63,7 @@ public class CharacterSelect : MonoBehaviour
             case 1:
                 //makes sure each player manager knows what canvas it is in control of.  same for other super long lines in this statement
                 Player1 = GameObject.Find("P1_Menu_Controls(Clone)");
-                GameObject.Find("P1_Menu_Controls(Clone)").GetComponent<PlayerInput>().uiInputModule = P1_Manager.GetComponent<InputSystemUIInputModule>();
+                Player1.GetComponent<PlayerInput>().uiInputModule = P1_Manager.GetComponent<InputSystemUIInputModule>();
                 P1_OK.SetActive(true);
                 P1_Join.SetActive(false);
                 P1_Up.SetActive(true);
@@ -73,8 +73,8 @@ public class CharacterSelect : MonoBehaviour
                 break;
             //2 players
             case 2:
-                Player2 = GameObject.Find("P1_Menu_Controls(Clone)");
-                GameObject.Find("P2_Menu_Controls(Clone)").GetComponent<PlayerInput>().uiInputModule = P2_Manager.GetComponent<InputSystemUIInputModule>();
+                Player2 = GameObject.Find("P2_Menu_Controls(Clone)");
+                Player2.GetComponent<PlayerInput>().uiInputModule = P2_Manager.GetComponent<InputSystemUIInputModule>();
                 P2_OK.SetActive(true);
                 P2_Join.SetActive(false);
                 P2_Up.SetActive(true);
@@ -84,8 +84,8 @@ public class CharacterSelect : MonoBehaviour
                 break;
             //3 players
             case 3:
-                Player3 = GameObject.Find("P1_Menu_Controls(Clone)");
-                GameObject.Find("P3_Menu_Controls(Clone)").GetComponent<PlayerInput>().uiInputModule = P3_Manager.GetComponent<InputSystemUIInputModule>();
+                Player3 = GameObject.Find("P3_Menu_Controls(Clone)");
+                Player3.GetComponent<PlayerInput>().uiInputModule = P3_Manager.GetComponent<InputSystemUIInputModule>();
                 P3_OK.SetActive(true);
                 P3_Join.SetActive(false);
                 P3_Up.SetActive(true);
@@ -95,8 +95,8 @@ public class CharacterSelect : MonoBehaviour
                 break;
             //4 players
             case 4:
-                Player4 = GameObject.Find("P1_Menu_Controls(Clone)");
-                GameObject.Find("P4_Menu_Controls(Clone)").GetComponent<PlayerInput>().uiInputModule = P4_Manager.GetComponent<InputSystemUIInputModule>();
+                Player4 = GameObject.Find("P4_Menu_Controls(Clone)");
+                Player4.GetComponent<PlayerInput>().uiInputModule = P4_Manager.GetComponent<InputSystemUIInputModule>();
                 InputManager.DisableJoining();
                 P4_OK.SetActive(true);
                 P4_Join.SetActive(false);
@@ -184,7 +184,7 @@ public class CharacterSelect : MonoBehaviour
                     }
                     DontDestroyOnLoad(Player1);
                 }
-                    
+
                 if (Player2 != null)
                 {
                     switch (P2_Character)
@@ -212,7 +212,7 @@ public class CharacterSelect : MonoBehaviour
                     }
                     DontDestroyOnLoad(Player2);
                 }
-                    
+
                 if (Player3 != null)
                 {
                     switch (P3_Character)
@@ -240,7 +240,7 @@ public class CharacterSelect : MonoBehaviour
                     }
                     DontDestroyOnLoad(Player3);
                 }
-                    
+
                 if (Player4 != null)
                 {
                     switch (P4_Character)
@@ -274,33 +274,44 @@ public class CharacterSelect : MonoBehaviour
         }
     }
 
+    public void PrepCharacters()
+    {
+        
+    }
+
     private void CreateChild(int PlayerNumber)
     {
         switch (PlayerNumber)
         {
             case 1:
                 GameObject Child1 = Player1.transform.GetChild(0).gameObject;
-                Child1.AddComponent<PlayerInput>().Equals(Player1.GetComponent<PlayerInput>());
-                PlayerInput.Destroy(Player1.GetComponent<PlayerInput>());
+                PlayerInput Input1 = Player1.GetComponent<PlayerInput>();
+                Destroy(Player1.GetComponent<PlayerInput>());
+                Child1.AddComponent<PlayerInput>().Equals(Input1);
                 Child1.GetComponent<PlayerInput>().actions = PlayerActions;
+                Player1.GetComponentInChildren<PlayerManager>().enabled = true;
                 break;
             case 2:
                 GameObject Child2 = Player2.transform.GetChild(0).gameObject;
-                Child2.AddComponent<PlayerInput>().Equals(Player2.GetComponent<PlayerInput>());
-                PlayerInput.Destroy(Player2.GetComponent<PlayerInput>());
+                PlayerInput Input2 = Player2.GetComponent<PlayerInput>();
+                Destroy(Player2.GetComponent<PlayerInput>());
+                Child2.AddComponent<PlayerInput>().Equals(Input2);
                 Child2.GetComponent<PlayerInput>().actions = PlayerActions;
+                Player2.GetComponentInChildren<PlayerManager>().enabled = true;
                 break;
             case 3:
                 GameObject Child3 = Player3.transform.GetChild(0).gameObject;
+                Destroy(Player3.GetComponent<PlayerInput>());
                 Child3.AddComponent<PlayerInput>().Equals(Player3.GetComponent<PlayerInput>());
-                PlayerInput.Destroy(Player3.GetComponent<PlayerInput>());
                 Child3.GetComponent<PlayerInput>().actions = PlayerActions;
+                Player3.GetComponentInChildren<PlayerManager>().enabled = true;
                 break;
             case 4:
                 GameObject Child4 = Player4.transform.GetChild(0).gameObject;
+                Destroy(Player4.GetComponent<PlayerInput>());
                 Child4.AddComponent<PlayerInput>().Equals(Player4.GetComponent<PlayerInput>());
-                PlayerInput.Destroy(Player1.GetComponent<PlayerInput>());
                 Child4.GetComponent<PlayerInput>().actions = PlayerActions;
+                Player4.GetComponentInChildren<PlayerManager>().enabled = true;
                 break;
         }
             
