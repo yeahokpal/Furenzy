@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour
         }
         if (i == 0)
         {
-            /*switch (SceneManager.GetActiveScene().name)
+            switch (SceneManager.GetActiveScene().name)
             {
                 case "Level_1":
                     save.Write("save", "cleared", 1, "1");
@@ -52,7 +52,7 @@ public class LevelManager : MonoBehaviour
                 case "Level_3":
                     save.Write("save", "cleared", 1, "1");
                     break;
-            }*/
+            }
             StartCoroutine(WaitAndLoadHub());
         }
     }
