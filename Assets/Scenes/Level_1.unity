@@ -49013,7 +49013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlaceholderCharacter: {fileID: 4422845648860592782, guid: e2e032ee4a48a214c8b19a898fa44ce3, type: 3}
-  Player1: {fileID: 3151010248019297981, guid: 6d020f6d2000e1f46b195eb6ca92ae1b, type: 3}
+  Player1: {fileID: 1460901717897544858, guid: 39529f13222727f46935fce0d9e05faa, type: 3}
   Player2: {fileID: 4410633837779907367, guid: 7a1ef9befec95694db9fb9852d3bfad7, type: 3}
   Player3: {fileID: 3151010248019297981, guid: 6d020f6d2000e1f46b195eb6ca92ae1b, type: 3}
   Player4: {fileID: 2577553177254470347, guid: 7a7c47569b4cf5d44a931024662d695e, type: 3}
@@ -49064,6 +49064,14 @@ MonoBehaviour:
       - m_Name: 
         m_Id: 11c6af44-7313-4764-92ce-127a9398de6b
         m_Path: <Keyboard>/space
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
+      - m_Name: 
+        m_Id: 7882a291-ef93-403e-bca9-8169c29c9197
+        m_Path: <Keyboard>/enter
         m_Interactions: 
         m_Processors: 
         m_Groups: 
