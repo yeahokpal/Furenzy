@@ -74,6 +74,58 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
+        switch (gameObject.name)
+        {
+            case "Fox(Clone)":
+                if (healthFill == null)
+                    healthFill = GameObject.Find("FoxFill");
+                if (health1 == null)
+                    health1 = GameObject.Find("FoxHealth1");
+                if (health2 == null)
+                    health2 = GameObject.Find("FoxHealth2");
+                if (health3 == null)
+                    health3 = GameObject.Find("FoxHealth3");
+                if (health4 == null)
+                    health4 = GameObject.Find("FoxHealth4");
+                break;
+            case "Bunny(Clone)":
+                if (healthFill == null)
+                    healthFill = GameObject.Find("BunnyFill");
+                if (health1 == null)
+                    health1 = GameObject.Find("BunnyHealth1");
+                if (health2 == null)
+                    health2 = GameObject.Find("BunnyHealth2");
+                if (health3 == null)
+                    health3 = GameObject.Find("BunnyHealth3");
+                if (health4 == null)
+                    health4 = GameObject.Find("BunnyHealth4");
+                break;
+            case "Bird(Clone)":
+                if (healthFill == null)
+                    healthFill = GameObject.Find("BirdFill");
+                if (health1 == null)
+                    health1 = GameObject.Find("BirdHealth1");
+                if (health2 == null)
+                    health2 = GameObject.Find("BirdHealth2");
+                if (health3 == null)
+                    health3 = GameObject.Find("BirdHealth3");
+                if (health4 == null)
+                    health4 = GameObject.Find("BirdHealth4");
+                break;
+            case "Ferret(Clone)":
+                if (healthFill == null)
+                    healthFill = GameObject.Find("FerretFill");
+                if (health1 == null)
+                    health1 = GameObject.Find("FerretHealth1");
+                if (health2 == null)
+                    health2 = GameObject.Find("FerretHealth2");
+                if (health3 == null)
+                    health3 = GameObject.Find("FerretHealth3");
+                if (health4 == null)
+                    health4 = GameObject.Find("FerretHealth4");
+                break;
+        }
+
         FindHealthUI();
         if (canMove)
         {
