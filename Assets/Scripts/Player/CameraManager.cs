@@ -16,7 +16,7 @@ public class CameraManager : MonoBehaviour
 {
     float foxX = 0, foxY = 0, bunnyX = 0, bunnyY = 0, birdX = 0, birdY = 0, ferretX = 0, ferretY = 0, camX = 0, camY = 0;
     float foxDist = 0.01f, bunnyDist = 0.01f, birdDist = 0.01f, ferretDist = 0.01f;
-    int numOfPlayers;
+    int numOfPlayers = 0;
     public GameObject Fox, Bunny, Bird, Ferret;
     public CinemachineVirtualCamera Camera;
     //float[] distArray = { foxDist, bunnyDist, birdDist, ferretDist};
@@ -32,7 +32,7 @@ public class CameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        numOfPlayers = GameObject.Find("PlayerInputManager").GetComponent<PlayerInputManager>().playerCount;
+        numOfPlayers = 0;
 
         // If the player is in the scene, then initialize their variable
         if (GameObject.Find("Fox(Clone)"))
@@ -41,6 +41,7 @@ public class CameraManager : MonoBehaviour
             foxDist = Vector2.Distance(Fox.transform.position, transform.position);
             foxX = Fox.GetComponent<Transform>().position.x;
             foxY = Fox.GetComponent<Transform>().position.y;
+            ++numOfPlayers;
         }
         else
         {
@@ -56,6 +57,7 @@ public class CameraManager : MonoBehaviour
             bunnyDist = Vector2.Distance(Bunny.transform.position, transform.position);
             bunnyX = Bunny.GetComponent<Transform>().position.x;
             bunnyY = Bunny.GetComponent<Transform>().position.y;
+            ++numOfPlayers;
         }
         else
         {
@@ -71,6 +73,7 @@ public class CameraManager : MonoBehaviour
             birdDist = Vector2.Distance(Bird.transform.position, transform.position);
             birdX = Bird.GetComponent<Transform>().position.x;
             birdY = Bird.GetComponent<Transform>().position.y;
+            ++numOfPlayers;
         }
         else
         {
@@ -87,6 +90,7 @@ public class CameraManager : MonoBehaviour
             ferretDist = Vector2.Distance(Ferret.transform.position, transform.position);
             ferretX = Ferret.GetComponent<Transform>().position.x;
             ferretY = Ferret.GetComponent<Transform>().position.y;
+            ++numOfPlayers;
         }
         else
         {
@@ -95,6 +99,8 @@ public class CameraManager : MonoBehaviour
             ferretX = 0;
             ferretY = 0;
         }
+
+        //Debug.Log(numOfPlayers);
 
         if (GameObject.Find("Fox(Clone)") || GameObject.Find("Bunny(Clone)") || GameObject.Find("Bird(Clone)") || GameObject.Find("Ferret(Clone)"))
         {

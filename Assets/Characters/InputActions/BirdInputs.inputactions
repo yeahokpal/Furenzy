@@ -308,7 +308,7 @@
                 {
                     "name": "",
                     "id": "9da52e05-55c9-4390-986b-c3a29defcc23",
-                    "path": "<Keyboard>/e",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -341,7 +341,7 @@
                 {
                     "name": "",
                     "id": "e496c9ad-e6a8-406b-bd8f-a7d2b8ccc044",
-                    "path": "<Keyboard>/enter",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

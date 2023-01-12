@@ -1,5 +1,6 @@
 /*
- * Programmer: Sliman / Jack
+ * Programmer: Jack / Slimane
+ * Purpose: To Determine when to change scene
  */
 using System.Collections;
 using System.Collections.Generic;
@@ -10,14 +11,18 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
     public SaveSystem save;
+    public GameObject WinText;
 
     private void Awake()
     {
+        WinText.SetActive(false);
         if (LevelManager.instance == null) instance = this;
         else Destroy(gameObject);
-        save = GameObject.Find("SaveManager").GetComponent<SaveSystem>();
+        //save = GameObject.Find("SaveManager").GetComponent<SaveSystem>();
     }
 
+
+    // Toggleing The death Screen when you die
     public void GameOver()
     {
         UIManager _ui = GetComponent<UIManager>();
@@ -27,7 +32,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void LevelCleared() // When All Enemies are Dead, go back to the hub with the new data
+    public void Update() // When All Enemies are Dead, go back to the hub with the new data
     {
         int i = 0;
         foreach (GameObject temp in GameObject.FindGameObjectsWithTag("Enemy"))
@@ -48,6 +53,14 @@ public class LevelManager : MonoBehaviour
                     save.Write("save", "cleared", 1, "1");
                     break;
             }
+            StartCoroutine(WaitAndLoadHub());
         }
+    }
+
+    IEnumerator WaitAndLoadHub()
+    {
+        WinText.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("HubWorld");
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Programmer: Jack / Caden / Sliman
+ * Programmer: Jack / Caden
  * Purpose: Manages user inputs and calls actions from them
  * Input: Player inputs
  * Output: Player actions
@@ -18,6 +18,7 @@ public class PlayerManager : MonoBehaviour
     //Player Stats
     public int Health = 3;
     public float mana = 1f;
+    bool canSearchForUI = true;
     public GameObject currentHealthSprite;
     public GameObject health1;
     public GameObject health2;
@@ -49,7 +50,6 @@ public class PlayerManager : MonoBehaviour
 
     //Abilities / Attacks
     bool canAttack = true;
-    bool canDash = true;
     [SerializeField] private GameObject FireBall;
     [SerializeField] private GameObject Lightning;
     public GameObject Arrow;
@@ -65,46 +65,16 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
+        GameObject.Find("SaveManager").GetComponent<EventLog>().enabled = false;
         audioSource = gameObject.GetComponent<AudioSource>();
         instance = this;
-
-        switch (gameObject.name)
-        {
-            case "Fox(Clone)":
-                health1 = GameObject.Find("FoxHealth1");
-                health2 = GameObject.Find("FoxHealth2");
-                health3 = GameObject.Find("FoxHealth3");
-                health4 = GameObject.Find("FoxHealth4");
-                healthFill = GameObject.Find("FoxFill");
-                break;
-            case "Bunny(Clone)":
-                Debug.Log("working");
-                health1 = GameObject.Find("BunnyHealth1");
-                health2 = GameObject.Find("BunnyHealth2");
-                health3 = GameObject.Find("BunnyHealth3");
-                health4 = GameObject.Find("BunnyHealth4");
-                healthFill = GameObject.Find("BunnyFill");
-                break;
-            case "Bird(Clone)":
-                health1 = GameObject.Find("BirdHealth1");
-                health2 = GameObject.Find("BirdHealth2");
-                health3 = GameObject.Find("BirdHealth3");
-                health4 = GameObject.Find("BirdHealth4");
-                healthFill = GameObject.Find("BirdFill");
-                break;
-            case "Ferret(Clone)":
-                health1 = GameObject.Find("FerretHealth1");
-                health2 = GameObject.Find("FerretHealth2");
-                health3 = GameObject.Find("FerretHealth3");
-                health4 = GameObject.Find("FerretHealth4");
-                healthFill = GameObject.Find("FerretFill");
-                break;
-        }
+        
         currentHealthSprite = health1;
     }
 
     private void Update()
     {
+        FindHealthUI();
         if (canMove)
         {
             rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
@@ -125,8 +95,6 @@ public class PlayerManager : MonoBehaviour
             moveDir = 1;
         else if (moveInput.x < .25 && moveInput.y < -.25)
             moveDir = 3;
-
-        
 
         // Defining variables used by Animator
         animator.SetInteger("MoveDir", moveDir);
@@ -258,6 +226,13 @@ public class PlayerManager : MonoBehaviour
             }
         }
     }
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
     public void OnKnife()
     {
         if (Time.timeScale == 1f && canAttack && mana >= .5f)
@@ -278,13 +253,6 @@ public class PlayerManager : MonoBehaviour
             audioSource.clip = Shoot;
             audioSource.Play();
         }
-    }
-    private void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null)
-            return;
-
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
     // Bird
     public void OnShootOne()
@@ -325,6 +293,45 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     #region Movement / UI
+
+    public void FindHealthUI()
+    {
+        if (canSearchForUI)
+        {
+            switch (gameObject.name)
+            {
+                case "Fox(Clone)":
+                    health1 = GameObject.Find("FoxHealth1");
+                    health2 = GameObject.Find("FoxHealth2");
+                    health3 = GameObject.Find("FoxHealth3");
+                    health4 = GameObject.Find("FoxHealth4");
+                    healthFill = GameObject.Find("FoxFill");
+                    break;
+                case "Bunny(Clone)":
+                    health1 = GameObject.Find("BunnyHealth1");
+                    health2 = GameObject.Find("BunnyHealth2");
+                    health3 = GameObject.Find("BunnyHealth3");
+                    health4 = GameObject.Find("BunnyHealth4");
+                    healthFill = GameObject.Find("BunnyFill");
+                    break;
+                case "Bird(Clone)":
+                    health1 = GameObject.Find("BirdHealth1");
+                    health2 = GameObject.Find("BirdHealth2");
+                    health3 = GameObject.Find("BirdHealth3");
+                    health4 = GameObject.Find("BirdHealth4");
+                    healthFill = GameObject.Find("BirdFill");
+                    break;
+                case "Ferret(Clone)":
+                    health1 = GameObject.Find("FerretHealth1");
+                    health2 = GameObject.Find("FerretHealth2");
+                    health3 = GameObject.Find("FerretHealth3");
+                    health4 = GameObject.Find("FerretHealth4");
+                    healthFill = GameObject.Find("FerretFill");
+                    break;
+            }
+            canSearchForUI = false;
+        }
+    }
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
@@ -354,6 +361,14 @@ public class PlayerManager : MonoBehaviour
     }
     #endregion
 
+    private void OnEventLog()
+    {
+        if (GameObject.Find("SaveManager").GetComponent<EventLog>().enabled == true)
+            GameObject.Find("SaveManager").GetComponent<EventLog>().enabled = false;
+        else
+            GameObject.Find("SaveManager").GetComponent<EventLog>().enabled = true;
+    }
+
     #region Health
     private void Dead()
     {
@@ -382,5 +397,4 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     #endregion
-
 }

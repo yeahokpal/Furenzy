@@ -17,6 +17,13 @@ public class SaveSystem : MonoBehaviour
 
     public Sprite CheckFilled;
 
+    GameObject lvl1;
+    GameObject lvl2;
+    GameObject lvl3;
+    GameObject check1;
+    GameObject check2;
+    GameObject check3;
+
     #region Default Methods
     private void Awake()
     {
@@ -36,61 +43,61 @@ public class SaveSystem : MonoBehaviour
     private void Update()
     {
         // Setting HubWorld Level Gates According to Save Data
-        string isItTrue = "";
-
-        GameObject lvl1;
-        GameObject lvl2;
-        GameObject lvl3;
+        string isItTrue = "0";
 
         if (SceneManager.GetActiveScene().name == "HubWorld")
         {
             lvl1 = GameObject.Find("Level_1");
             lvl2 = GameObject.Find("Level_2");
             lvl3 = GameObject.Find("Level_3");
+            check1 = GameObject.Find("CheckBox1");
+            check2 = GameObject.Find("CheckBox2");
+            check3 = GameObject.Find("CheckBox3");
 
             // Deciding to allow entry into levels
 
-            Read("Save", "unlocked", 1, isItTrue);
-            if (isItTrue != "0")
+            isItTrue = Read("Save", "unlocked", 1);
+            if (isItTrue == "1")
             {
-                lvl1.SetActive(false);
+                lvl1.GetComponent<BoxCollider2D>().enabled = false;
             }
-            isItTrue = "";
+            isItTrue = "0";
 
-            Read("Save", "unlocked", 2, isItTrue);
-            if (isItTrue != "0")
+            isItTrue = Read("Save", "unlocked", 2);
+            if (isItTrue == "1")
             {
-                lvl2.SetActive(false);
+                lvl2.GetComponent<BoxCollider2D>().enabled = false;
             }
-            isItTrue = "";
+            isItTrue = "0";
 
-            Read("Save", "unlocked", 3, isItTrue);
-            if (isItTrue != "0")
+            isItTrue = Read("Save", "unlocked", 3);
+            if (isItTrue == "1")
             {
-                lvl3.SetActive(false);
+                lvl3.GetComponent<BoxCollider2D>().enabled = false;
             }
-            isItTrue = "";
+            isItTrue = "0";
 
             // Deciding if levels have been completed
 
-            Read("Save", "cleared", 1, isItTrue);
-            if (isItTrue != "0")
+            isItTrue = Read("Save", "cleared", 1);
+            if (isItTrue == "1")
             {
-                lvl1.GetComponent<SpriteRenderer>().sprite = CheckFilled;
+                Debug.Log("working");
+                check1.GetComponent<SpriteRenderer>().sprite = CheckFilled;
             }
-            isItTrue = "";
+            isItTrue = "0";
 
-            Read("Save", "cleared", 2, isItTrue);
-            if (isItTrue != "0")
+            isItTrue = Read("Save", "cleared", 2);
+            if (isItTrue == "1")
             {
-                lvl2.GetComponent<SpriteRenderer>().sprite = CheckFilled;
+                check2.GetComponent<SpriteRenderer>().sprite = CheckFilled;
             }
-            isItTrue = "";
+            isItTrue = "0";
 
-            Read("Save", "cleared", 3, isItTrue);
-            if (isItTrue != "0")
+            isItTrue = Read("Save", "cleared", 3);
+            if (isItTrue == "1")
             {
-                lvl3.GetComponent<SpriteRenderer>().sprite = CheckFilled;
+                check3.GetComponent<SpriteRenderer>().sprite = CheckFilled;
             }
         }
     }
@@ -109,7 +116,7 @@ public class SaveSystem : MonoBehaviour
             IDbCommand Command = Connection.CreateCommand();
 
             // Creating the Save Table if it doesn't already exist
-            Command.CommandText = "CREATE TABLE IF NOT EXISTS Save (id INTEGER, level INTEGER, unlocked INTEGER, cleared INTEGER, playerCount INTEGER);";
+            Command.CommandText = "CREATE TABLE IF NOT EXISTS Save (id INTEGER, level INTEGER, unlocked INTEGER, cleared INTEGER);";
             Command.ExecuteReader();
 
             Command = Connection.CreateCommand();
@@ -162,24 +169,15 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    public string Read(string table, string column, int row, string variableToChange)
+    public string Read(string table, string column, int row)
     {
-        using (var connection = new SqliteConnection(dbName))
+        using (SqliteConnection connection = new SqliteConnection(dbName))
         {
             connection.Open();
-
-            //Setting up an object command to allow db caontrol
-            using (var command = connection.CreateCommand())
-            {
-                command.CommandText = "SELECT * FROM " + table + " ORDER BY id;";
-                command.ExecuteNonQuery();
-
-                command.CommandText = "SELECT DISTINCT " + column + " FROM " + table + " WHERE id = " + row + " ORDER BY id;";
-                variableToChange = command.ExecuteScalar().ToString();
-            }
-            connection.Close();
-
-            return variableToChange;
+            SqliteCommand cmd = new SqliteCommand("SELECT " + column + " FROM " + table + " WHERE id = " + row.ToString(), connection);
+            SqliteDataReader reader = cmd.ExecuteReader();
+            
+            return reader.GetValue(0).ToString();
         }
     }
 
@@ -192,11 +190,11 @@ public class SaveSystem : MonoBehaviour
             //Setting up an object command to allow db caontrol
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "SELECT DISTINCT " + column + " FROM " + table + " WHERE id = " + row + " ORDER BY id;"; // NOT GETTING AN EXISTING ROW
+                command.CommandText = "SELECT DISTINCT " + column + " FROM " + table + " WHERE id = " + row.ToString() + " ORDER BY id;";
                 command.ExecuteNonQuery();
 
                 //IDataReader dataReader = command.ExecuteReader();
-                command.CommandText = "UPDATE " + table + " SET " + column + " = " + variableToUse + " WHERE id = " + row;
+                command.CommandText = "UPDATE " + table + " SET " + column + " = " + variableToUse + " WHERE id = " + row.ToString();
                 command.ExecuteNonQuery();
             }
             connection.Close();
