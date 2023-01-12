@@ -59,12 +59,16 @@ public class PlayerManager : MonoBehaviour
     public LayerMask enemyLayers;
     public int StabDamage = 3;
 
+    // Other
+    EventLog eventLog;
+
     #endregion
 
     #region Default Methods
 
     private void Awake()
     {
+        eventLog = GameObject.Find("SaveManager").GetComponent<EventLog>();
         GameObject.Find("SaveManager").GetComponent<EventLog>().enabled = false;
         audioSource = gameObject.GetComponent<AudioSource>();
         instance = this;
@@ -198,6 +202,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (healthFill.GetComponent<Image>().fillAmount >= .5 && Time.timeScale == 1f && canAttack)
         {
+            eventLog.AddEvent("Attack: Fireball");
             animator.SetTrigger("FireBall");
             if (moveDir == 1)
                 Instantiate(FireBall, transform.position + new Vector3(0, .75f, 0), Quaternion.Euler(0f, 0f, 180f));
@@ -218,6 +223,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (Time.timeScale == 1f && canAttack)
         {
+            eventLog.AddEvent("Attack: Lightning");
             animator.SetTrigger("FireBall");
             if (moveDir == 1)
                 Instantiate(Lightning, transform.position + new Vector3(0, .75f, 0), Quaternion.Euler(0f, 0f, 180f));
@@ -238,6 +244,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (canAttack)
         {
+            eventLog.AddEvent("Attack: Stab");
             //Play Attack Animation
             switch (moveDir)
             {
@@ -287,6 +294,7 @@ public class PlayerManager : MonoBehaviour
     }
     public void OnKnife()
     {
+        eventLog.AddEvent("Attack: Throw Knife");
         if (Time.timeScale == 1f && canAttack && mana >= .5f)
         {
             //animator.SetTrigger("Knife");
@@ -309,6 +317,7 @@ public class PlayerManager : MonoBehaviour
     // Bird
     public void OnShootOne()
     {
+        eventLog.AddEvent("Attack: Shoot Arrow");
         if (canAttack)
         {
             switch (moveDir)

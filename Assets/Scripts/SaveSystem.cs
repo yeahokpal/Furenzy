@@ -32,6 +32,7 @@ public class SaveSystem : MonoBehaviour
             Directory.CreateDirectory(Application.streamingAssetsPath + "/Saves/");
         }
         DontDestroyOnLoad(gameObject);
+        gameObject.GetComponent<EventLog>().enabled = false;
     }
 
     private void Start()

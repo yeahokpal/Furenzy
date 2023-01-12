@@ -78,10 +78,7 @@ public class Interactable : MonoBehaviour
                     gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
                 }
             }
-            else { gameObject.GetComponent<SpriteRenderer>().sprite = newSprite; }
         }
-
-        
     }
     private void Update()
     {

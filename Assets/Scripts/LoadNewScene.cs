@@ -15,6 +15,14 @@ public class LoadNewScene : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            if (GameObject.Find("Fox(Clone)"))
+                GameObject.Find("Fox(Clone)").transform.position = new Vector3(0, 0, 0);
+            if (GameObject.Find("Bunny(Clone)"))
+                GameObject.Find("Bunny(Clone)").transform.position = new Vector3(0, 0, 0);
+            if (GameObject.Find("Bird(Clone)"))
+                GameObject.Find("Bird(Clone)").transform.position = new Vector3(0, 0, 0);
+            if (GameObject.Find("Ferret(Clone)"))
+                GameObject.Find("Ferret(Clone)").transform.position = new Vector3(0, 0, 0);
             SceneManager.LoadScene(scene);
         }
     }
