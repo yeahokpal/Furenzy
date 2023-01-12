@@ -28,11 +28,11 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private GameObject P1_Manager, P2_Manager, P3_Manager, P4_Manager;
     [SerializeField] private GameObject P1_Check, P2_Check, P3_Check, P4_Check;
     [SerializeField] private GameObject P1_OK, P2_OK, P3_OK, P4_OK;
-    [SerializeField] private GameObject Player1, Player2, Player3, Player4;
     [SerializeField] private GameObject Character_Select_Error;
     [SerializeField] private GameObject Fox_Character, Bunny_Character, Bird_Character, Ferret_Character;
-    [SerializeField] private InputActionAsset PlayerActions;
+    [SerializeField] private InputActionAsset Player_Actions_1, Player_Actions_2, Player_Actions_3, Player_Actions_4;
     [SerializeField] private PlayerInputManager InputManager;
+    [NonSerialized] private GameObject Player1, Player2, Player3, Player4;
     [NonSerialized] private int numOfPlayers = 0, readyPlayers = 0;
     [NonSerialized] private int P1_Character = 20, P2_Character = 200, P3_Character = 2000, P4_Character = 20000;
     [NonSerialized] private int P1_Active_Sprite = 1, P2_Active_Sprite = 2, P3_Active_Sprite = 3, P4_Active_Sprite = 4;
@@ -163,23 +163,23 @@ public class CharacterSelect : MonoBehaviour
                     {
                         case 1:
                             Instantiate(Fox_Character, Player1.transform);
-                            CreateChild(1);
-                            Player1.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Fox");
+                            CreateChild(Player1, 1);
+                            Player1.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Fox");
                             break;
                         case 2:
                             Instantiate(Bunny_Character, Player1.transform);
-                            CreateChild(1);
-                            Player1.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Bunny");
+                            CreateChild(Player1, 1);
+                            Player1.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Bunny");
                             break;
                         case 3:
                             Instantiate(Bird_Character, Player1.transform);
-                            CreateChild(1);
-                            Player1.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Bird");
+                            CreateChild(Player1, 1);
+                            Player1.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Bird");
                             break;
                         case 4:
                             Instantiate(Ferret_Character, Player1.transform);
-                            CreateChild(1);
-                            Player1.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Ferret");
+                            CreateChild(Player1, 1);
+                            Player1.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Ferret");
                             break;
                     }
                     DontDestroyOnLoad(Player1);
@@ -191,23 +191,23 @@ public class CharacterSelect : MonoBehaviour
                     {
                         case 1:
                             Instantiate(Fox_Character, Player2.transform);
-                            CreateChild(2);
-                            Player2.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Fox");
+                            CreateChild(Player2, 2);
+                            Player2.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Fox");
                             break;
                         case 2:
                             Instantiate(Bunny_Character, Player2.transform);
-                            CreateChild(2);
-                            Player2.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Bunny");
+                            CreateChild(Player2, 2);
+                            Player2.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Bunny");
                             break;
                         case 3:
                             Instantiate(Bird_Character, Player2.transform);
-                            CreateChild(2);
-                            Player2.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Bird");
+                            CreateChild(Player2, 2);
+                            Player2.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Bird");
                             break;
                         case 4:
                             Instantiate(Ferret_Character, Player2.transform);
-                            CreateChild(2);
-                            Player2.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Ferret");
+                            CreateChild(Player2, 2);
+                            Player2.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Ferret");
                             break;
                     }
                     DontDestroyOnLoad(Player2);
@@ -219,23 +219,23 @@ public class CharacterSelect : MonoBehaviour
                     {
                         case 1:
                             Instantiate(Fox_Character, Player3.transform);
-                            CreateChild(3);
-                            Player3.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Fox");
+                            CreateChild(Player3, 3);
+                            Player3.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Fox");
                             break;
                         case 2:
                             Instantiate(Bunny_Character, Player3.transform);
-                            CreateChild(3);
-                            Player3.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Bunny");
+                            CreateChild(Player3, 3);
+                            Player3.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Bunny");
                             break;
                         case 3:
                             Instantiate(Bird_Character, Player3.transform);
-                            CreateChild(3);
-                            Player3.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Bird");
+                            CreateChild(Player3, 3);
+                            Player3.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Bird");
                             break;
                         case 4:
                             Instantiate(Ferret_Character, Player3.transform);
-                            CreateChild(3);
-                            Player3.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Ferret");
+                            CreateChild(Player3, 3);
+                            Player3.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Ferret");
                             break;
                     }
                     DontDestroyOnLoad(Player3);
@@ -247,23 +247,23 @@ public class CharacterSelect : MonoBehaviour
                     {
                         case 1:
                             Instantiate(Fox_Character, Player4.transform);
-                            CreateChild(4);
-                            Player4.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Fox");
+                            CreateChild(Player4, 4);
+                            Player4.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Fox");
                             break;
                         case 2:
                             Instantiate(Bunny_Character, Player4.transform);
-                            CreateChild(4);
-                            Player4.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Bunny");
+                            CreateChild(Player4, 4);
+                            Player4.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Bunny");
                             break;
                         case 3:
                             Instantiate(Bird_Character, Player4.transform);
-                            CreateChild(4);
-                            Player4.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Bird");
+                            CreateChild(Player4, 4);
+                            Player4.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Bird");
                             break;
                         case 4:
                             Instantiate(Ferret_Character, Player4.transform);
-                            CreateChild(4);
-                            Player4.transform.GetChild(0).gameObject.GetComponent<PlayerInput>().SwitchCurrentActionMap("Ferret");
+                            CreateChild(Player4, 4);
+                            Player4.transform.GetChild(0).GetComponent<PlayerInput>().SwitchCurrentActionMap("Ferret");
                             break;
                     }
                     DontDestroyOnLoad(Player4);
@@ -274,46 +274,29 @@ public class CharacterSelect : MonoBehaviour
         }
     }
 
-    public void PrepCharacters()
+    private void CreateChild(GameObject Player, int Num)//Adds child to object from this scene
     {
-        
-    }
-
-    private void CreateChild(int PlayerNumber)
-    {
-        switch (PlayerNumber)
+        GameObject Child = Player.transform.GetChild(0).gameObject;
+        PlayerInput Input = Player.GetComponent<PlayerInput>();
+        Destroy(Player.GetComponent<PlayerInput>());
+        Child.AddComponent<PlayerInput>().Equals(Input);
+        switch (Num)
         {
             case 1:
-                GameObject Child1 = Player1.transform.GetChild(0).gameObject;
-                PlayerInput Input1 = Player1.GetComponent<PlayerInput>();
-                Destroy(Player1.GetComponent<PlayerInput>());
-                Child1.AddComponent<PlayerInput>().Equals(Input1);
-                Child1.GetComponent<PlayerInput>().actions = PlayerActions;
-                Player1.GetComponentInChildren<PlayerManager>().enabled = true;
+                Child.GetComponent<PlayerInput>().actions = Player_Actions_1;
                 break;
             case 2:
-                GameObject Child2 = Player2.transform.GetChild(0).gameObject;
-                PlayerInput Input2 = Player2.GetComponent<PlayerInput>();
-                Destroy(Player2.GetComponent<PlayerInput>());
-                Child2.AddComponent<PlayerInput>().Equals(Input2);
-                Child2.GetComponent<PlayerInput>().actions = PlayerActions;
-                Player2.GetComponentInChildren<PlayerManager>().enabled = true;
+                Child.GetComponent<PlayerInput>().actions = Player_Actions_2;
                 break;
             case 3:
-                GameObject Child3 = Player3.transform.GetChild(0).gameObject;
-                Destroy(Player3.GetComponent<PlayerInput>());
-                Child3.AddComponent<PlayerInput>().Equals(Player3.GetComponent<PlayerInput>());
-                Child3.GetComponent<PlayerInput>().actions = PlayerActions;
-                Player3.GetComponentInChildren<PlayerManager>().enabled = true;
+                Child.GetComponent<PlayerInput>().actions = Player_Actions_3;
                 break;
             case 4:
-                GameObject Child4 = Player4.transform.GetChild(0).gameObject;
-                Destroy(Player4.GetComponent<PlayerInput>());
-                Child4.AddComponent<PlayerInput>().Equals(Player4.GetComponent<PlayerInput>());
-                Child4.GetComponent<PlayerInput>().actions = PlayerActions;
-                Player4.GetComponentInChildren<PlayerManager>().enabled = true;
+                Child.GetComponent<PlayerInput>().actions = Player_Actions_4;
                 break;
         }
+        //Child.GetComponent<PlayerInput>().actions = PlayerActions;
+        Player.GetComponentInChildren<PlayerManager>().enabled = true;
             
     }
 
