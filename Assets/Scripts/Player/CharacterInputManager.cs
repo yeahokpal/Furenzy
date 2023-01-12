@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class CharacterInputManager : MonoBehaviour
 {
     GameObject playerInput;
+    PlayerSelectManager playerSelectManager;
     PlayerInputManager playerInputManager;
 
     public GameObject PlaceholderCharacter;
@@ -23,12 +24,12 @@ public class CharacterInputManager : MonoBehaviour
     private void Start()
     {
         playerInputManager = GetComponent<PlayerInputManager>();
+        playerSelectManager = GameObject.Find("PlayerSelectManager").GetComponent<PlayerSelectManager>();
     }
+
     private void Update()
     {
-        /*if (GameObject.Find("PlayerSelectManager"))
-            playerSelectManager = GameObject.Find("PlayerSelectManager").GetComponent<PlayerSelectManager>();
-
+        /*Debug.Log(playerInputManager);
         if (playerInputManager.GetComponent<InputDevice>().device.name.ToString() == playerSelectManager.ControllerNames[1].ToString())
         {
             switch (playerSelectManager.PlayerSprites[1])
@@ -47,6 +48,31 @@ public class CharacterInputManager : MonoBehaviour
                     break;
             }
 
+        }*/
+
+        if (playerInputManager.playerCount == 0)
+        {
+            playerInput = Player1;
+            playerInputManager.playerPrefab = playerInput;
+        }
+        else if (playerInputManager.playerCount == 1)
+        {
+            playerInput = Player2;
+            playerInputManager.playerPrefab = playerInput;
+        }
+        else if (playerInputManager.playerCount == 2)
+        {
+            playerInput = Player3;
+            playerInputManager.playerPrefab = playerInput;
+        }
+        else if (playerInputManager.playerCount == 3)
+        {
+            playerInput = Player4;
+            playerInputManager.playerPrefab = playerInput;
+        }
+        /*else
+        {
+            some sort of error message
         }*/
     }
 
