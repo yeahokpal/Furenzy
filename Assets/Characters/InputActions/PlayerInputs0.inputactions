@@ -1,5 +1,5 @@
 {
-    "name": "PlayerInputs",
+    "name": "PlayerInputs0",
     "maps": [
         {
             "name": "UI",
@@ -1427,7 +1427,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Fire",
+                    "name": "Bonk",
                     "type": "Button",
                     "id": "9d977564-8e88-4553-9185-22a8c6f564ac",
                     "expectedControlType": "Button",
@@ -1448,6 +1448,15 @@
                     "name": "EventLog",
                     "type": "Button",
                     "id": "20f8e9c1-d3f8-4b7b-ba98-70aa6736f71f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Spin",
+                    "type": "Button",
+                    "id": "b0abfe1c-9ed8-4bf5-b1dd-5ec2746f4eb4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1716,6 +1725,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "EventLog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2e5cabde-2abf-4206-b694-0b5ed29fae5b",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spin",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -285,6 +285,18 @@ public class PlayerManager : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+    private void OnBonk()
+    {
+        if (canAttack)
+        {
+            switch (moveDir)
+            {
+                case 1:
+                    animator.SetTrigger("BonkNorth");
+                    break;
+            }
+        }
+    }
     public void OnKnife()
     {
         if (Time.timeScale == 1f && canAttack && mana >= .5f)
