@@ -709,7 +709,7 @@
                 {
                     "name": "",
                     "id": "460157b3-374b-4597-959c-b2ee04bf4bfc",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -721,6 +721,17 @@
                     "name": "",
                     "id": "f807eac3-257a-428d-82f7-9a0bc6d487e7",
                     "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Stab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c86b778-75c7-48d4-8f71-7c2145d111f4",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

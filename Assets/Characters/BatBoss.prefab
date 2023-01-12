@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f77b04e1dce6047a3272030f740a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 20
   KnockbackPower: 100
   KnockbackDuration: 1
   attacker: {fileID: 0}
