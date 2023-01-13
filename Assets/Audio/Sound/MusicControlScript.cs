@@ -18,16 +18,18 @@ public class MusicControlScript : MonoBehaviour
 
     public void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
 
-        if (instannce == null)
+                DontDestroyOnLoad(this.gameObject);
+
+        if (instannce == this)
         {
-            instannce = this;
+            instannce = null;
         }
         else
         {
             Destroy(gameObject);
         }
+
     }
     private void Update()
     {
