@@ -15,7 +15,7 @@ public class Interactable : MonoBehaviour
     bool i = true;
     public TextMeshProUGUI UIToIncrease = null;
     public TextMeshProUGUI UIToRead = null;
-    public Sprite newSprite;
+    public Sprite newSprite, oldSprite;
     public GameObject check1, check2, check3, spawnThis;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -58,7 +58,7 @@ public class Interactable : MonoBehaviour
             }
         }
 
-        if (die)
+        if (die && collision.tag == "Player")
             Destroy(gameObject);
 
         if (UIToIncrease != null)
@@ -72,7 +72,7 @@ public class Interactable : MonoBehaviour
         {
             if (UIToRead != null)
             {
-                if (int.Parse(UIToRead.text) > 0)
+                if (int.Parse(UIToRead.text) > 0 && collision.tag == "Player")
                 {
                     UIToRead.text = (int.Parse(UIToRead.text) - 1).ToString();
                     gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -86,7 +86,7 @@ public class Interactable : MonoBehaviour
         {
             if ((check1.GetComponent<SpriteRenderer>().sprite.name == "KeyholeFilled") && (check2.GetComponent<SpriteRenderer>().sprite.name == "KeyholeFilled") && (check3.GetComponent<SpriteRenderer>().sprite.name == "KeyholeFilled"))
             {
-                Instantiate(spawnThis, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+                GameObject.Find("BatBoss").GetComponent<Transform>().position = gameObject.transform.position;
                 i = false;
             }
         }

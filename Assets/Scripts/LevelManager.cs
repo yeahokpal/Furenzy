@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -13,12 +14,20 @@ public class LevelManager : MonoBehaviour
     public SaveSystem save;
     public GameObject WinText;
 
-    private void Awake()
+    public void Awake()
     {
+        if (SceneManager.GetActiveScene().name == "Level_2")
+        {
+            GameObject.Find("Keyhole1").GetComponent<SpriteRenderer>().sprite = GameObject.Find("Keyhole1").GetComponent<Interactable>().oldSprite;
+            GameObject.Find("Keyhole2").GetComponent<SpriteRenderer>().sprite = GameObject.Find("Keyhole2").GetComponent<Interactable>().oldSprite;
+            GameObject.Find("Keyhole3").GetComponent<SpriteRenderer>().sprite = GameObject.Find("Keyhole3").GetComponent<Interactable>().oldSprite;
+            //GameObject.Find("KeyText").GetComponent<TextMeshProUGUI>().text = (int.Parse(GameObject.Find("KeyText").GetComponent<TextMeshProUGUI>().text) - 5).ToString(); ;
+        }
+
         WinText.SetActive(false);
         if (LevelManager.instance == null) instance = this;
         else Destroy(gameObject);
-        //save = GameObject.Find("SaveManager").GetComponent<SaveSystem>();
+        save = GameObject.Find("SaveManager").GetComponent<SaveSystem>();
     }
 
 
@@ -47,14 +56,19 @@ public class LevelManager : MonoBehaviour
                     save.Write("save", "cleared", 1, "1");
                     break;
                 case "Level_2":
-                    save.Write("save", "cleared", 1, "1");
+                    save.Write("save", "cleared", 2, "1");
                     break;
                 case "Level_3":
-                    save.Write("save", "cleared", 1, "1");
+                    save.Write("save", "cleared", 3, "1");
                     break;
             }
             StartCoroutine(WaitAndLoadHub());
         }
+    }
+
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     IEnumerator WaitAndLoadHub()
@@ -62,5 +76,13 @@ public class LevelManager : MonoBehaviour
         WinText.SetActive(true);
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("HubWorld");
+        if (GameObject.Find("Fox(Clone)"))
+            GameObject.Find("Fox(Clone)").transform.position = new Vector3(0f, 0f, 0f);
+        if (GameObject.Find("Bunny(Clone)"))
+            GameObject.Find("Bunny(Clone)").transform.position = new Vector3(0f, 0f, 0f);
+        if (GameObject.Find("Bird(Clone)"))
+            GameObject.Find("Bird(Clone)").transform.position = new Vector3(0f, 0f, 0f);
+        if (GameObject.Find("Ferret(Clone)"))
+            GameObject.Find("Ferret(Clone)").transform.position = new Vector3(0f, 0f, 0f);
     }
 }

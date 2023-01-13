@@ -347,7 +347,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -926,6 +926,7 @@ GameObject:
   - component: {fileID: 749600540}
   - component: {fileID: 749600539}
   - component: {fileID: 749600541}
+  - component: {fileID: 749600542}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -945,7 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1029035277}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &749600540
@@ -982,7 +983,7 @@ MonoBehaviour:
   m_ActionsAsset: {fileID: -944628639613478452, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_PointAction: {fileID: 3718512263163430116, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_MoveAction: {fileID: 6257524260831345091, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
-  m_SubmitAction: {fileID: 0}
+  m_SubmitAction: {fileID: -3066226189073238630, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_CancelAction: {fileID: 911426634759062351, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_LeftClickAction: {fileID: -3066226189073238630, guid: 30701bbc2e8a136498ded13479a4a94b, type: 3}
   m_MiddleClickAction: {fileID: 0}
@@ -993,6 +994,18 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 2
   m_CursorLockBehavior: 0
+--- !u!114 &749600542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749600537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2e0ba2368d73f4397e6c8a105eb539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &764580648
 GameObject:
   m_ObjectHideFlags: 0

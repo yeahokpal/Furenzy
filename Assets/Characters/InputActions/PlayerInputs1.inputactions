@@ -1,5 +1,5 @@
 {
-    "name": "PlayerInputs",
+    "name": "PlayerInputs1",
     "maps": [
         {
             "name": "UI",
@@ -991,7 +991,7 @@
                 {
                     "name": "",
                     "id": "460157b3-374b-4597-959c-b2ee04bf4bfc",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1003,6 +1003,17 @@
                     "name": "",
                     "id": "f807eac3-257a-428d-82f7-9a0bc6d487e7",
                     "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Stab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0301cbbf-4888-41cb-a8d0-e189c9961cd9",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1407,6 +1418,24 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Bonk",
+                    "type": "Button",
+                    "id": "5cc1f954-f19a-4ad6-8d12-1dd633bb3e63",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Spin",
+                    "type": "Button",
+                    "id": "0bc75359-cade-4408-b015-a37566c6226b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Look",
                     "type": "Value",
                     "id": "cb13c789-4dd3-4f5e-a1f2-b2709663114c",
@@ -1705,6 +1734,61 @@
                     "processors": "",
                     "groups": "",
                     "action": "EventLog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "89c5f19a-bd50-40e6-a568-9408e2b78fad",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bonk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "11745c7d-73fa-4536-ae8a-8de1e7c07750",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bonk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3a592420-f186-4520-81ce-f1c48107b353",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bonk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "62d461af-4030-47e0-9b7d-45539c51fcd7",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spin",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "34c962db-094b-4127-8dbd-f7ee4f11a88c",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spin",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

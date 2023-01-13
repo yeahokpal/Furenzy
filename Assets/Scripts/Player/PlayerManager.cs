@@ -57,7 +57,7 @@ public class PlayerManager : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
-    public int StabDamage = 3;
+    public int StabDamage = 2;
 
     // Other
     EventLog eventLog;
@@ -65,7 +65,6 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     #region Default Methods
-
     private void Awake()
     {
         eventLog = GameObject.Find("SaveManager").GetComponent<EventLog>();
@@ -74,6 +73,9 @@ public class PlayerManager : MonoBehaviour
         instance = this;
         
         currentHealthSprite = health1;
+
+        
+
     }
 
     private void Update()
@@ -292,48 +294,6 @@ public class PlayerManager : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-    private void OnBonk()
-    {
-        if (canAttack)
-        {
-            animator.SetBool("Bonk", true);
-            attackRange = 1f;
-            switch (moveDir)
-            {
-                case 1:
-                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0f, 0.75f, 0f);
-                    break;
-                case 2:
-                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0.75f, 0.0f, 0f);
-                    break;
-                case 3:
-                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0f, -0.75f, 0f);
-                    break;
-                case 4:
-                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(-0.75f, 0.0f, 0f);
-                    break;
-            }
-            audioSource.clip = Shoot; // Add melee sound
-            audioSource.Play();
-
-            StartCoroutine(Cooldown());
-            animator.SetBool("Bonk", false);
-
-            //Hit Detection
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-            //Deal Damage
-            foreach (Collider2D enemy in hitEnemies)
-            {
-                if (enemy is not CircleCollider2D)
-                {
-                    enemy.GetComponent<EnemyTarget>().TakeDamage(StabDamage);
-                    enemy.GetComponent<EnemyTarget>().HitStunWait(.5f);
-                    MP_Up();
-                }
-            }
-        }
-    }
     public void OnKnife()
     {
         eventLog.AddEvent("Attack: Throw Knife");
@@ -380,6 +340,75 @@ public class PlayerManager : MonoBehaviour
             StartCoroutine(Cooldown());
             audioSource.clip = Shoot;
             audioSource.Play();
+        }
+    }
+    // Ferret
+    private void OnBonk()
+    {
+        if (canAttack)
+        {
+            animator.SetTrigger("Bonk");
+            attackRange = 1f;
+            switch (moveDir)
+            {
+                case 1:
+                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0f, 0.75f, 0f);
+                    break;
+                case 2:
+                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0.75f, 0.0f, 0f);
+                    break;
+                case 3:
+                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0f, -0.75f, 0f);
+                    break;
+                case 4:
+                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(-0.75f, 0.0f, 0f);
+                    break;
+            }
+            audioSource.clip = Shoot; // Add melee sound
+            audioSource.Play();
+
+            StartCoroutine(Cooldown());
+
+            //Hit Detection
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+            //Deal Damage
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                if (enemy is not CircleCollider2D)
+                {
+                    enemy.GetComponent<EnemyTarget>().TakeDamage(2);
+                    MP_Up();
+                }
+            }
+        }
+    }
+
+    private void OnSpin()
+    {
+        if (canAttack && mana >= .5f)
+        {
+            animator.SetTrigger("Spin");
+            attackRange = 2.5f;
+            attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0f, 0f, 0f);
+            audioSource.clip = Shoot; // Add melee sound
+            audioSource.Play();
+
+            StartCoroutine(Cooldown());
+
+            //Hit Detection
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+            //Deal Damage
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                if (enemy is not CircleCollider2D)
+                {
+                    enemy.GetComponent<EnemyTarget>().TakeDamage(3);
+                    MP_Up();
+                }
+            }
+            mana -= .5f;
         }
     }
     // All
@@ -474,7 +503,29 @@ public class PlayerManager : MonoBehaviour
     #region Health
     private void Dead()
     {
-        GameObject.Find("LevelManager").GetComponent<LevelManager>().GameOver();
+        int numOfActivePlayers = 0;
+        if (GameObject.Find("Fox(Clone)"))
+            ++numOfActivePlayers;
+        if (GameObject.Find("Bunny(Clone)"))
+            ++numOfActivePlayers;
+        if (GameObject.Find("Bird(Clone)"))
+            ++numOfActivePlayers;
+        if (GameObject.Find("Ferret(Clone)"))
+            ++numOfActivePlayers;
+        if (numOfActivePlayers == 0)
+        {
+            if (GameObject.Find("P1_Menu_Controls(Clone)"))
+                Destroy(GameObject.Find("P1_Menu_Controls(Clone)"));
+            if (GameObject.Find("P2_Menu_Controls(Clone)"))
+                Destroy(GameObject.Find("P2_Menu_Controls(Clone)"));
+            if (GameObject.Find("P3_Menu_Controls(Clone)"))
+                Destroy(GameObject.Find("P3_Menu_Controls(Clone)"));
+            if (GameObject.Find("P4_Menu_Controls(Clone)"))
+                Destroy(GameObject.Find("P4_Menu_Controls(Clone)"));
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().GameOver();
+        }
+            
+
         gameObject.SetActive(false);
     }
     public void TakeDamage(int damage)

@@ -36,6 +36,7 @@ public class EnemyTarget : MonoBehaviour
     #region Default Methods
     private void Awake()
     {
+        aipath = gameObject.GetComponent<AIPath>();
         instance = this; //used for hitstun
     }
     // Update is called once per frame
@@ -74,6 +75,11 @@ public class EnemyTarget : MonoBehaviour
         {
             GameObject.Find("Fox(Clone)").GetComponent<PlayerManager>().MP_Up();
         }
+
+        if (collision.gameObject.name == "Arrow(Clone)")
+        {
+            GameObject.Find("Bird(Clone)").GetComponent<PlayerManager>().MP_Up();
+        }
     }
 
     #endregion
@@ -83,7 +89,7 @@ public class EnemyTarget : MonoBehaviour
     public void TakeDamage(int damage)//enemy takes damage
     {    
         health = health - damage;
-        StartCoroutine(HitStunWait(.5f));
+        StartCoroutine(HitStunWait(.4f));
         gameObject.GetComponent<ParticleSystem>().Play();
         audioSource.Play();
         if (health <= 0)

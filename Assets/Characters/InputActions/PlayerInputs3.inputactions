@@ -1,5 +1,5 @@
 {
-    "name": "PlayerInputs",
+    "name": "PlayerInputs3",
     "maps": [
         {
             "name": "UI",
@@ -991,7 +991,7 @@
                 {
                     "name": "",
                     "id": "460157b3-374b-4597-959c-b2ee04bf4bfc",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1003,6 +1003,17 @@
                     "name": "",
                     "id": "f807eac3-257a-428d-82f7-9a0bc6d487e7",
                     "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Stab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f2000dfd-ccce-4f43-ab58-022a49b51e1e",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1425,6 +1436,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Bonk",
+                    "type": "Button",
+                    "id": "6f3ca408-5261-43f7-86a3-5fefe33a1671",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "141046e4-a982-4fdf-ab0f-e572bed53942",
@@ -1437,6 +1457,15 @@
                     "name": "EventLog",
                     "type": "Button",
                     "id": "20f8e9c1-d3f8-4b7b-ba98-70aa6736f71f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Spin",
+                    "type": "Button",
+                    "id": "cd54dc11-1d76-4580-825d-9e9f15719ea7",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1705,6 +1734,61 @@
                     "processors": "",
                     "groups": "",
                     "action": "EventLog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b4be0cce-c598-4eee-92ab-6fdaa4de8277",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bonk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c333a182-657e-4dfe-87be-cc45f52e2cde",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bonk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ef802106-6be4-4fa5-a261-720336435d84",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bonk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2cc5ff7f-43eb-47a2-9b25-eaf99230f110",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spin",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7c03e25d-7e18-4773-9285-f3aa52c5d792",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spin",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

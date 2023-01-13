@@ -1436,6 +1436,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Spin1",
+                    "type": "Button",
+                    "id": "96b4b475-0cb7-43da-b9bf-166f0716fc61",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "141046e4-a982-4fdf-ab0f-e572bed53942",
@@ -1780,6 +1789,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Bonk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "30974b98-dfcc-4974-88ad-de9b7ac1ff99",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spin1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ec316901-7a12-4363-a03a-b84abf8b860f",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spin1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

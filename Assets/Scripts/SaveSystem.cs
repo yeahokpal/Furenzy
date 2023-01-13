@@ -93,7 +93,6 @@ public class SaveSystem : MonoBehaviour
             isItTrue = Read("Save", "cleared", 1);
             if (isItTrue == "1")
             {
-                Debug.Log("working");
                 check1.GetComponent<SpriteRenderer>().sprite = CheckFilled;
             }
             isItTrue = "0";
@@ -109,6 +108,12 @@ public class SaveSystem : MonoBehaviour
             if (isItTrue == "1")
             {
                 check3.GetComponent<SpriteRenderer>().sprite = CheckFilled;
+            }
+
+            if (SceneManager.GetActiveScene().name == "Level_2")
+            {
+                GameObject.Find("LevelManager").GetComponent<LevelManager>().enabled = true;
+                GameObject.Find("LevelManager").GetComponent<LevelManager>().Awake();
             }
         }
     }
