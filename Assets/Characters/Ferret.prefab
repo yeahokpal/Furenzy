@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2114789193212326426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2513601973821312259}
+  m_Layer: 0
+  m_Name: attackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2513601973821312259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114789193212326426}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2577553177254470350}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2577553177254470347
 GameObject:
   m_ObjectHideFlags: 0
@@ -35,7 +66,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2513601973821312259}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -117,10 +149,10 @@ MonoBehaviour:
   KnockbackPower: 100
   KnockbackDuration: 1
   moveSpeed: 5
-  rb: {fileID: 3151010248019297983, guid: 6d020f6d2000e1f46b195eb6ca92ae1b, type: 3}
-  animator: {fileID: 3151010248019297980, guid: 6d020f6d2000e1f46b195eb6ca92ae1b, type: 3}
+  rb: {fileID: 2577553177254470345}
+  animator: {fileID: 2577553177254470346}
   moveDir: 0
-  audioSource: {fileID: 9199588179596792350, guid: 6d020f6d2000e1f46b195eb6ca92ae1b, type: 3}
+  audioSource: {fileID: 3295084296068873868}
   Hit: {fileID: 8300000, guid: 407daba3c0f5b684380bd7c61b295565, type: 3}
   Hurt: {fileID: 8300000, guid: 3629ae88150dae84ba27b5f0cc238bca, type: 3}
   Shoot: {fileID: 8300000, guid: b46680ddaa2136148b3a04c5a1583d9f, type: 3}
@@ -128,11 +160,11 @@ MonoBehaviour:
   Lightning: {fileID: 0}
   Arrow: {fileID: 0}
   Knife: {fileID: 0}
-  attackPoint: {fileID: 0}
+  attackPoint: {fileID: 2513601973821312259}
   attackRange: 0.5
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   StabDamage: 3
 --- !u!50 &2577553177254470345
 Rigidbody2D:

@@ -40,7 +40,7 @@ public class PlayerManager : MonoBehaviour
 
     //Animations
     public Animator animator;
-    public int moveDir;
+    public int moveDir = 3;
 
     //Audio
     public AudioSource audioSource;
@@ -296,11 +296,41 @@ public class PlayerManager : MonoBehaviour
     {
         if (canAttack)
         {
+            animator.SetBool("Bonk", true);
+            attackRange = 1f;
             switch (moveDir)
             {
                 case 1:
-                    animator.SetTrigger("BonkNorth");
+                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0f, 0.75f, 0f);
                     break;
+                case 2:
+                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0.75f, 0.0f, 0f);
+                    break;
+                case 3:
+                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(0f, -0.75f, 0f);
+                    break;
+                case 4:
+                    attackPoint.position = GetComponentInParent<Transform>().position + new Vector3(-0.75f, 0.0f, 0f);
+                    break;
+            }
+            audioSource.clip = Shoot; // Add melee sound
+            audioSource.Play();
+
+            StartCoroutine(Cooldown());
+            animator.SetBool("Bonk", false);
+
+            //Hit Detection
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+            //Deal Damage
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                if (enemy is not CircleCollider2D)
+                {
+                    enemy.GetComponent<EnemyTarget>().TakeDamage(StabDamage);
+                    enemy.GetComponent<EnemyTarget>().HitStunWait(.5f);
+                    MP_Up();
+                }
             }
         }
     }
@@ -311,13 +341,13 @@ public class PlayerManager : MonoBehaviour
         {
             //animator.SetTrigger("Knife");
             if (moveDir == 1)
-                Instantiate(Knife, transform.position + new Vector3(0, .75f, 0), Quaternion.Euler(0f, 0f, 180f));
+                Instantiate(Knife, transform.position + new Vector3(0, 1f, 0), Quaternion.Euler(0f, 0f, 180f));
             else if (moveDir == 2)
-                Instantiate(Knife, transform.position + new Vector3(.75f, 0, 0), Quaternion.Euler(0f, 0f, 90f));
+                Instantiate(Knife, transform.position + new Vector3(1f, 0, 0), Quaternion.Euler(0f, 0f, 90f));
             else if (moveDir == 3)
-                Instantiate(Knife, transform.position + new Vector3(0, -.75f, 0), Quaternion.Euler(0f, 0f, 0f));
+                Instantiate(Knife, transform.position + new Vector3(0, -1f, 0), Quaternion.Euler(0f, 0f, 0f));
             else if (moveDir == 4)
-                Instantiate(Knife, transform.position + new Vector3(-.75f, 0, 0), Quaternion.Euler(0f, 0f, -90f));
+                Instantiate(Knife, transform.position + new Vector3(-1f, 0, 0), Quaternion.Euler(0f, 0f, -90f));
             StartCoroutine(Cooldown());
 
             mana -= .5f;
@@ -432,8 +462,6 @@ public class PlayerManager : MonoBehaviour
         else
             CanvasManager.Pause();
     }
-    #endregion
-
     private void OnEventLog()
     {
         if (GameObject.Find("SaveManager").GetComponent<EventLog>().enabled == true)
@@ -441,11 +469,12 @@ public class PlayerManager : MonoBehaviour
         else
             GameObject.Find("SaveManager").GetComponent<EventLog>().enabled = true;
     }
+    #endregion
 
     #region Health
     private void Dead()
     {
-        LevelManager.instance.GameOver();
+        GameObject.Find("LevelManager").GetComponent<LevelManager>().GameOver();
         gameObject.SetActive(false);
     }
     public void TakeDamage(int damage)
