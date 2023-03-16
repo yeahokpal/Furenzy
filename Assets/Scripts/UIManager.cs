@@ -7,10 +7,10 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] GameObject deathPanel;
+    public GameObject deathPanel;
 
     public void ToggleDeathPanel()
     {
-        deathPanel.SetActive(!deathPanel.activeSelf);
+        deathPanel.SetActive(deathPanel);
     }
 }

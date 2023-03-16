@@ -44,8 +44,6 @@ public class CanvasManager : MonoBehaviour
 
     public void Quit()
     {
-        SceneManager.LoadScene("MainMenu");
-
         // Add saving to the file
 
         #region Characters
@@ -73,6 +71,7 @@ public class CanvasManager : MonoBehaviour
             saveManager.Write("Player", "health", 1, ferret.Health.ToString());
             saveManager.Write("Player", "mana", 1, ferret.mana.ToString());
         }
+        SceneManager.LoadScene("MainMenu");
         #endregion
 
 

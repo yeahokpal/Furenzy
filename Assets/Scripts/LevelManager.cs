@@ -48,6 +48,7 @@ public class LevelManager : MonoBehaviour
         {
             ++i;
         }
+        Debug.Log(i);
         if (i == 0)
         {
             switch (SceneManager.GetActiveScene().name)
@@ -64,10 +65,36 @@ public class LevelManager : MonoBehaviour
             }
             StartCoroutine(WaitAndLoadHub());
         }
+
+        i = 0;
+        if (GameObject.Find("Fox(Clone)"))
+            ++i;
+        if (GameObject.Find("Bunny(Clone)"))
+            ++i;
+        if (GameObject.Find("Bird(Clone)"))
+            ++i;
+        if (GameObject.Find("Ferret(Clone)"))
+            ++i;
+
+
+        if (i == 0)
+        {
+            GameOver();
+        }
     }
 
     public void LoadMenu()
     {
+        if (GameObject.Find("P1_Menu_Controls(Clone)"))
+            Destroy(GameObject.Find("P1_Menu_Controls(Clone)"));
+        if (GameObject.Find("P2_Menu_Controls(Clone)"))
+            Destroy(GameObject.Find("P2_Menu_Controls(Clone)"));
+        if (GameObject.Find("P3_Menu_Controls(Clone)"))
+            Destroy(GameObject.Find("P3_Menu_Controls(Clone)"));
+        if (GameObject.Find("P4_Menu_Controls(Clone)"))
+            Destroy(GameObject.Find("P4_Menu_Controls(Clone)"));
+        Destroy(GameObject.Find("SaveManager"));
+        Destroy(GameObject.Find("PlayerSelectManager"));
         SceneManager.LoadScene("MainMenu");
     }
 

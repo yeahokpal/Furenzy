@@ -17,12 +17,6 @@ public class SaveSystem : MonoBehaviour
     string dbName = "URI=file:Database.db";
 
     public Sprite CheckFilled;
-    float volume;
-
-    public void ChangeVolume()
-    {
-        volume = GameObject.Find("Slider").GetComponent<Slider>().value;
-    }
 
     GameObject lvl1;
     GameObject lvl2;
@@ -53,8 +47,6 @@ public class SaveSystem : MonoBehaviour
         // Setting HubWorld Level Gates According to Save Data
         string isItTrue = "0";
 
-        if (GameObject.Find("MusicControl"))
-            GameObject.Find("MusicControl").GetComponent<AudioSource>().volume = volume;
 
         if (SceneManager.GetActiveScene().name == "HubWorld")
         {
