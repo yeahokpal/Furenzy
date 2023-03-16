@@ -65,17 +65,14 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     #region Default Methods
-    private void Awake()
+    private void Start()
     {
         eventLog = GameObject.Find("SaveManager").GetComponent<EventLog>();
         GameObject.Find("SaveManager").GetComponent<EventLog>().enabled = false;
         audioSource = gameObject.GetComponent<AudioSource>();
         instance = this;
-        
+
         currentHealthSprite = health1;
-
-        
-
     }
 
     private void Update()

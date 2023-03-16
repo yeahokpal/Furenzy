@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
 
     public void Awake()
     {
+        this.enabled = true;
         if (SceneManager.GetActiveScene().name == "Level_2")
         {
             GameObject.Find("Keyhole1").GetComponent<SpriteRenderer>().sprite = GameObject.Find("Keyhole1").GetComponent<Interactable>().oldSprite;
